@@ -4,15 +4,24 @@
 #1f1f1f - Black
 #731010 - dark Red
 #a80000 -  Red
+
+#fff (white)
+#000 (black)
+#8BC34A (dark green)
+#FFC107 (bright yellow)
+#03A9F4 (bright blue)
+#9C27B0 (purple)
 */
 
 
 .main {
   display: flex;
+  background: linear-gradient(176deg,rgb(18,24,27) 50%,rgb(32,39,55) 100%);
+  background-attachment: fixed;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 

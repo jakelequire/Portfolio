@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
 import NavBar from '../components/navbar.jsx'
-
+import Landing from '../components/landing.jsx'
 /* */
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <div>
           <NavBar> </NavBar>
+          <Landing> </Landing>
         </div>
       </main>
     </>

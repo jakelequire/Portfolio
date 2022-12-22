@@ -1,43 +1,87 @@
+/*
+#d4d4d4 - Light Gray
+#707070 - Dark Gray
+#1f1f1f - Black
+#731010 - dark Red
+#a80000 -  Red
+
+#fff (white)
+#000 (black)
+#8BC34A (dark green)
+#FFC107 (bright yellow)
+#03A9F4 (bright blue)
+#9C27B0 (purple)
+*/
+
+/* @mixin transition {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+} */
+            
 .navbar {
-    display: flex;
-    height: 70px;
-    width: 100vw;
-    background-color: #fff;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-  }
-  
-  . {}
-  
-  .nav-group {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .nav-links-container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    text-decoration: none;
-    padding: 0 1rem;
-    color: #000;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  height: 70px;
+  width: 100vw;
+  background-color: #fff;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+
+  transition: opacity .2s ease-in;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-links-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 500;
+  -moz-transition: all 50ms ease-in;
+  -o-transition: all 50ms ease-in;
+  -webkit-transition: all 50ms ease-in;
+  transition: all 50ms ease-in;
+}
   .nav-item::after {
     content: '/';
-    padding: 0 0.8rem;
+    padding: 2rem;
     color: #000;
   }
-  
+
+#home:hover {
+  color: #8BC34A;
+}
+#about:hover {
+  color: #FFC107;
+}
+#projects:hover {
+  color: #03A9F4;
+}
+#contact:hover {
+  color: #9C27B0;
+}
+
+
