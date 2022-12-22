@@ -18,13 +18,17 @@ function NavBar() {
   }, []); // Empty array means this effect only runs once when the component mounts
 
   const handleMouseOver = () => {
-    nav && (nav.style.opacity = '1');
-    nav && (nav.style.background = '#fff');
+    if(nav) {
+    nav.style.opacity = '1'
+    nav.style.background = '#fff'
+    }
   }
 
   const handleMouseOut = () => {
-    nav && (nav.style.opacity = '0.6');
-    nav && (nav.style.background = 'linear-gradient(to bottom, #ffffff, #ffffff00)');
+    if(nav) {
+    nav.style.opacity = '0.6';
+    nav.style.background = 'linear-gradient(to bottom, #ffffff, #ffffff00)';
+    }
   }
 
   const handleScroll = () => {
