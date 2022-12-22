@@ -11,15 +11,7 @@
 #FFC107 (bright yellow)
 #03A9F4 (bright blue)
 #9C27B0 (purple)
-*/
-
-/* @mixin transition {
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-} */
-            
+*/         
 .navbar {
   position: fixed;
   top: 0;
@@ -46,10 +38,6 @@
 .nav-links-container {
   display: flex;
   flex-direction: row;
-}
-
-.nav-scroll {
-  color: #ffffff
 }
 
 .nav-link {
