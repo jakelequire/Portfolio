@@ -35,8 +35,7 @@
   flex-direction: row;
   align-items: center;
   align-content: center;
-
-  transition: opacity .2s ease-in;
+  transition: all .2s ease-in;
 }
 
 .nav-group {
@@ -49,6 +48,10 @@
   flex-direction: row;
 }
 
+.nav-scroll {
+  color: #ffffff
+}
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -59,29 +62,49 @@
   padding-left: 0.5rem;
   color: #000;
   font-size: 1.3rem;
-  font-weight: 500;
-  -moz-transition: all 50ms ease-in;
-  -o-transition: all 50ms ease-in;
-  -webkit-transition: all 50ms ease-in;
-  transition: all 50ms ease-in;
+  font-weight: 300;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
 }
-  .nav-item::after {
-    content: '/';
-    padding: 2rem;
-    color: #000;
+.nav-separator {
+  display: flex;
+  color: #000;
+  font-size: 1.3rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+#home, #about, #projects, #contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 300;
+  -moz-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in font-weight 0.4s ease-out;
+}
+  #home:hover {
+    color: #8BC34A!important;
+    transform: scale(1.05);
+    text-shadow: 0 0 4px #8BC34A;
   }
-
-#home:hover {
-  color: #8BC34A;
-}
-#about:hover {
-  color: #FFC107;
-}
-#projects:hover {
-  color: #03A9F4;
-}
-#contact:hover {
-  color: #9C27B0;
-}
+  #about:hover {
+    color: #FFC107!important;
+    transform: scale(1.05);
+    text-shadow: 0 0 4px #FFC107;
+  }
+  #projects:hover {
+    color: #03A9F4!important;
+    transform: scale(1.05);
+    text-shadow: 0 0 4px #03A9F4;
+  }
+  #contact:hover {
+    color: #c227de!important;
+    transform: scale(1.05);
+    text-shadow: 0 0 4px #c227de;
+  }
 
 
