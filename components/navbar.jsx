@@ -40,7 +40,6 @@ export default function NavBar() {
 
   // Render the navbar
   return (
-      <div>
         <div className="navbar" ref={navRef}>
           <div className="nav-group">
             <div className="nav-links-container">
@@ -54,6 +53,5 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-      </div>
     );
 }
