@@ -1,5 +1,7 @@
 import { useRef, useEffect } from "react";
 
+import { GitHub, LinkedIn } from './svgicons/svg-icons'
+
 export default function NavBar() {
   // Create a ref to store the nav DOM element
   const navRef = useRef(null);
@@ -23,7 +25,7 @@ export default function NavBar() {
     // If scroll height is greater than nav height, add class to change nav style
     if (scrollHeight > navHeight) {
       nav.classList.add("nav-scroll");
-      nav.style.background = "rgba(206, 206, 206, 0.20)"
+      nav.style.background = "rgb(24, 24, 24)"
       nav.querySelectorAll('.nav-link').forEach(link => {
         link.style.color = '#fff';
       });
@@ -31,9 +33,9 @@ export default function NavBar() {
     // If scroll height is less than nav height, remove class to change nav style
     } else { 
       nav.classList.remove("nav-scroll");
-      nav.style.background = "#ffffff"
+      nav.style.background = "rgb(24, 24, 24)"
       nav.querySelectorAll('.nav-link').forEach(link => {
-        link.style.color = '#000';
+        link.style.color = '#fff';
       });
     }
   }
@@ -41,6 +43,19 @@ export default function NavBar() {
   // Render the navbar
   return (
         <div className="navbar" ref={navRef}>
+          <div className="nav-logo-container">
+            <div className="nav-logo">
+              <div className="nav-placeholder"></div>
+            </div>
+            <div className="nav-logo-caption">
+              <h1 className="nav-logo-text">Jake</h1>
+              <p className="nav-logo-subtext">Web Developer</p>
+            </div>
+            <div className="social-media-container">
+              <a className="social-media-link" href=""> <GitHub /> </a>
+              <a className="social-media-link" href=""> <LinkedIn /> </a>
+            </div>
+          </div>
           <div className="nav-group">
             <div className="nav-links-container">
               <a className="nav-link nav-item " id="home" href="#l-home">Home</a>
@@ -49,7 +64,9 @@ export default function NavBar() {
                 <span className="nav-separator">/</span>
               <a className="nav-link nav-item " id="projects" href="/">Projects</a>
                 <span className="nav-separator">/</span>
-              <a className="nav-link" id="contact" href="/">Contact</a>
+              <a className="nav-link nav-item " id="projects" href="/">Blog</a>
+                <span className="nav-separator">/</span>
+              <a className="nav-link nav-item" id="contact" href="/">Contact</a>
             </div>
           </div>
         </div>

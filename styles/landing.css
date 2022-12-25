@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50rem;
+    height: 100vh;
     width: 100vw;
     background-color: none;
     background-image: none;
@@ -33,9 +33,9 @@
     padding: 0 7rem;
 }
 
-.landing-container {
+.landing {
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     flex-direction: row;
     align-content: center;
@@ -45,16 +45,15 @@
 
 .landing-hero {
     display: flex;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
     flex-direction: row;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-image: url('../public/media/placeholder.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: contain;
+    object-position: center;
 }
 
 .landing-headerOne, .landing-headerTwo {
