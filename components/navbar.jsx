@@ -26,17 +26,10 @@ export default function NavBar() {
     if (scrollHeight > navHeight) {
       nav.classList.add("nav-scroll");
       nav.style.background = "rgb(24, 24, 24)"
-      nav.querySelectorAll('.nav-link').forEach(link => {
-        link.style.color = '#fff';
-      });
-
     // If scroll height is less than nav height, remove class to change nav style
     } else { 
       nav.classList.remove("nav-scroll");
       nav.style.background = "rgb(24, 24, 24)"
-      nav.querySelectorAll('.nav-link').forEach(link => {
-        link.style.color = '#fff';
-      });
     }
   }
 
@@ -58,15 +51,17 @@ export default function NavBar() {
           </div>
           <div className="nav-group">
             <div className="nav-links-container">
-              <a className="nav-link nav-item " id="home" href="#l-home">Home</a>
-                <span className="nav-separator">/</span>
+              <a className="nav-link nav-item " id="home" href="#l-home">&#9679; Home</a>
               <a className="nav-link nav-item " id="about" href="/">About Me</a>
-                <span className="nav-separator">/</span>
               <a className="nav-link nav-item " id="projects" href="/">Projects</a>
-                <span className="nav-separator">/</span>
               <a className="nav-link nav-item " id="projects" href="/">Blog</a>
-                <span className="nav-separator">/</span>
               <a className="nav-link nav-item" id="contact" href="/">Contact</a>
+            </div>
+          </div>
+          <div className="theme-toggle-container">
+            <div className="theme-toggle">
+              <p className="theme-toggle-text">Dark</p>
+              <p className="theme-toggle-text">Light</p>
             </div>
           </div>
         </div>

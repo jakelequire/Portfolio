@@ -21,11 +21,11 @@
   display: flex;
   height: 100vh;
   width: 10%;
-  background-color: #fff;
+  background-color: rgb(24, 24, 24);
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-  transition: all .2s ease-in;
+  overflow: hidden;
 }
 
 .nav-logo-container {
@@ -108,7 +108,7 @@
   text-decoration: none;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  color: #000;
+  color: #fff;
   font-size: 1.3rem;
   font-weight: 300;
   -moz-transition: all 100ms ease-in;
@@ -123,6 +123,7 @@
   content: "";
   display: block;
   position: absolute;
+  z-index: -2;
   top: 0;
   left: 0;
   width: 0;
@@ -167,28 +168,22 @@
   background-color: transparent;
   line-height: 2rem;
   width: 100%;
-  height: auto;
-}
-
-.nav-separator {
-  display: flex;
-  justify-content: center;
-  color: rgb(145, 145, 145);
-  font-style: italic;
-  font-size: 0.9rem;
-  font-weight: lighter;
+  height: fit-content;
 }
 
 #home, #about, #projects, #contact {
   display: flex;
+  padding: 0.5rem;
+  padding-left: 2rem;
   align-items: center;
-  justify-content: center;
-  color: #000;
+  justify-content: flex-start;
+  color: #fff;
   font-weight: 300;
 }
   #home:hover, #about:hover, #projects:hover, #contact:hover {
     border: 1px solid hsl(159, 100%, 52%);
-    color: #000 !important;
+    color: #000;
+    font-weight: 400;
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
   }
@@ -225,3 +220,32 @@
     opacity: 1;
   }
 }
+
+/* -- Theme Toggler -- */
+
+.theme-toggle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 3rem;
+  width: auto;
+}
+
+.theme-toggle {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.theme-toggle-text {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 300;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+  .theme-toggle-text::before {
+    padding-right: 0.5rem;
+    content: "□";
+  }
