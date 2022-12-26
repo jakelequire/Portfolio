@@ -34,8 +34,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    -webkit-animation: text-focus-in 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both 1.5s;
-    animation: text-focus-in 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both 1.5s;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.8s;
+    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.8s;
 }   
     .lt1-container {
         padding-right: 1.5em;

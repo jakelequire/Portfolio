@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 
 import NavBar from '../components/navbar.jsx'
 import Landing from '../components/landing.jsx'
+import AboutMe from '../components/aboutme.jsx'
 /* */
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
         <div className="index-wrapper">
           <NavBar> </NavBar>
           <Landing> </Landing>
+          <AboutMe> </AboutMe>
         </div>
       </main>
     </>

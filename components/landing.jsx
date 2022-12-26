@@ -4,7 +4,20 @@ import Image from 'next/image';
 import placeholder from '../public/media/sample2.png';
 
 export default function Landing() {
+  const [showArrow, setShowArrow] = useState(true);
 
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        setShowArrow(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="landing-wrapper">
         <div className="landing">
@@ -25,14 +38,15 @@ export default function Landing() {
               </div>
           </div>
 
-        <div className="landing-subheader">
-          <h3 className="l-subheader">Front-end / Back-end Web Developer</h3>
-        </div>
+          <div className="landing-subheader">
+            <h3 className="l-subheader">Front-end / Back-end Web Developer</h3>
+          </div>
+    
+          <div className="landing-btn">
+            <a className="l-btn" href="/about">Contact Me!</a>
+          </div>
 
-        <div className="landing-btn">
-          <a className="l-btn" href="/about">Contact Me!</a>
         </div>
       </div>
-    </div>
   );
 }
