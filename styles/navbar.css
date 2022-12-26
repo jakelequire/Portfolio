@@ -170,6 +170,7 @@
   line-height: 2rem;
   width: 100%;
   height: fit-content;
+  padding: 1rem;
 }
 
 #home, #about, #projects, #contact {
