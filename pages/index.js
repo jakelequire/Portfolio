@@ -5,7 +5,6 @@ import styles from '../styles/Home.module.css'
 
 import NavBar from '../components/navbar.jsx'
 import Landing from '../components/landing.jsx'
-import AboutMe from '../components/aboutMe.jsx'
 /* */
 const inter = Inter({ subsets: ['latin'] })
 
