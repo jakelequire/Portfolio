@@ -22,7 +22,6 @@ export default function Home() {
         <div className="index-wrapper">
           <NavBar> </NavBar>
           <Landing> </Landing>
-          <AboutMe> </AboutMe>
         </div>
       </main>
     </>
