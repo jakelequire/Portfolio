@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
-
+import Image from "next/image";
 import { GitHub, LinkedIn } from './svgicons/svg-icons'
+import logo from '../public/media/logo.png'
 
 export default function NavBar() {
   // Create a ref to store the nav DOM element
@@ -38,7 +39,7 @@ export default function NavBar() {
         <div className="navbar" ref={navRef}>
           <div className="nav-logo-container">
             <div className="nav-logo">
-              <div className="nav-placeholder"></div>
+
             </div>
             <div className="nav-logo-caption">
               <h1 className="nav-logo-text">Jake</h1>
