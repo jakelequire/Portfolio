@@ -27,9 +27,7 @@
     width: 50%;
 }
 .about-header-wrapper {
-    display: flex;
-    border-bottom: solid;
-    width: fit-content;
+
 }
 
 .about-header {
@@ -37,12 +35,22 @@
     font-weight: 600;
     color: #fff;
 }
+
+.about-visible {
+    display: flex;
+    border-bottom: solid;
+    width: fit-content;
+    transition: opacity 0.5s ease-in-out;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
+    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
+}
     .aboutme-header {
         font-size: 4rem;
         font-weight: 600;
         color: #fff;
     }
     .about-text-wrapper {
+        color: #fff;
         padding-left: 1rem;
         font-size: 4rem;
     }
@@ -64,8 +72,10 @@
     align-items: center;
     padding-top: 5rem;
     font-size: 3rem;
-    color: hsl(159, 100%, 52%);;
+    color: #00b159;
     text-shadow: -0.5px 0 #fff, -1px 0 #fff, -1.5px 0 #fff, -2px 0 #fff, -2.5px 0 #fff, -3px 0 #fff, -3.5px 0 #fff, -4px 0 #fff;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .slideshow-options-container {

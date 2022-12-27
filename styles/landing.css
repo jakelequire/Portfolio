@@ -41,6 +41,7 @@
         padding-right: 1.5em;
     }
     .lt-header{
+        color: #fff;
         font-size: 7rem;
         font-weight: 500;
         -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;

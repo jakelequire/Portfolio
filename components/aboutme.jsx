@@ -1,4 +1,7 @@
 import { useRef, useEffect, useState} from 'react';
+import Image from 'next/image';
+
+import html5 from '../public/media/Icons/html5.svg';
 
 export default function AboutMe() {
     const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -10,15 +13,16 @@ export default function AboutMe() {
     const intersectionObserver = useRef(null);
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
-          // Check if the component is intersecting with the middle of the viewport
-          if (entries[0].intersectionRatio > 0.5) {
-            // If the component is intersecting, add a "visible" class to the component
-            intersectionObserver.current.classList.add('visible');
-          } else {
-            // If the component is not intersecting, remove the "visible" class
-            intersectionObserver.current.classList.remove('visible');
-          }
-        });
+            // Check if the component is intersecting with the viewport
+            if (entries[0].isIntersecting) {
+              // If the component is intersecting, add a "visible" class to the component
+              intersectionObserver.current.classList.add('about-visible');
+            } else {
+              // If the component is not intersecting, remove the "visible" class
+            //   intersectionObserver.current.classList.remove('about-visible');
+            }
+          });
+          
       
         observer.observe(intersectionObserver.current);
         return () => observer.unobserve(intersectionObserver.current);
