@@ -1,25 +1,39 @@
-import { useState, useEffect, useRef } from 'react'; 
-import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 
-import placeholder from '../public/media/sample2.png';
+
+function useSmoothScroll(index, refs) {
+  if (index !== null) {
+    const element = document.getElementById(refs[index].current);
+    if (element) {
+      const elementPosition = element.offsetTop;
+      const currentPosition = window.pageYOffset;
+      const distance = elementPosition - currentPosition;
+      window.scrollBy({ top: distance, left: 0, behavior: 'smooth' });
+    }
+  }
+}
 
 export default function Landing() {
-  const [showArrow, setShowArrow] = useState(true);
+  const refs = [
+    useRef('home'),
+    useRef('about'),
+    useRef('projects'),
+    useRef('blog'),
+    useRef('contact')
+  ];
+  const [index, setIndex] = useState(null);
 
   useEffect(() => {
-    function handleScroll() {
-      if (window.scrollY > 50) {
-        setShowArrow(false);
-      }
-    }
+    useSmoothScroll(index, refs);
+  }, [index]);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  function smoothScroll(event, newIndex) {
+    console.log(event, newIndex, refs[newIndex].current)
+    event.preventDefault();
+    setIndex(newIndex);
+  }
   return (
-    <div className="landing-wrapper">
+    <div className="landing-wrapper" id="home" ref={refs[0]}>
         <div className="landing">
           <div className="landing-header">
             <h1 className="lt-header">Hello,</h1>
@@ -43,7 +57,8 @@ export default function Landing() {
           </div>
     
           <div className="landing-btn">
-            <a className="l-btn" href="/about">Contact Me!</a>
+            <a className="l-btn" href="#contact" onClick={
+                (e) => smoothScroll(e, 4)}>Contact Me!</a>
           </div>
 
         </div>
