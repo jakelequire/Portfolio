@@ -1,15 +1,70 @@
 import { useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 
+
 import html5 from '../public/media/Icons/html5.svg';
+import css3 from '../public/media/Icons/css3.svg';
+import javascript from '../public/media/Icons/javascript.svg';
+import react from '../public/media/Icons/reactjs.svg';
 
 export default function AboutMe() {
     const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
     
+    /* 
+    - I need to create a function that will display a slideshow for the "sideshwow" div
+    - I need to set a default state for the slideshow
+    - I need to create a function that will change the state of the slideshow
+    */
+
+    /* -- Slideshow -- */
+    const [slideshowIndex, setSlideshowIndex] = useState(0);
+
+    function showSlide(index) {
+      setSlideshowIndex(index);
+    }
+  
+    function plusSlides(direction) {
+      let newIndex = slideshowIndex + direction;
+      if (newIndex >= slides.length) {
+        newIndex = 0;
+      }
+      if (newIndex < 0) {
+        newIndex = slides.length - 1;
+      }
+      showSlide(newIndex);
+    }
+  
+    const slides = [
+      {
+        content: <div className="slideshow-item">
+                    <Image id="javascript" src={javascript} alt="JavaScript" width={200} height={200} />
+                    <h1 className="ss-javascript"> JavaScript</h1>
+                 </div>
+      },
+      {
+        content: <div className="slideshow-item">
+                    <Image id="react" src={react} alt="React" width={200} height={200} />
+                    <h1 className="ss-react"> React</h1>
+                 </div>
+      },
+      {
+        content: <div className="slideshow-item">
+                    <Image id="html" src={html5} alt="HTML5" width={200} height={200} />
+                    <h1 className="ss-html"> HTML</h1>
+                 </div>
+      },
+      {
+        content: <div className="slideshow-item">
+                    <Image id="css" src={css3} alt="CSS3" width={200} height={200} />
+                    <h1 className="ss-css"> CSS</h1>
+                 </div>
+      }
+
+    ];
+    /* -- ^^^^^^^^^ -- */
+    
+    /* -- Intersection Observer -- */
     const [currentIndex, setCurrentIndex] = useState(0);
-
-
-    /* Intersection Observer */
     const intersectionObserver = useRef(null);
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
@@ -19,15 +74,13 @@ export default function AboutMe() {
               intersectionObserver.current.classList.add('about-visible');
             } else {
               // If the component is not intersecting, remove the "visible" class
-            //   intersectionObserver.current.classList.remove('about-visible');
+              //   intersectionObserver.current.classList.remove('about-visible');
             }
           });
-          
-      
         observer.observe(intersectionObserver.current);
         return () => observer.unobserve(intersectionObserver.current);
       }, []);
-      
+      /* -- ^^^^^^^^^ -- */
 
     return (
         <div className="aboutme-wrapper" id="about" ref={refs[1]}>
@@ -62,23 +115,26 @@ export default function AboutMe() {
                         </div>
                         <div className="slideshow-container">
                             <div className="slideshow">
-                                <div className="slideshow-item item-one">
-
-                                </div>
-                                <div className="slideshow-item item-two">
-
-                                </div>
-                                <div className="slideshow-item item-three">
-
+                                {slides.map((slide, index) => (
+                                    <div
+                                      style={{ display: index === slideshowIndex ? 'block' : 'none' }}
+                                    >
+                                        {slide.content}
+                                    </div>
+                                ))}
+                                <div className="button-container">
+                                    <a className="slide-btn" 
+                                    onClick={() => plusSlides(-1)}>&#11164;</a>
+                                    <a className="slide-btn"
+                                    onClick={() => plusSlides(1)}>&#11166;</a>
                                 </div>
                             </div>
-                        </div>
                         <div className="slideshow-caption">
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     )
 }
