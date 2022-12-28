@@ -26,9 +26,6 @@
     height: 70%;
     width: 50%;
 }
-.about-header-wrapper {
-
-}
 
 .about-header {
     font-size: 4rem;
@@ -98,19 +95,12 @@
     height: fit-content;
 }
 
-.slideshow-item {
+.FE_slideshow-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
-}
-
-.slideshow-captions {
-    display: flex;
-    justify-content: center;
-    height: auto;
-    width: 100%;
 }
 
 .button-container {
