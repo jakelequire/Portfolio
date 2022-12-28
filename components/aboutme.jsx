@@ -12,7 +12,7 @@ import firebase from '../public/media/Icons/firebase.svg'
 export default function AboutMe() {
     const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
 
-    /* -- Slideshow -- */
+    /* ## Slideshow ## */
     const [slideshowIndex, setSlideshowIndex] = useState(0);
 
     function showSlide(index) {
@@ -77,9 +77,9 @@ export default function AboutMe() {
                      </div>
         },
     ]
-    /* -- ^^^^^^^^^ -- */
+    /* ## ^^^^^^^^^ ## */
     
-    /* -- Intersection Observer -- */
+    /* ## Intersection Observer ## */
     const [currentIndex, setCurrentIndex] = useState(0);
     const intersectionObserver = useRef(null);
     useEffect(() => {
@@ -96,7 +96,7 @@ export default function AboutMe() {
         observer.observe(intersectionObserver.current);
         return () => observer.unobserve(intersectionObserver.current);
       }, []);
-      /* -- ^^^^^^^^^ -- */
+      /* ## ^^^^^^^^^ ## */
 
     return (
         <div className="aboutme-wrapper" id="about" ref={refs[1]}>
