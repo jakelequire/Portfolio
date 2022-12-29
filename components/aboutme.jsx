@@ -10,24 +10,39 @@ import node from '../public/media/Icons/nodejs.svg'
 import firebase from '../public/media/Icons/firebase.svg'
 
 export default function AboutMe() {
-    const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+    const refs = Array.from({ length: 5 }, () => useRef(null));
 
     /* ## Slideshow ## */
-    const [slideshowIndex, setSlideshowIndex] = useState(0);
-
-    function showSlide(index) {
-      setSlideshowIndex(index);
+    const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);
+    const [BE_slideshowIndex, setBE_SlideshowIndex] = useState(0);
+    const [currentCategory, setCurrentCategory] = useState("frontend");
+    function showFE_Slide(index) {
+      setFE_SlideshowIndex(index);
     }
-  
-    function plusSlides(direction) {
-      let newIndex = slideshowIndex + direction;
+    function showBE_Slide(index) {
+        setBE_SlideshowIndex(index);
+    }
+
+    function plusFE_Slides(direction) {
+      let newIndex = FE_slideshowIndex + direction;
       if (newIndex >= FE_slides.length) {
         newIndex = 0;
       }
       if (newIndex < 0) {
         newIndex = FE_slides.length - 1;
       }
-      showSlide(newIndex);
+      showFE_Slide(newIndex);
+    }
+
+    function plusBE_Slides(direction) {
+        let newIndex = BE_slideshowIndex + direction;
+        if (newIndex >= BE_slides.length) {
+            newIndex = 0;
+        }
+        if (newIndex < 0) {
+            newIndex = BE_slides.length - 1;
+        }
+        showBE_Slide(newIndex);
     }
     /* -- Front-end Slides -- */
     const FE_slides = [
@@ -56,6 +71,7 @@ export default function AboutMe() {
                  </div>
       },
     ];
+
     /* -- Back-end Slides -- */
     const BE_slides = [
         {
@@ -76,7 +92,7 @@ export default function AboutMe() {
                         <h1 className="ss-firebase"> Firebase </h1>
                      </div>
         },
-    ]
+    ];
     /* ## ^^^^^^^^^ ## */
     
     /* ## Intersection Observer ## */
@@ -130,24 +146,43 @@ export default function AboutMe() {
                             <h1 className="slideshow-options">Backend</h1>
                         </div>
                     <div className="slideshow-container">
-                        <div className="frontend-slideshow">
-                            {FE_slides.map((slide, index) => (
-                                <div
-                                  style={{ display: index === slideshowIndex ? 'block' : 'none' }}
-                                >
-                                    {slide.content}
-                                </div>
-                            ))}
-                            <div className="button-container">
-                                <a className="slide-btn" 
-                                onClick={() => plusSlides(-1)}>&#11164;</a>
-                                <a className="slide-btn"
-                                onClick={() => plusSlides(1)}>&#11166;</a>
-                            </div>
+                    <a onClick={() => setCurrentCategory("frontend")}>Frontend</a>
+                    <a onClick={() => setCurrentCategory("backend")}>Backend</a>
+                    {/* Determine which set of slides to display based on currentCategory */}
+                    {currentCategory === "frontend" ? (
+                      <div className="slideshow-container">
+                        {FE_slides.map((slide, index) => (
+                          <div
+                            ref={refs[index]}
+                            key={index}
+                            className={index === FE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
+                          >
+                            {slide.content}
+                          </div>
+                        ))}
+                        <div className="button-container">
+                            <a className="prev" onClick={() => plusFE_Slides(-1)}>&#11164;</a>
+                            <a className="next" onClick={() => plusFE_Slides(1)}>&#11166;</a>
                         </div>
-                        <div className="backend-slideshow">
-                            
+                      </div>
+                    ) : (
+                      <div className="slideshow-container">
+                        {BE_slides.map((slide, index) => (
+                          <div
+                            ref={refs[index]}
+                            key={index}
+                            className={index === BE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
+                          >
+                            {slide.content}
+                          </div>
+                        ))}
+                        <div className="button-container">
+                            <a className="prev" onClick={() => plusBE_Slides(-1)}>&#11164;</a>
+                            <a className="next" onClick={() => plusBE_Slides(1)}>&#11166;</a>
                         </div>
+                      </div>
+                    )}
+
                     </div>
                 </div>
             </div>

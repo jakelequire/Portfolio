@@ -95,6 +95,17 @@
     height: fit-content;
 }
 
+.slideshow-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.slideshow-inactive {
+    display: none;
+}
+
 .FE_slideshow-item {
     display: flex;
     flex-direction: column;
