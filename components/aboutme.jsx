@@ -134,6 +134,17 @@ export default function AboutMe() {
                         <span className="about-dev">.</span>
                     </div>
                 </div>
+                <div className="aboutme-caption">
+                    <p className="aboutme-caption-text">
+                    Hi, my name is Jacob LeQuire and I am a full-stack web developer. I am self taught and have a strong passion for coding. I specialize in full-stack web development, with experience in technologies such as JavaScript, HTML, CSS, React.js, Next.js, Node.js, and Firebase.
+                    <br />
+                    <br />
+                    I have developed a full-stack website and am currently working on other web development projects. As a competitive person by nature, I am always striving to improve my skills and advance in the field of web development.
+                    <br />
+                    <br />
+                    In my free time, I enjoy continuing to learn and stay up-to-date on the latest web development trends and technologies. I am excited to bring my skills and passion to new challenges and projects.
+                    </p>
+                </div>
             </div>
             <div className="toolkit">
                 <div className="toolkit-container">
