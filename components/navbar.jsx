@@ -21,18 +21,17 @@ function useSmoothScroll() {
 }
 
 export default function NavBar() {
-  const refs = [
-    useRef('home'),
-    useRef('about'),
-    useRef('projects'),
-    useRef('blog'),
-    useRef('contact')
-  ];
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const blogRef = useRef(null);
+  const contactRef = useRef(null);
+  
+  const refs = [homeRef, aboutRef, projectsRef, blogRef, contactRef];
   const [index, setIndex] = useState(null);
-
   useEffect(() => {
     useSmoothScroll(index, refs);
-  }, [index]);
+  }, []);
 
   function smoothScroll(event, newIndex) {
     console.log(event, newIndex, refs[newIndex].current)
@@ -68,7 +67,6 @@ export default function NavBar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  console.log(index, refs[index], refs)
   return (
         <div className="navbar">
           <div className="nav-logo-container">

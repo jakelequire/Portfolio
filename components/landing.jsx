@@ -15,11 +15,11 @@ function useSmoothScroll(index, refs) {
 
 export default function Landing() {
   const refs = [
-    useRef('home'),
-    useRef('about'),
-    useRef('projects'),
-    useRef('blog'),
-    useRef('contact')
+    useRef('home'), //0 
+    useRef('about'), //1
+    useRef('projects'), //2
+    useRef('blog'), //3
+    useRef('contact') //4
   ];
   const [index, setIndex] = useState(null);
 

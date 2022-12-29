@@ -141,47 +141,47 @@ export default function AboutMe() {
                         <h1 className="toolkit-header-text">My Toolkit</h1>
                     </div>
                 <div className="toolkit-slideshow">
-                        <div className="slideshow-options-container">
-                            <h1 className="slideshow-options">Frontend</h1>
-                            <h1 className="slideshow-options">Backend</h1>
-                        </div>
                     <div className="slideshow-container">
-                    <a onClick={() => setCurrentCategory("frontend")}>Frontend</a>
-                    <a onClick={() => setCurrentCategory("backend")}>Backend</a>
+                        <div className="slideshow-category">
+                            <a className="category-FE" onClick={() => setCurrentCategory("frontend")}
+                            id={currentCategory === 'frontend' ? 'FE-active' : 'FE-inactive'}>Frontend</a>
+                            <a className="category-BE"onClick={() => setCurrentCategory("backend")}
+                            id={currentCategory === 'backend' ? 'BE-active' : 'BE-inactive'}>Backend</a>
+                        </div>
                     {/* Determine which set of slides to display based on currentCategory */}
-                    {currentCategory === "frontend" ? (
-                      <div className="slideshow-container">
-                        {FE_slides.map((slide, index) => (
-                          <div
-                            ref={refs[index]}
-                            key={index}
-                            className={index === FE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
-                          >
-                            {slide.content}
+                        {currentCategory === "frontend" ? (
+                          <div className="slideshow-container">
+                            {FE_slides.map((slide, index) => (
+                              <div
+                                ref={refs[index]}
+                                key={index}
+                                className={index === FE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
+                              >
+                                {slide.content}
+                              </div>
+                            ))}
+                            <div className="button-container">
+                                <a className="btn-prev" onClick={() => plusFE_Slides(-1)}>&#11164;</a>
+                                <a className="btn-next" onClick={() => plusFE_Slides(1)}>&#11166;</a>
+                            </div>
                           </div>
-                        ))}
-                        <div className="button-container">
-                            <a className="prev" onClick={() => plusFE_Slides(-1)}>&#11164;</a>
-                            <a className="next" onClick={() => plusFE_Slides(1)}>&#11166;</a>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="slideshow-container">
-                        {BE_slides.map((slide, index) => (
-                          <div
-                            ref={refs[index]}
-                            key={index}
-                            className={index === BE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
-                          >
-                            {slide.content}
+                        ) : (
+                          <div className="slideshow-container">
+                            {BE_slides.map((slide, index) => (
+                              <div
+                                ref={refs[index]}
+                                key={index}
+                                className={index === BE_slideshowIndex ? "slideshow-active" : "slideshow-inactive"}
+                              >
+                                {slide.content}
+                              </div>
+                            ))}
+                            <div className="button-container">
+                                <a className="btn-prev" onClick={() => plusBE_Slides(-1)}>&#11164;</a>
+                                <a className="btn-next" onClick={() => plusBE_Slides(1)}>&#11166;</a>
+                            </div>
                           </div>
-                        ))}
-                        <div className="button-container">
-                            <a className="prev" onClick={() => plusBE_Slides(-1)}>&#11164;</a>
-                            <a className="next" onClick={() => plusBE_Slides(1)}>&#11166;</a>
-                        </div>
-                      </div>
-                    )}
+                        )}
 
                     </div>
                 </div>
