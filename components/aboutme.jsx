@@ -7,7 +7,7 @@ import html5 from '../public/media/Icons/html5.svg';
 import css3 from '../public/media/Icons/css3.svg';
 import javascript from '../public/media/Icons/javascript.svg';
 import react from '../public/media/Icons/reactjs.svg';
-import next from '../public/media/Icons/nextjs.svg'
+import next from '../public/media/Icons/next.svg'
 import node from '../public/media/Icons/nodejs.svg'
 import firebase from '../public/media/Icons/firebase.svg'
 
@@ -51,26 +51,26 @@ export default function AboutMe() {
     const FE_slides = [
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="javascript" src={javascript} alt="JavaScript" width={200} height={200} />
-                    <h1 className="ss-javascript"> JavaScript</h1>
+                    <Image id="javascript" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={javascript} alt="JavaScript" width={200} height={200} />
+                    <h1 className="FE_slideshow-text"> JavaScript</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="react" src={react} alt="React" width={200} height={200} />
-                    <h1 className="ss-react"> React.js </h1>
+                    <Image id="react" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={react} alt="React" width={200} height={200} />
+                    <h1 className="FE_slideshow-text"> React.js </h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="html" src={html5} alt="HTML5" width={200} height={200} />
-                    <h1 className="ss-html"> HTML</h1>
+                    <Image id="html" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={html5} alt="HTML5" width={200} height={200} />
+                    <h1 className="FE_slideshow-text"> HTML</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="css" src={css3} alt="CSS3" width={200} height={200} />
-                    <h1 className="ss-css"> CSS</h1>
+                    <Image id="css" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={css3} alt="CSS3" width={200} height={200} />
+                    <h1 className="FE_slideshow-text"> CSS</h1>
                  </div>
       },
     ];
@@ -79,20 +79,20 @@ export default function AboutMe() {
     const BE_slides = [
         {
             content: <div className="BE_slideshow-item">
-                        <Image id="next" src={next} alt="NextJs" width={200} height={200} />
-                        <h1 className="ss-next"> Next.js </h1>
+                        <Image id="next" className="BE_img slide-in-blurred-right" src={next} alt="NextJs" width={200} height={200} />
+                        <h1 className="BE_slideshow-text"> Next.js </h1>
                      </div>
         },
         {
             content: <div className="BE_slideshow-item">
-                        <Image id="node" src={node} alt="NodeJs" width={200} height={200} />
-                        <h1 className="ss-node"> Node.js </h1>
+                        <Image id="node" className="BE_img slide-in-blurred-right" src={node} alt="NodeJs" width={200} height={200} />
+                        <h1 className="BE_slideshow-text"> Node.js </h1>
                      </div>
         },
         {
             content: <div className="BE_slideshow-item">
-                        <Image id="firebase" src={firebase} alt="Firebase" width={200} height={200} />
-                        <h1 className="ss-firebase"> Firebase </h1>
+                        <Image id="firebase" className="BE_img slide-in-blurred-right" src={firebase} alt="Firebase" width={200} height={200} />
+                        <h1 className="BE_slideshow-text"> Firebase </h1>
                      </div>
         },
     ];
@@ -139,13 +139,13 @@ export default function AboutMe() {
                 </div>
                 <div className="aboutme-caption">
                     <p className="aboutme-caption-text">
-                    Hi, my name is Jacob LeQuire and I am a full-stack web developer. I am self taught and have a strong passion for coding. I specialize in full-stack web development, with experience in technologies such as JavaScript, HTML, CSS, React.js, Next.js, Node.js, and Firebase.
+                    Hello! My name is Jacob LeQuire and I am a full-stack web developer with a strong passion for coding. Through self-study and hands-on experience, I have developed expertise in technologies such as JavaScript, HTML, CSS, React.js, Next.js, Node.js, and Firebase.
                     <br />
                     <br />
-                    I have developed a full-stack website and am currently working on other web development projects. As a competitive person by nature, I am always striving to improve my skills and advance in the field of web development.
+                    I have successfully built a full-stack website and am always eager to take on new web development projects. I am a competitive person who is committed to constantly improving my skills and staying up-to-date on the latest trends and technologies in the field.
                     <br />
                     <br />
-                    In my free time, I enjoy continuing to learn and stay up-to-date on the latest web development trends and technologies. I am excited to bring my skills and passion to new challenges and projects.
+                    In my free time, I enjoy learning and exploring new technologies to further enhance my development skills. I am excited to bring my skills and passion to new challenges and projects.
                     </p>
                 </div>
             </div>
