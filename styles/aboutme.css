@@ -19,19 +19,6 @@
     width: 50%;
 }
 
-.toolkit {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 70%;
-    width: 50%;
-}
-
-.about-header {
-    font-size: 4rem;
-    font-weight: 600;
-    color: #fff;
-}
 
 .about-visible {
     display: flex;
@@ -41,33 +28,40 @@
     -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
     animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
 }
-    .aboutme-header {
-        font-size: 4rem;
-        font-weight: 600;
+    .a-header {
         color: #fff;
+        font-size: 2.5rem;
     }
     .about-text-wrapper {
-        color: #fff;
         padding-left: 1rem;
-        font-size: 4rem;
+        font-size: 5rem;
     }
     .dev-D {
-        text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159, -8px 0 #00b159;
+        text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
     }
 
 .aboutme-caption {
     display: flex;
 }
 .aboutme-caption-text {
-    font-size: 2rem;
+    font-family: playfair display;
+    font-size: 1.5rem;
     color: #fff;
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 /* -- Toolkit -- */
+.toolkit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 70%;
+    width: 50%;
+}
+
 .toolkit-container {
     display: flex;
     position: relative;
@@ -152,7 +146,6 @@
     text-decoration-color: #00b159;
     text-decoration-thickness: 0.2rem;
     text-underline-offset: 0.3rem;
-    
 }
 #FE-inactive, #BE-inactive {
     cursor: pointer;

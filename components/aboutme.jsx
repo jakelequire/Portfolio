@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 
+import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
+
 import html5 from '../public/media/Icons/html5.svg';
 import css3 from '../public/media/Icons/css3.svg';
 import javascript from '../public/media/Icons/javascript.svg';
@@ -10,7 +12,8 @@ import node from '../public/media/Icons/nodejs.svg'
 import firebase from '../public/media/Icons/firebase.svg'
 
 export default function AboutMe() {
-    const refs = Array.from({ length: 5 }, () => useRef(null));
+  const refs = Array.from({ length: 5 }, () => useRef(null));
+
 
     /* ## Slideshow ## */
     const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);
@@ -118,10 +121,10 @@ export default function AboutMe() {
         <div className="aboutme-wrapper" id="about" ref={refs[1]}>
             <div className="aboutme">
                 <div className="about-header-wrapper" ref={intersectionObserver}>
-                    <div className="aboutme-header">
+                    <div className="aboutme-header a-header">
                         <h1 className="about-header">Meet the </h1>
                     </div>
-                    <div className="about-text-wrapper">
+                    <div className="about-text-wrapper a-header">
                         <span className="about-dev dev-D">D</span>
                         <span className="about-dev">e</span>
                         <span className="about-dev">v</span>
@@ -193,7 +196,6 @@ export default function AboutMe() {
                             </div>
                           </div>
                         )}
-
                     </div>
                 </div>
             </div>
