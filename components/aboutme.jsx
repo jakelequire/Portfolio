@@ -14,18 +14,14 @@ import firebase from '../public/media/Icons/firebase.svg'
 export default function AboutMe() {
   const refs = Array.from({ length: 5 }, () => useRef(null));
 
-
     /* ## Slideshow ## */
     const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);
     const [BE_slideshowIndex, setBE_SlideshowIndex] = useState(0);
     const [currentCategory, setCurrentCategory] = useState("frontend");
-    function showFE_Slide(index) {
-      setFE_SlideshowIndex(index);
-    }
-    function showBE_Slide(index) {
-        setBE_SlideshowIndex(index);
-    }
+    const [currentDirection, setCurrentDirection] = useState("");
 
+
+    /* -- Front-end Slides -- */
     function plusFE_Slides(direction) {
       let newIndex = FE_slideshowIndex + direction;
       if (newIndex >= FE_slides.length) {
@@ -37,6 +33,11 @@ export default function AboutMe() {
       showFE_Slide(newIndex);
     }
 
+    function showFE_Slide(index) {
+        setFE_SlideshowIndex(index);
+      }
+      
+    /* -- Back-end Slides -- */   
     function plusBE_Slides(direction) {
         let newIndex = BE_slideshowIndex + direction;
         if (newIndex >= BE_slides.length) {
@@ -47,29 +48,42 @@ export default function AboutMe() {
         }
         showBE_Slide(newIndex);
     }
-    /* -- Front-end Slides -- */
+
+    function showBE_Slide(index) {
+        setBE_SlideshowIndex(index);
+    }
+
+    /* -- Front-end Slide Content -- */
+    const buttonDirection = (direction) => {
+        if (direction === "left") {
+            setCurrentDirection("slide-in-blurred-left");
+        } else {
+            setCurrentDirection("slide-in-blurred-right");
+        }
+    }
+    console.log(setCurrentDirection)
     const FE_slides = [
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="javascript" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={javascript} alt="JavaScript" width={200} height={200} />
+                    <Image id="javascript" className={setCurrentDirection} src={javascript} alt="JavaScript" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> JavaScript</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="react" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={react} alt="React" width={200} height={200} />
+                    <Image id="react" className={setCurrentDirection} src={react} alt="React" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> React.js </h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="html" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={html5} alt="HTML5" width={200} height={200} />
+                    <Image id="html" className={setCurrentDirection} src={html5} alt="HTML5" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> HTML</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="css" className={`FE_img ${plusFE_Slides === 1 ? "slide-in-blurred-right" : "slide-in-blurred-left"}`} src={css3} alt="CSS3" width={200} height={200} />
+                    <Image id="css" className={setCurrentDirection} src={css3} alt="CSS3" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> CSS</h1>
                  </div>
       },
@@ -97,6 +111,12 @@ export default function AboutMe() {
         },
     ];
     /* ## ^^^^^^^^^ ## */
+
+
+
+
+
+
     
     /* ## Intersection Observer ## */
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -175,8 +195,8 @@ export default function AboutMe() {
                               </div>
                             ))}
                             <div className="button-container">
-                                <a className="btn-prev" onClick={() => plusFE_Slides(-1)}>&#11164;</a>
-                                <a className="btn-next" onClick={() => plusFE_Slides(1)}>&#11166;</a>
+                                <a className="btn-prev" onClick={() => plusFE_Slides(-1) && buttonDirection("left")}>&#11164;</a>
+                                <a className="btn-next" onClick={() => plusFE_Slides(1) && buttonDirection("right")}>&#11166;</a>
                             </div>
                           </div>
                         ) : (
