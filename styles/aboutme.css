@@ -19,7 +19,6 @@
     width: 50%;
 }
 
-
 .about-visible {
     display: flex;
     border-bottom: solid;
@@ -57,20 +56,21 @@
 .toolkit {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     height: 70%;
     width: 50%;
 }
 
-.toolkit-container {
+.slideshow-visible  {
     display: flex;
     position: relative;
     flex-direction: column;
-    width: 100%;
+    height: auto;
+    width: 90%;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border: 2px solid #fff;
 }
-    .toolkit-container::before {
+    .slideshow-visible::before {
         content: "";
         position: absolute;
         background: inherit;
@@ -93,8 +93,6 @@
     padding-top: 5rem;
     font-size: 3rem;
     color: #fff;
-    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 /* -- Slideshow -- */
@@ -121,9 +119,9 @@
 }
 
 .slideshow-category{
-    gap: 1rem;
+    gap: 3rem;
     width: 80%;
-    border-bottom: 1px solid hsl(159, 100%, 52%);
+    border-bottom: 1px solid #fff;
     padding-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
@@ -136,18 +134,17 @@
     z-index: 2;
     font-size: 2rem;
 }
-    .category-FE:hover, .category-BE:hover {
-
-    }
 
 #FE-active, #BE-active {
+    position: relative;
     cursor: pointer;
     color: #fff;
     text-decoration: underline;
-    text-decoration-color: #00b159;
+    text-decoration-color: hsl(159, 100%, 52%);
     text-decoration-thickness: 0.2rem;
     text-underline-offset: 0.3rem;
 }
+
 #FE-inactive, #BE-inactive {
     cursor: pointer;
     color: rgb(123, 123, 123);
@@ -157,14 +154,25 @@
     #FE-inactive:hover, #BE-inactive:hover {
         color: rgb(190, 190, 190);
     }
+.blurred-left {
+    -webkit-animation: slide-in-blurred-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-blurred-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+.blurred-right {
+    -webkit-animation: slide-in-blurred-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-blurred-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
 .slideshow-active {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
 }
+
 .slideshow-inactive {
     display: none;
 }

@@ -12,14 +12,13 @@ import node from '../public/media/Icons/nodejs.svg'
 import firebase from '../public/media/Icons/firebase.svg'
 
 export default function AboutMe() {
-  const refs = Array.from({ length: 5 }, () => useRef(null));
+  const { refs } = useCustomSmoothScroll();
 
     /* ## Slideshow ## */
     const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);
     const [BE_slideshowIndex, setBE_SlideshowIndex] = useState(0);
     const [currentCategory, setCurrentCategory] = useState("frontend");
     const [currentDirection, setCurrentDirection] = useState("");
-
 
     /* -- Front-end Slides -- */
     function plusFE_Slides(direction) {
@@ -54,93 +53,104 @@ export default function AboutMe() {
     }
 
     /* -- Front-end Slide Content -- */
+    useEffect(() => {
+      // this callback function will run after currentDirection is updated
+      console.log(currentDirection);
+    }, [currentDirection]);
+    
     const buttonDirection = (direction) => {
-        if (direction === "left") {
-            setCurrentDirection("slide-in-blurred-left");
-        } else {
-            setCurrentDirection("slide-in-blurred-right");
-        }
-    }
+      if (direction === "left") {
+        setCurrentDirection("slide-in-blurred-right blurred-left");
+      } else {
+        setCurrentDirection("slide-in-blurred-left blurred-right");
+      }
+    };
     console.log(setCurrentDirection)
+
+    const divRef = useRef(null);
+    const [className, setClassName] = useState("active");
+
+    useEffect(() => {
+      if(divRef.current.className !== "active") { 
+        console.log("active");
+        setClassName("active"); 
+      }}, [className]);
+
     const FE_slides = [
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="javascript" className={setCurrentDirection} src={javascript} alt="JavaScript" width={200} height={200} />
+                    <Image id="javascript" ref={divRef} className={[className, currentDirection].join(' ')} src={javascript} alt="JavaScript" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> JavaScript</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="react" className={setCurrentDirection} src={react} alt="React" width={200} height={200} />
+                    <Image id="react" className={[className, currentDirection].join(' ')} src={react} alt="React" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> React.js </h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="html" className={setCurrentDirection} src={html5} alt="HTML5" width={200} height={200} />
+                    <Image id="html" className={[className, currentDirection].join(' ')} src={html5} alt="HTML5" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> HTML</h1>
                  </div>
       },
       {
         content: <div className="FE_slideshow-item">
-                    <Image id="css" className={setCurrentDirection} src={css3} alt="CSS3" width={200} height={200} />
+                    <Image id="css" className={[className, currentDirection].join(' ')} src={css3} alt="CSS3" width={200} height={200} />
                     <h1 className="FE_slideshow-text"> CSS</h1>
                  </div>
       },
     ];
 
-    /* -- Back-end Slides -- */
+    /* -- Back-end Slides Content -- */
     const BE_slides = [
         {
-            content: <div className="BE_slideshow-item">
-                        <Image id="next" className="BE_img slide-in-blurred-right" src={next} alt="NextJs" width={200} height={200} />
-                        <h1 className="BE_slideshow-text"> Next.js </h1>
-                     </div>
+          content: <div className="BE_slideshow-item">
+                      <Image id="next" className={currentDirection} src={next} alt="NextJs" width={200} height={200} />
+                      <h1 className="BE_slideshow-text"> Next.js </h1>
+                   </div>
         },
         {
-            content: <div className="BE_slideshow-item">
-                        <Image id="node" className="BE_img slide-in-blurred-right" src={node} alt="NodeJs" width={200} height={200} />
-                        <h1 className="BE_slideshow-text"> Node.js </h1>
-                     </div>
+          content: <div className="BE_slideshow-item">
+                      <Image id="node" className={currentDirection} src={node} alt="NodeJs" width={200} height={200} />
+                      <h1 className="BE_slideshow-text"> Node.js </h1>
+                   </div>
         },
         {
-            content: <div className="BE_slideshow-item">
-                        <Image id="firebase" className="BE_img slide-in-blurred-right" src={firebase} alt="Firebase" width={200} height={200} />
-                        <h1 className="BE_slideshow-text"> Firebase </h1>
-                     </div>
+          content: <div className="BE_slideshow-item">
+                      <Image id="firebase" className={currentDirection} src={firebase} alt="Firebase" width={200} height={200} />
+                      <h1 className="BE_slideshow-text"> Firebase </h1>
+                   </div>
         },
     ];
-    /* ## ^^^^^^^^^ ## */
 
-
-
-
-
-
-    
     /* ## Intersection Observer ## */
     const [currentIndex, setCurrentIndex] = useState(0);
-    const intersectionObserver = useRef(null);
+    const intersectionObserver = {
+      header: useRef(null),
+      slideshow: useRef(null),
+    };
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             // Check if the component is intersecting with the viewport
             if (entries[0].isIntersecting) {
               // If the component is intersecting, add a "visible" class to the component
-              intersectionObserver.current.classList.add('about-visible');
-            } else {
-              // If the component is not intersecting, remove the "visible" class
-              //   intersectionObserver.current.classList.remove('about-visible');
+              intersectionObserver[entries[0].target.id].current.classList.add({
+                header: 'about-visible',
+                slideshow: 'slideshow-visible',
+              }[entries[0].target.id]);
             }
-          });
-        observer.observe(intersectionObserver.current);
-        return () => observer.unobserve(intersectionObserver.current);
-      }, []);
-      /* ## ^^^^^^^^^ ## */
+            });
+            Object.values(intersectionObserver).forEach(el => observer.observe(el.current));
+            return () => Object.values(intersectionObserver).forEach(el => observer.unobserve(el.current));
+          }, []);
 
+/* ------------------------------------------------------------------------------------------------------------- */
     return (
         <div className="aboutme-wrapper" id="about" ref={refs[1]}>
             <div className="aboutme">
-                <div className="about-header-wrapper" ref={intersectionObserver}>
+                <div className="about-header-wrapper" id="header" ref={intersectionObserver.header}>
                     <div className="aboutme-header a-header">
                         <h1 className="about-header">Meet the </h1>
                     </div>
@@ -169,8 +179,8 @@ export default function AboutMe() {
                     </p>
                 </div>
             </div>
-            <div className="toolkit">
-                <div className="toolkit-container">
+            <div className="toolkit" >
+                <div className="toolkit-container slideshow-visible" id="slideshow" ref={intersectionObserver.slideshow}>
                     <div className="toolkit-header">
                         <h1 className="toolkit-header-text">My Toolkit</h1>
                     </div>
@@ -195,8 +205,8 @@ export default function AboutMe() {
                               </div>
                             ))}
                             <div className="button-container">
-                                <a className="btn-prev" onClick={() => plusFE_Slides(-1) && buttonDirection("left")}>&#11164;</a>
-                                <a className="btn-next" onClick={() => plusFE_Slides(1) && buttonDirection("right")}>&#11166;</a>
+                                <a className="btn-prev" onClick={() => {buttonDirection("left"); plusFE_Slides(-1)}}>&#11164;</a>
+                                <a className="btn-next" onClick={() => {buttonDirection("right"); plusFE_Slides(1)}}>&#11166;</a>
                             </div>
                           </div>
                         ) : (
@@ -211,8 +221,8 @@ export default function AboutMe() {
                               </div>
                             ))}
                             <div className="button-container">
-                                <a className="btn-prev" onClick={() => plusBE_Slides(-1)}>&#11164;</a>
-                                <a className="btn-next" onClick={() => plusBE_Slides(1)}>&#11166;</a>
+                                <a className="btn-prev" onClick={() => {buttonDirection("left"); plusBE_Slides(-1)}}>&#11164;</a>
+                                <a className="btn-next" onClick={() => {buttonDirection("right"); plusBE_Slides(1)}}>&#11166;</a>
                             </div>
                           </div>
                         )}
