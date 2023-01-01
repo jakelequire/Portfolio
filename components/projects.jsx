@@ -19,7 +19,7 @@ export default function Projects() {
     return (
         <div className="projects-wrapper" id="projects" ref={refs[2]}>
             <div className="projects-header">
-                <h1 className="projects-header-text">Projects</h1>
+                <h1 className="projects-header-text"><span id="project-P">P</span>rojects</h1>
             </div>
             <div className="projects-container">
                 <div className="project-list">
