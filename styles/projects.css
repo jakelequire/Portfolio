@@ -130,13 +130,13 @@
 }
 
 #hoverOneActive { 
-    transition: box-shadow, background-color 0.4s ease-in;
+    transition: box-shadow, background-color 0.4s ease-in 0.2s;
     box-shadow: inset 0 0 55px rgb(34, 0, 255);
     background-color: rgba(0, 0, 0, 0.7);
 }
 #hoverTwoActive {
-    transition: box-shadow, background-color 0.4s ease-in;
-    box-shadow: inset 0 0 55px #0affa9;
+    transition: box-shadow, background-color 0.4s ease-in-out 0.2s;
+    box-shadow: inset 0 0 30px #0affa9;
     background-color: rgba(0, 0, 0, 0.7);
 }
 #hoverOneInactive, #hoverTwoInactive {
