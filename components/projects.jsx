@@ -5,12 +5,9 @@ import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 
 import github from '../public/media/icons/github.svg';
 import link from '../public/media/icons/link.svg';
-import solboba_logo from '../public/media/icons/solboba-logo.svg'
-import logo from '../public/media/icons/logo.svg'
-import comingsoon from '../public/media/icons/comingsoon.svg'
-import react from '../public/media/Icons/reactjs.svg';
-import next from '../public/media/Icons/next.svg'
-import nextjs from '../public/media/Icons/Nextjs-logo.svg'
+import solboba_logo from '../public/media/icons/solboba-logo.svg';
+import logo from '../public/media/icons/logo.svg';
+import comingsoon from '../public/media/icons/comingsoon.svg';
 
 export default function Projects() {
     const { refs } = useCustomSmoothScroll();
