@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 
-import html5 from '../public/media/Icons/html5.svg';
-import css3 from '../public/media/Icons/css3.svg';
-import javascript from '../public/media/Icons/javascript.svg';
-import react from '../public/media/Icons/reactjs.svg';
-import next from '../public/media/Icons/next.svg'
-import node from '../public/media/Icons/nodejs.svg'
-import firebase from '../public/media/Icons/firebase.svg'
+import html5 from '../public/media/icons/html5.svg';
+import css3 from '../public/media/icons/css3.svg';
+import javascript from '../public/media/icons/javascript.svg';
+import react from '../public/media/icons/reactjs.svg';
+import next from '../public/media/icons/next.svg'
+import node from '../public/media/icons/nodejs.svg'
+import firebase from '../public/media/icons/firebase.svg'
 
 export default function AboutMe() {
   const { refs } = useCustomSmoothScroll();
