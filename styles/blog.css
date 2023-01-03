@@ -25,7 +25,8 @@
     width: 100%;
     font-size: 4rem;
     padding-bottom: 0.5rem;
-    border-bottom: solid;
+    color: #fff;
+    border-bottom: solid #fff;
 }
     .blog-header::before {
         content: "Blog";

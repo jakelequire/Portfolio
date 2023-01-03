@@ -22,7 +22,7 @@
 
 .about-visible {
     display: flex;
-    border-bottom: solid;
+    border-bottom: solid #fff;
     width: fit-content;
     transition: opacity 0.5s ease-in-out;
     -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
