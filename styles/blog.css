@@ -5,7 +5,41 @@
     width: 100vw;
     padding-left: 13%;
     padding-right: 5%;
+    margin-bottom: 15rem;
     justify-content: center;
     align-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
+
+#blog-B {
+    text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
+}
+
+.blog-header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+    font-size: 4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: solid;
+}
+    .blog-header::before {
+        content: "Blog";
+        font-size: 20rem;
+        font-family: Roboto, sans-serif;
+        color: rgba(255, 255, 255, 0.03);
+        font-weight: 100;
+        position: absolute;
+        background: inherit;
+        z-index: 0;
+        top: -90%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    

@@ -6,7 +6,8 @@
     width: 100vw;
     padding-left: 13%;
     padding-right: 5%;
-    justify-content: center;
+    margin-bottom: 15rem;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
 }
@@ -28,8 +29,8 @@
     .projects-header::before {
         content: "Projects";
         font-size: 20rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: rgba(255, 255, 255, 0.05);
+        font-family: Roboto, sans-serif;
+        color: rgba(255, 255, 255, 0.03);
         font-weight: 100;
         position: absolute;
         background: inherit;
