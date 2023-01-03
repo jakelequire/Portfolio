@@ -71,7 +71,7 @@
   align-content: center;
   justify-content: center;
   background-color: rgb(14, 14, 14);
-  box-shadow: 0 0 35px 0 rgb(0 0 0 / 60%);
+  box-shadow: 0 5px 25px 0 rgb(0 0 0 / 60%);
   padding: 2.5rem;
   width: 90%;
   height: 90%;
@@ -222,12 +222,74 @@
 
 .resume {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-content: center;
+  align-items: center;
   justify-content: center;
   background-color: rgb(14, 14, 14);
-  box-shadow: 0 0 35px 0 rgb(0 0 0 / 60%);
+  box-shadow: 0 5px 25px 0 rgb(0 0 0 / 60%);
   padding: 2.5rem;
-  width: 90%;
+  width: 70%;
   height: 90%;
+}
+  .resume::after {
+    content: "Resume";
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    font-size: 3.5rem;
+    font-weight: 100;
+    font-style: italic; 
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+.resume-title {
+  position: absolute;
+}
+
+.resume-img {
+  height: auto;
+  z-index: 2;
+  width: 80%;
+  box-shadow: inset 0 0 35px 0 rgb(255, 0, 0);
+  border: 2px solid #fff;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+  .resume-img:hover {
+    opacity: 0.8;
+  }
+.resume-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  align-content: center;
+  margin-top: 1rem;
+  position: absolute;
+  z-index: 5;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: rgb(38, 38, 38);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.8rem 2.5rem;
+  transition: background-color 0.5s ease;
+}
+.resume-btn:hover {
+  color: #000;
+  background-color: hsl(159, 100%, 52%);
+}
+
+#mouseover-active {
+  opacity: 0.8;
 }

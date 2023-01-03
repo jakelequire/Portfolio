@@ -1,8 +1,27 @@
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
+
+import Resume from '../public/media/Resume.png';
+
+
+
 
 export default function Contact() {
     const { refs } = useCustomSmoothScroll();
+
+    const resumeBtn = useRef(null);
+    const resumeImg = useRef(null);
+  // mental note: make this a custom hook to reference the same event listeners
+    useEffect(() => {
+        resumeBtn.current.addEventListener('mouseover', function() {
+            resumeImg.current.setAttribute('id', 'mouseover-active');
+        });
+        resumeBtn.current.addEventListener('mouseout', function() {
+            resumeImg.current.removeAttribute('id');
+        });
+    }, []);
+
     return (
         <div className="contact-wrapper" id="contact" ref={refs[4]}>
             <div className="contact-header">
@@ -37,8 +56,10 @@ export default function Contact() {
                     </form>
                 </div>
                 <div className="resume-container">
+                    <h1 className="resume-title">Resume</h1>
                     <div className="resume">
-        
+                        <button ref={resumeBtn} className="resume-btn">View File</button>
+                        <Image ref={resumeImg} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
                     </div>
                 </div>
             </div>
