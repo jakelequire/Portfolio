@@ -7,6 +7,8 @@ import '../styles/blog.css'
 import '../styles/contact.css'
 import '../styles/customAnimations/animations.css'
 import '../styles/customAnimations/observerAnimations.css'
+import '../styles/blog-page/blog-index.css'
+import '../styles/blog-page/blog-sidebar.css'
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
