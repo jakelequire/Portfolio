@@ -18,9 +18,9 @@
 .blog-header {
     display: flex;
     position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     height: auto;
     width: 100%;
     font-size: 4rem;
@@ -41,6 +41,22 @@
         left: 0;
         right: 0;
         bottom: 0;
+    }
+
+
+
+.blog-path {
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    transition: background-color 0.250s ease-in-out;
+}
+    .blog-path:hover {
+        background-color: #fff;
+        color: #000;
     }
 
 .blog-content {

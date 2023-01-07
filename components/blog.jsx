@@ -6,9 +6,14 @@ export default function Blog() {
     return (
         <div className="blog-wrapper" id="blog" ref={refs[3]}>
             <div className="blog-header">
-                <h1 className="blog-title"><span id="blog-B">B</span>log</h1>
+                <div className="blog-header-title">
+                    <h1 className="blog-title"><span id="blog-B">B</span>log</h1>
+                </div>
+                <div className="blog-path">
+                    <a href="/blog">View More &#187;</a>
+                </div>
             </div>
-
+            
             <div className="blog-content">
                 <div className="blog-items-wrapper">
                     <div className="blog-post">

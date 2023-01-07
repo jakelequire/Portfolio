@@ -27,7 +27,7 @@
 .nav-logo {
   display: flex;
   justify-content: center;
-  background-image: url(../public/media/logo.png);
+  background-image: url(../../public/media/logo.png);
   background-size: cover;
   align-items: center;
   height: 100%;
