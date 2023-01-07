@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { GitHub, LinkedIn } from './svgicons/svg-icons'
+import { GitHub, LinkedIn } from '../public/media/icons/svg-icons'
 
 import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 import logo from '../public/media/logo.png'
@@ -61,7 +61,7 @@ export default function NavBar() {
             </div>
             <div className="social-media-container">
               <a className="social-media-link" href=""> <GitHub /> </a>
-              <a className="social-media-link" href=""> <LinkedIn /> </a>
+              <a className="social-media-link" href=""><LinkedIn /> </a>
             </div>
           </div>
           <div className="nav-group">
