@@ -3,9 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
-import NavBar from '../components/navbar.jsx'
-import BlogLanding from '../components/blog/blox-landing.jsx'
-import BlogSidebar from '../components/blog/blog-sidebar.jsx'
+import BlogLanding from '../components/blog/blog-landing.jsx'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Blog() {
@@ -23,7 +21,6 @@ export default function Blog() {
       </Head>
       <main className={styles.main}>
         <div className="blog-page-wrapper">
-            <BlogSidebar> </BlogSidebar>
             <BlogLanding> </BlogLanding>
         </div>
       </main>
