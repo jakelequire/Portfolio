@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import useCustomHover from '../hooks/useCustomHover.jsx'
 
+import search from '../../public/media/icons/search.svg'
+
 export default function BlogLanding() {
 
     const [tagHover, tagRef] = useCustomHover()

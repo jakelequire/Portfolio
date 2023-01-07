@@ -1,10 +1,10 @@
 /**
- * Custom hook to detect hover state of a component
+ * @description Custom hook to detect hover state of a component
  * 
  * @params {null}
  * @returns {boolean} hover
  * @returns {object} ref
- *
+ * 
  */
 
 

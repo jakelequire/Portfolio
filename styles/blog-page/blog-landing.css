@@ -115,8 +115,16 @@
     height: 5rem;
     width: 75%;
     background-color: transparent;
+    background: url(../../public/media/icons/search.svg) no-repeat left;
+    background-size: contain 2%;
     border: 0;
     border-bottom: 2px solid #fff;
     font-size: 2rem;
+}
+.searchbar[type="text"] {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 200;
+    padding-left: 5rem;
 }
 

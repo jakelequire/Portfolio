@@ -155,12 +155,12 @@
   #name {
     background-color: transparent;
     background: url(../../public/media/icons/user-icon.svg) no-repeat left;
-    background-size: contain; /* Scales the SVG to fit within the input element */
+    background-size: contain;
   }
   #email {
     background-color: transparent;
     background: url(../../public/media/icons/mail.svg) no-repeat left;
-    background-size: contain; /* Scales the SVG to fit within the input element */
+    background-size: contain;
   }
 
 .form-button {
