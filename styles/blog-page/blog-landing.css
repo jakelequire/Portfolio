@@ -32,16 +32,17 @@
 
 .blog-landing-header{
     display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     height: 30%;
     width: 100%;
-    font-size: 8rem;
-    font-weight: 200;
-    color: #fff;
 }
 
 .blog-landing-hero {
-    border-bottom: 3px solid #fff;
-    padding-right: 25%;
+    font-size: 10rem;
+    font-weight: 100;
+    color: #fff;
 }
 
 .landing-filters {
@@ -72,6 +73,33 @@
         color: rgb(125, 125, 125);
         border-bottom: 2px solid transparent;
     }
+
+/******************/
+/* Dropdown Items */
+/******************/
+#category-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+    font-size: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    position: absolute;
+  }
+  
+#tags-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+    font-size: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    position: absolute;
+  }
+  
+
 /*******************/
 /* Blog Search Bar */
 /*******************/
