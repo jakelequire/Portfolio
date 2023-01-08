@@ -7,7 +7,6 @@
  * 
  */
 
-
 import { useRef, useState, useEffect } from 'react';
 
 export default function useCustomHover() {
@@ -28,11 +27,11 @@ export default function useCustomHover() {
 
         if (node) {
         node.addEventListener('mouseover', handleMouseOver);
-        node.addEventListener('mouseleave', handleMouseOut);
+        node.addEventListener('mouseout', handleMouseOut);
     
         return () => {
             node.removeEventListener('mouseover', handleMouseOver);
-            node.removeEventListener('mouseleave', handleMouseOut);
+            node.removeEventListener('mouseout', handleMouseOut);
         };
         }
     }, []);

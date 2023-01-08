@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
 import BlogLanding from '../components/blog/blog-landing.jsx'
+import SearchQuery from '../components/blog/search-query.jsx'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Blog() {
@@ -22,6 +23,7 @@ export default function Blog() {
       <main className={styles.main}>
         <div className="blog-page-wrapper">
             <BlogLanding> </BlogLanding>
+            <SearchQuery> </SearchQuery>
         </div>
       </main>
     </>
