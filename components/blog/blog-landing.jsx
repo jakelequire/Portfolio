@@ -20,7 +20,7 @@ export default function BlogLanding() {
                         <div className="filters">
                             <a className="filter-header">Recent</a>
                             <a className="filter-header">All</a>
-
+                            
                             <div ref={categoryRef} className="filter-dropdown-category">
                             <a className="filter-header">Category</a>     
                                 {categoryHover ? (

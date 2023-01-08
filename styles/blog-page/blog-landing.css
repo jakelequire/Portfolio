@@ -37,6 +37,7 @@
     align-items: center;
     height: 30%;
     width: 100%;
+    border-bottom: 1px solid #fff;
 }
 
 .blog-landing-hero {
@@ -77,15 +78,23 @@
 /******************/
 /* Dropdown Items */
 /******************/
+
 #category-active {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #000;
-    font-size: 1.5rem;
+    font-family: Roboto, sans-serif;
+    font-size: 1.2rem;
     gap: 1rem;
     padding: 1rem;
     position: absolute;
+    width: 20%;
+    height: 25%;
+    left: 50%;
+    right: 50%;
+    transform: translate(1%);
   }
   
 #tags-active {
