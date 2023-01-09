@@ -47,7 +47,7 @@
 }
 
 .landing-filters {
-    display: flex;
+    display: inline-flex;
     height: 60%;
     width: 100%;
     font-size: 2rem;
@@ -58,7 +58,7 @@
 }
 
 .filters {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 20rem;
@@ -78,35 +78,73 @@
 /******************/
 /* Dropdown Items */
 /******************/
+.filter-dropdown-category {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.filter-dropdown-tags  {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.filter-dropdown-item {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 200;
+    color: #fff;
+    cursor: pointer;
+    padding: 1rem;
+}
 
 #category-active {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: #000;
     font-family: Roboto, sans-serif;
     font-size: 1.2rem;
-    gap: 1rem;
     padding: 1rem;
+    width: 25rem;
+    height: 15rem;
     position: absolute;
-    width: 20%;
-    height: 25%;
-    left: 50%;
-    right: 50%;
-    transform: translate(1%);
-  }
-  
+    top: 100%;
+}
+
 #tags-active {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: #000;
-    font-size: 1.5rem;
-    gap: 1rem;
+    font-family: Roboto, sans-serif;
+    font-size: 1.2rem;
     padding: 1rem;
+    width: 25rem;
+    height: 15rem;
     position: absolute;
-  }
+    top: 100%;
+}
   
 
 /*******************/

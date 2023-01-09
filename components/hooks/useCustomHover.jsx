@@ -14,7 +14,7 @@ export default function useCustomHover() {
     const ref = useRef(null);
     
     const handleMouseOver = () => setHover(true)
-    const handleMouseOut = () => setHover(true) // SET TO FALSE TO FIX
+    const handleMouseOut = () => setHover(false) // SET TO FALSE TO FIX
     
     useEffect(() => {
         const node = ref.current;

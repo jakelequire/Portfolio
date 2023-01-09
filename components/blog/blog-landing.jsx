@@ -24,7 +24,7 @@ export default function BlogLanding() {
                             <div ref={categoryRef} className="filter-dropdown-category">
                             <a className="filter-header">Category</a>     
                                 {categoryHover ? (
-                                    <div className='filter-dropdown-category'
+                                    <div className='A-filter-dropdown-category'
                                     id={categoryHover ? 'category-active' : 'category-inactive'}>
                                       <a className="filter-dropdown-item">Category 1</a>
                                       <a className="filter-dropdown-item">Category 2</a>
@@ -36,11 +36,11 @@ export default function BlogLanding() {
                             <div ref={tagRef} className="filter-dropdown-tags">
                                 <a className="filter-header">Tags</a>
                                 {tagHover ? (
-                                    <div className='filter-dropdown-tags'
+                                    <div className='A-filter-dropdown-tags'
                                     id={tagHover ? 'tags-active' : 'tags-inactive'}>
-                                      <a className="filter-dropdown-item">Tag 1</a>
-                                      <a className="filter-dropdown-item">Tag 2</a>
-                                      <a className="filter-dropdown-item">Tag 3</a>
+                                      <a id="tag1" className="filter-dropdown-item"># Tag 1</a>
+                                      <a id="tag2" className="filter-dropdown-item"># Tag 2</a>
+                                      <a id="tag3" className="filter-dropdown-item"># Tag 3</a>
                                     </div>
                                 ): null}
                             </div> 

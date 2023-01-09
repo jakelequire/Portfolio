@@ -47,7 +47,7 @@ export default function Contact() {
           }
         });
       }, []);
-
+      
     // >------------------------------------------------------------------------------------------
     return (
         <div className="contact-wrapper" id="contact" ref={refs[4]}>
