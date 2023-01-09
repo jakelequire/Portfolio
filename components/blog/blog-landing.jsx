@@ -1,12 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import useCustomHover from '../hooks/useCustomHover.jsx'
+import axios from 'axios';
 
 export default function BlogLanding() {
-
     const [tagHover, tagRef] = useCustomHover()
     const [categoryHover, categoryRef] = useCustomHover()
 
+    const [articles, setArticles] = useState([])
+    const [searchTerm, setSearchTerm] = useState('')
 
+    useEffect(() => {
+      async function fetchArticles() {
+        const response = await axios.get(`http://localhost:3001/api/blog-articles?q=${searchTerm}`);
+        setArticles(response.data);
+      }
+      fetchArticles();
+    }, [searchTerm]);
+
+    
 // >------------------------------------------------------------------------------------------
     return (
         <div className="blog-landing">
@@ -50,7 +61,13 @@ export default function BlogLanding() {
                 </div>
 
                 <div className="blog-searchbar">
-                    <input className="searchbar" type="text" placeholder="Search" />
+                        <input
+                        className="searchbar"
+                        type="text"
+                        placeholder="Search"
+                        value={searchTerm}
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                        />
                 </div>
 
             </div>
