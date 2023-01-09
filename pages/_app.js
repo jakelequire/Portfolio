@@ -10,7 +10,7 @@ import '../styles/homepage/contact.css'
 import '../styles/customAnimations/animations.css'
 import '../styles/customAnimations/observerAnimations.css'
 import '../styles/blog-page/blog-landing.css'
-
+import '../styles/blog-page/search-query.css'
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
