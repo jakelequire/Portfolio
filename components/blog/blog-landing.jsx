@@ -5,18 +5,6 @@ import axios from 'axios';
 export default function BlogLanding() {
     const [tagHover, tagRef] = useCustomHover()
     const [categoryHover, categoryRef] = useCustomHover()
-
-    const [articles, setArticles] = useState([])
-    const [searchTerm, setSearchTerm] = useState('')
-
-    useEffect(() => {
-      async function fetchArticles() {
-        const response = await axios.get(`http://localhost:3001/api/blog-articles?q=${searchTerm}`);
-        setArticles(response.data);
-      }
-      fetchArticles();
-    }, [searchTerm]);
-
     
 // >------------------------------------------------------------------------------------------
     return (
@@ -65,8 +53,8 @@ export default function BlogLanding() {
                         className="searchbar"
                         type="text"
                         placeholder="Search"
-                        value={searchTerm}
-                        onChange={(event) => setSearchTerm(event.target.value)}
+                        // value={searchTerm}
+                        // onSubmit={(event) => setSearchTerm(event.target.value)}
                         />
                 </div>
 
