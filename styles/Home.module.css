@@ -23,6 +23,16 @@
   min-height: 200vh;
 }
 
+.blog {
+  display: flex;
+  background: linear-gradient(176deg,rgb(18,24,27) 50%,rgb(32,39,55) 100%);
+  background-attachment: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250vh;
+}
+
 .landing-wrapper {
   z-index: 1;
 }

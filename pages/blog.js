@@ -20,7 +20,7 @@ export default function Blog() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className={styles.blog}>
         <div className="blog-page-wrapper">
             <BlogLanding> </BlogLanding>
             <SearchQuery> </SearchQuery>
