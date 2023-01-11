@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# This file is used to store notes for your project.
+.notes.md 

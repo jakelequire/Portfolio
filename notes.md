@@ -21,3 +21,6 @@
 4. Date
 5. Category
 6. Tags
+
+## default to display on page load /blog:
+- Recent posts
