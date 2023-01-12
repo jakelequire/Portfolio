@@ -1,24 +1,36 @@
+import { useState, useEffect } from "react";
+import blogApiCatcher from "../../lib/blogApiCatcher.js"
+import axios from "axios";
 
 export default function SearchQuery() {
+
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await blogApiCatcher('GET', 'new');
+            setArticles(data);
+        }
+        fetchData();
+    }, []);
 
     const example = {
         content:
         <div className="query-example">
             <div className="query-example-image">Placeholder</div>
-            <h1 className="query-example-title">Title</h1>
-            <p className="query-example-description">Description</p>
-            <p className="query-example-date">Date</p>
+            <h1 className="query-example-title">Title: {}</h1>
+            <p className="query-example-description">Description: {}</p>
+            <p className="query-example-date">Date: {}</p>
             <div className="query-example-category">
-                <a className="query-example-category">Category</a>
+                <a className="query-example-category">Category: {}</a>
             </div>
             <div className="query-example-tags">
-                <a className="query-example-tag">#Tag1</a>
-                <a className="query-example-tag">#Tag2</a>
-                <a className="query-example-tag">#Tag3</a>
+                <a className="query-example-tag">#Tag1:{}</a>
+                <a className="query-example-tag">#Tag2:{}</a>
+                <a className="query-example-tag">#Tag3:{}</a>
             </div>
         </div>
     }
-
 
     return(
         <div className="search-query-container">
@@ -43,7 +55,6 @@ export default function SearchQuery() {
                     <div className="query-mode-all">
 
                     </div>
-
                 </div>
                 <div className="query-page-numbers">
                     <a className="query-page-number">1</a>

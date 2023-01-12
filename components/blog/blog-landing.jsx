@@ -1,11 +1,19 @@
 import { useState, useEffect, useRef } from 'react'
 import useCustomHover from '../hooks/useCustomHover.jsx'
+import useCustomFilter from '../hooks/useCustomFilter.jsx'
 import axios from 'axios';
 
 export default function BlogLanding() {
     const [tagHover, tagRef] = useCustomHover()
     const [categoryHover, categoryRef] = useCustomHover()
     
+    
+    const [searchFilter, setSearchFilter] = useState('recent')
+
+    function handleFilterClick(filterName) {
+        setSearchFilter(filterName);
+    }
+
 // >------------------------------------------------------------------------------------------
     return (
         <div className="blog-landing">
@@ -17,8 +25,14 @@ export default function BlogLanding() {
                     </div>
                     <div className="landing-filters">
                         <div className="filters">
-                            <a className="filter-header">Recent</a>
-                            <a className="filter-header">All</a>
+                            <a className="filter-header"
+                            onClick={() => handleFilterClick('recent')}>
+                            Recent</a>
+                            <a className="filter-header"
+                            onClick={() => handleFilterClick('all')}>
+                            All</a>
+                            
+
                             
                             <div ref={categoryRef} className="filter-dropdown-category">
                             <a className="filter-header">Category</a>     
