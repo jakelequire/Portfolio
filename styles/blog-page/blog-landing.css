@@ -66,6 +66,7 @@
 
 .filter-header {
     cursor: pointer;
+    display: flex;
 }
     .fh-active {
         border-bottom: 2px solid #fff;
@@ -96,6 +97,7 @@
         transition: color 0.2s ease-in-out;
         color: rgb(200, 200, 200);
     }
+
 
 /******************/
 /* Dropdown Items */
