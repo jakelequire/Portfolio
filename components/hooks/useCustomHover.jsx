@@ -6,7 +6,6 @@
  * @returns {object} ref
  * 
  */
-
 import { useRef, useState, useEffect } from 'react';
 
 export default function useCustomHover() {

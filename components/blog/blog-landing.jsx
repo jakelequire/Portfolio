@@ -1,19 +1,13 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import useCustomHover from '../hooks/useCustomHover.jsx'
 import useCustomFilter from '../hooks/useCustomFilter.jsx'
-import axios from 'axios';
 
 export default function BlogLanding() {
     const [tagHover, tagRef] = useCustomHover()
     const [categoryHover, categoryRef] = useCustomHover()
     
     
-    const [searchFilter, setSearchFilter] = useState('recent')
-
-    function handleFilterClick(filterName) {
-        setSearchFilter(filterName);
-    }
-
+    const { filter, setFilter, setCategory, setTag } = useCustomFilter();
 // >------------------------------------------------------------------------------------------
     return (
         <div className="blog-landing">
@@ -26,34 +20,42 @@ export default function BlogLanding() {
                     <div className="landing-filters">
                         <div className="filters">
                             <a className="filter-header"
-                            onClick={() => handleFilterClick('recent')}>
+                            onClick={() => setFilter("recent")}
+                            id={filter === "recent" ? "filter-active" : "filter-inactive"}>
                             Recent</a>
                             <a className="filter-header"
-                            onClick={() => handleFilterClick('all')}>
+                            onClick={() => setFilter("all")}
+                            id={filter === "all" ? "filter-active" : "filter-inactive"}>
                             All</a>
                             
-
-                            
                             <div ref={categoryRef} className="filter-dropdown-category">
-                            <a className="filter-header">Category</a>     
+                            <a className="filter-header"
+                            id={categoryHover ? 'filters-active' : 'filters-inactive'}>Category</a>     
                                 {categoryHover ? (
                                     <div className='A-filter-dropdown-category'
                                     id={categoryHover ? 'category-active' : 'category-inactive'}>
-                                      <a className="filter-dropdown-item">Category 1</a>
-                                      <a className="filter-dropdown-item">Category 2</a>
-                                      <a className="filter-dropdown-item">Category 3</a>
+                                      <a className="filter-dropdown-item"
+                                      onClick={() => setCategory(prev => !prev)}>Category 1</a>
+                                      <a className="filter-dropdown-item"
+                                      onClick={() => setCategory(prev => !prev)} >Category 2</a>
+                                      <a className="filter-dropdown-item"
+                                      onClick={() => setCategory(prev => !prev)}>Category 3</a>
                                     </div>
                                 ): null}
-                            </div>
+                            </div> {/* Note to self: add a button that will reset the filters */}
 
                             <div ref={tagRef} className="filter-dropdown-tags">
-                                <a className="filter-header">Tags</a>
+                                <a className="filter-header"
+                                id={tagHover ? 'filters-active' : 'filters-inactive'}>Tags</a>
                                 {tagHover ? (
                                     <div className='A-filter-dropdown-tags'
                                     id={tagHover ? 'tags-active' : 'tags-inactive'}>
-                                      <a id="tag1" className="filter-dropdown-item"># Tag 1</a>
-                                      <a id="tag2" className="filter-dropdown-item"># Tag 2</a>
-                                      <a id="tag3" className="filter-dropdown-item"># Tag 3</a>
+                                      <a id="tag1" className="filter-dropdown-item"
+                                      onClick={() => setTag(prev => !prev)}># Tag 1</a>
+                                      <a id="tag2" className="filter-dropdown-item"
+                                      onClick={() => setTag(prev => !prev)}># Tag 2</a>
+                                      <a id="tag3" className="filter-dropdown-item"
+                                      onClick={() => setTag(prev => !prev)}># Tag 3</a>
                                     </div>
                                 ): null}
                             </div> 

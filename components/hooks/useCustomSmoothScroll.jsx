@@ -1,10 +1,8 @@
 /**
- * Custom hook to adjust scroll position of a component
+ * @description Custom hook to adjust scroll position of a component
  * 
- * @params {null}
  * @returns {boolean} hover
  * @returns {object} ref
- * 
  */
 
 import { useRef, useState, useEffect } from 'react';

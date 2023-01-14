@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import blogApiCatcher from "../../lib/blogApiCatcher.js"
-import axios from "axios";
+import useCustomFilter from "../hooks/useCustomFilter.jsx"
 
 export default function SearchQuery() {
 
@@ -13,6 +13,10 @@ export default function SearchQuery() {
         }
         fetchData();
     }, []);
+
+
+    
+
 
     const example = {
         content:
@@ -31,22 +35,22 @@ export default function SearchQuery() {
             </div>
         </div>
     }
-    const articleList = articles.map((article, index) => {
-        return (
-            <div className="query-example" key={index}>
-                <div className="query-example-image">Placeholder</div>
-                <h1 className="query-example-title">Title: {article.title}</h1>
-                <p className="query-example-description">Description: {article.description}</p>
-                <p className="query-example-date">Date: {article.date}</p>
-                <div className="query-example-category">
-                    <a className="query-example-category">Category: {article.category}</a>
-                </div>
-                <div className="query-example-tags">
-                    {article.tags.map((tag, index) => <a className="query-example-tag" key={index}>#{tag}</a>)}
-                </div>
-            </div>
-        )
-    });
+    // const articleList = articles.map((article, index) => {
+    //     return (
+    //         <div className="query-example" key={index}>
+    //             <div className="query-example-image">Placeholder</div>
+    //             <h1 className="query-example-title">Title: {article.title}</h1>
+    //             <p className="query-example-description">Description: {article.description}</p>
+    //             <p className="query-example-date">Date: {article.date}</p>
+    //             <div className="query-example-category">
+    //                 <a className="query-example-category">Category: {article.category}</a>
+    //             </div>
+    //             <div className="query-example-tags">
+    //                 {article.tags.map((tag, index) => <a className="query-example-tag" key={index}>#{tag}</a>)}
+    //             </div>
+    //         </div>
+    //     )
+    // });
     
 
     return(
@@ -66,7 +70,7 @@ export default function SearchQuery() {
                         {example.content}
                         {example.content}
                         {example.content}
-                        {articleList}
+                        {example.content}
                     </div> 
 
                     <div className="query-mode-all">

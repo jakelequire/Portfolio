@@ -1,24 +1,14 @@
-/*
-Notes:
-- This hook will need to determine the type of filter and then return the appropriate filter function
-- On first render, the filter function will be set to a default filter function (recent)
-On page load the default will be recent
-- Needs to be able to filter: All / Recent / Category / Tags
-
-!! This is not the hook for the search bar, this is the hook for the filter dropdowns !!
-!! When the search bar is used, this hook should default to (all) !!
-
-Arguments:
-- Mode
-
-
-*/
+/**
+ * @description Custom hook to handle the filter state for the search query.
+ * 
+ * @returns {Object} filter, setFilter, category, setCategory, tag, setTag
+ */
 import { useState, useEffect } from 'react';
 
-function useCustomFilter() {
+export default function useCustomFilter() {
     const [filter, setFilter] = useState('recent');
-    const [category, setCategory] = useState();
-    const [tag, setTag] = useState();
+    const [category, setCategory] = useState(false);
+    const [tag, setTag] = useState(false);
 
     useEffect(() => {
         if (category) {
@@ -35,6 +25,14 @@ function useCustomFilter() {
             setFilter("recent");
         }
     }, [tag]);
+
+    console.log("------------------------");
+    console.log("| useCustomFilter Hook |");
+    console.log("------------------------")
+    console.warn("Filter: " + filter);
+    console.warn("Category: " + category);
+    console.warn("Tag: " + tag);
+    console.log("------------------------")
 
     return { filter, setFilter, category, setCategory, tag, setTag };
 }

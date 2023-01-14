@@ -75,6 +75,28 @@
         border-bottom: 2px solid transparent;
     }
 
+#filter-active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+#filter-inactive {
+    color: rgb(125, 125, 125);
+}
+    #filter-inactive:hover {
+        transition: color 0.2s ease-in-out;
+        color: rgb(200, 200, 200);
+    }
+#filters-active {
+    color: #fff;
+}
+#filters-inactive {
+    color: rgb(125, 125, 125);
+}
+    #filters-inactive:hover {
+        transition: color 0.2s ease-in-out;
+        color: rgb(200, 200, 200);
+    }
+
 /******************/
 /* Dropdown Items */
 /******************/
