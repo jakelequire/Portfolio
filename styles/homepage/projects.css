@@ -1,4 +1,3 @@
-
 .projects-wrapper {
     display: flex;
     flex-direction: column;
@@ -44,103 +43,36 @@
 
 .projects-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     height: 60%;
     width: 100%;
+    padding-top: 2rem;
 }
 
 .project-list {
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 45%;
     padding: 1rem;
     gap: 2rem;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
+/**********************/
+/* Project List Items */
+/**********************/
 
-.project, .projectTwo, .projectThree{
+.project-item-container {
     display: flex;
-    position: relative;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 80%;
-    width: 23%;
-    padding: 1rem;
-
-}
-.project {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border: 2px solid rgb(0, 21, 255);
-}
-.projectTwo {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border: 2px solid #0affa9;
-}
-.projectThree {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border: 2px solid #ffffff;
-}
-    .project::before, .projectTwo::before, .projectThree::before {
-        content: "";
-        position: absolute;
-        background: inherit;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .project::before {
-        box-shadow: inset 0 0 15px rgba(34, 0, 255, 0.8);
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .projectTwo::before {
-        box-shadow: inset 0 0 15px #0affa9ce;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .projectThree::before {
-        box-shadow: inset 0 0 15px #ffffffce;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-
-    
-.project-title {
-    z-index: 2;
-    font-size: 3rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    color: #fff;
-}
-.project-image {
-    z-index: 3;
-}
-
-.project-links {
-    display: flex;
-    flex-direction: row;
     align-content: center;
     justify-content: center;
     align-items: center;
     width: 100%;
-    z-index: 5;
+    height: 100%;
 }
 
-.project-link {
-    z-index: 5;
-}
-
-#hoverOneActive { 
-    transition: box-shadow, background-color 0.4s ease-in 0.2s;
-    box-shadow: inset 0 0 55px rgb(34, 0, 255);
-    background-color: rgba(0, 0, 0, 0.7);
-}
-#hoverTwoActive {
-    transition: box-shadow, background-color 0.4s ease-in-out 0.2s;
-    box-shadow: inset 0 0 30px #0affa9;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-#hoverOneInactive, #hoverTwoInactive {
-    transition: box-shadow, background-color 0.4s ease-out;
+.project-item {
+    display: flex;
 }

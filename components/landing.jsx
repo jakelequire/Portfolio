@@ -32,6 +32,8 @@ export default function Landing() {
     event.preventDefault();
     setIndex(newIndex);
   }
+
+// >------------------------------------------------------------------------------------------
   return (
     <div className="landing-wrapper" id="home" ref={refs[0]}>
         <div className="landing">

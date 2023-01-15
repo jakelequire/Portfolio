@@ -49,6 +49,7 @@ export default function NavBar() {
       };
     }
   }, [refs]);
+// >------------------------------------------------------------------------------------------
   return (
         <div className="navbar">
           <div className="nav-logo-container">

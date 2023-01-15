@@ -67,6 +67,9 @@
 .filter-header {
     cursor: pointer;
     display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
     .fh-active {
         border-bottom: 2px solid #fff;
