@@ -59,7 +59,7 @@
     width: 45%;
     padding: 1rem;
     gap: 2rem;
-    border-left: 1px solid #fff;
+    border-left: 1px solid rgb(125, 125, 125);
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -104,7 +104,6 @@
     align-content: center;
     height: 100%;
     width: 45%;
-    border-right: 1px solid #fff;
 }
 /***********************/
 /*    Project Image    */
@@ -115,14 +114,15 @@
     align-content: center;
     align-items: center;
     padding: 1rem;
-    border: 1px solid #fff;
     width: 100%;
     height: 100%;
+    border-right: 1px solid rgb(125, 125, 125);
 }
 .preview-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
   }
 
 .project-link-container {
@@ -138,22 +138,42 @@
     font-size: 1.5rem;
 }
 .project-link {
-    border: 1px solid #fff;
-    padding: 0.5rem;
-    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     align-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem;
+    padding-left: 1.3rem;
+    width: 30%;
+    border: 1px solid #fff;
+    background-color:hsl(159, 100%, 52%, 0.2);
+    color: #fff;
+    transition: all 0.125s ease-in-out;
 }
+    .project-link:hover {
+        color: #000;
+    }
+    
 .visit-site {
-    background-color: transparent;
     background: url(../../public/media/icons/web-media/external-link.svg) no-repeat left;
     background-size: contain;
 }
-.view-code {
-    background-color: transparent;
+    .visit-site:hover {
+        background: url(../../public/media/icons/web-media/external-link-black.svg) no-repeat left;
+        background-size: contain;
+        background-color: hsl(159, 100%, 52%);
+        border-color: hsl(159, 100%, 52%);
+    }
+.view-code  {
     background: url(../../public/media/icons/tech-branding/github.svg) no-repeat left;
     background-size: contain;
 }
+    .view-code:hover {
+        background: url(../../public/media/icons/tech-branding/github-black.svg) no-repeat left;
+        background-size: contain;
+        background-color: hsl(159, 100%, 52%);
+        border-color: hsl(159, 100%, 52%);
+    }

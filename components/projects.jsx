@@ -7,6 +7,7 @@ import nextjs from "../public/media/icons/tech-branding/next3.svg";
 import react from "../public/media/icons/tech-branding/reactjs.svg";
 import javascript from "../public/media/icons/tech-branding/javascript.svg";
 import typescript from "../public/media/icons/tech-branding/typescript.svg";
+import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
 /* -- PNG -- */
 import SolBobaHomepage from "../public/media/pictures/SolBobaHomepage.png";
 
@@ -26,6 +27,11 @@ export default function Projects() {
             technologies: [nextjs, react, javascript],
         },
         project3: {
+            name: "Portfolio - Backend",
+            description: "Backend for my personal portfolio website. Built to learn backend development.",
+            technologies: [nextjs, nodejs, javascript],
+        },
+        project4: {
             name: "Coming Soon",
             description: "New project coming soon! Practice for learning TypeScript.",
             technologies: [nextjs, react, typescript],
@@ -64,6 +70,7 @@ export default function Projects() {
                         {projectItems[0]}
                         {projectItems[1]}
                         {projectItems[2]}
+                        {projectItems[3]}
                     </div>
                 </div>
 
