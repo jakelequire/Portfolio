@@ -73,7 +73,6 @@
     align-items: center;
     width: 90%;
     height: 100%;
-    gap: 0rem;
 }
 
 .project-item {
@@ -105,6 +104,9 @@
     height: 100%;
     width: 45%;
 }
+.project-item-description {
+    color: rgb(200, 200, 200);
+}
 /***********************/
 /*    Project Image    */
 /***********************/
@@ -123,7 +125,7 @@
     height: 100%;
     object-fit: contain;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
-  }
+}
 
 .project-link-container {
     display: flex;
