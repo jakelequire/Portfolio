@@ -42,7 +42,7 @@ export default function Projects() {
   };
   /* Project layout template */
   const projectItems = Object.values(projects).map((project, index) => (
-    <div className="project-item" key={index}>
+    <div className="project-item" key={index} onClick={() => setSelectedProject(project)}>
       <div className="project-item-wrapper">
         <h2 className="project-item-name">{project.name}</h2>
         <p className="project-item-description">{project.description}</p>
@@ -60,6 +60,52 @@ export default function Projects() {
       </div>
     </div>
   ));
+  const [selectedProject, setSelectedProject] = useState(projectItems[0]);
+	
+	/* ----------------- */
+	const projectImages = {
+		project1: {
+			image: SolBobaHomepage,
+			alt: "Sol Boba Homepage",
+			github: "https://github.com/jakelequire/SolBoba",
+			website: "https://solboba.com/",
+		},
+		project2: {
+			image: SolBobaHomepage,
+			alt: "Personal Portfolio",
+			github: "https://github.com/jakelequire/Portfolio",
+			website: "https://jakelequire.dev/",
+		},
+		project3: {
+			image: SolBobaHomepage,
+			alt: "Personal Portfolio - Backend",
+			github: "https://github.com/jakelequire/portfolio-backend",
+			website: "https://solboba.com/",
+		},
+		project4: {
+			image: SolBobaHomepage,
+			alt: "Coming Soon",
+			github: "",
+			website: "https://solboba.com/",
+		},
+	}
+
+	const projectImage = Object.values(projectImages).map((project, index) => (
+		<div className="project-preview-image" key={index}>
+			<Image src={project.image} className="preview-image" alt={project.alt} width={774} height={640} />
+			<div className="project-link-container">
+				<a href={project.website} 
+				target="_blank" 
+				rel="noreferrer" 
+				className="project-link visit-site">Visit Site</a>
+				<a href={project.github}
+				target="_blank"
+				rel="noreferrer"
+				className="project-link view-code">View Code</a>
+			</div>
+		</div>
+	))
+
   // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={refs[2]}>
@@ -79,35 +125,7 @@ export default function Projects() {
         </div>
 
         <div className="project-preview">
-          {/* Project 1 */}
-          <div className="project-preview-image">
-            <Image
-              src={SolBobaHomepage}
-              className="preview-image"
-              alt="placeholder"
-              width={774}
-              height={640}
-            />
-            <div className="project-link-container">
-              <a
-                href="https://solboba.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="project-link visit-site"
-              >
-                Visit Site
-              </a>
-              <a
-                href="https://github.com/jakelequire/SolBoba"
-                target="_blank"
-                rel="noreferrer"
-                className="project-link view-code"
-              >
-                View Code
-              </a>
-            </div>
-          </div>
-          {/* Project 2 */}
+					{projectImage[0]}
         </div>
       </div>
     </div>
