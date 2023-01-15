@@ -10,6 +10,8 @@ import typescript from "../public/media/icons/tech-branding/typescript.svg";
 import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
 /* -- PNG -- */
 import SolBobaHomepage from "../public/media/pictures/SolBobaHomepage.png";
+import PortfolioPreview from "../public/media/pictures/portfolio-preview.png";
+import PortfolioBackendPreview from "../public/media/pictures/PortfolioBackend-preview.png";
 
 export default function Projects() {
   const { refs } = useCustomSmoothScroll();
@@ -71,22 +73,22 @@ export default function Projects() {
 			website: "https://solboba.com/",
 		},
 		project2: {
-			image: SolBobaHomepage,
+			image: PortfolioPreview,
 			alt: "Personal Portfolio",
 			github: "https://github.com/jakelequire/Portfolio",
 			website: "https://jakelequire.dev/",
 		},
 		project3: {
-			image: SolBobaHomepage,
+			image: PortfolioBackendPreview,
 			alt: "Personal Portfolio - Backend",
 			github: "https://github.com/jakelequire/portfolio-backend",
-			website: "https://solboba.com/",
+			website: "https://jakelequire.dev/",
 		},
 		project4: {
 			image: SolBobaHomepage,
 			alt: "Coming Soon",
 			github: "",
-			website: "https://solboba.com/",
+			website: "placeholder",
 		},
 	}
 
