@@ -68,20 +68,18 @@ export default function Projects() {
                 </div>
 
                 <div className="project-preview">
-                    <div className="project-preview-container">
-
-                        {/* Project 1 */}
-                        <div className="project-preview-image">
-                            <Image src={SolBobaHomepage} alt="placeholder" width={500} height={500} />
-                            <div className="project-link-container">
-                                <a href="https://sol-boba.vercel.app/" target="_blank"
-                                rel="noreferrer" className="project-link">Visit Site</a>
-                                <a href="https://github.com/jakelequire/SolBoba" target="_blank"
-                                rel="noreferrer" className="project-link">View Code</a>
-                            </div>
+                    {/* Project 1 */}
+                    <div className="project-preview-image">
+                        <Image src={SolBobaHomepage} className="preview-image"
+                        alt="placeholder" width={774} height={640} />
+                        <div className="project-link-container">
+                            <a href="https://solboba.com/" target="_blank"
+                            rel="noreferrer" className="project-link visit-site">Visit Site</a>
+                            <a href="https://github.com/jakelequire/SolBoba" target="_blank"
+                            rel="noreferrer" className="project-link view-code">View Code</a>
                         </div>
-                        {/* Project 2 */}
                     </div>
+                    {/* Project 2 */}
                 </div>
             </div>
         </div>

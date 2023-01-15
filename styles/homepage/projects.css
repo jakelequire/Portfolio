@@ -45,7 +45,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 60%;
+    height: 70%;
     width: 100%;
     padding-top: 2rem;
 }
@@ -105,4 +105,55 @@
     height: 100%;
     width: 45%;
     border-right: 1px solid #fff;
+}
+/***********************/
+/*    Project Image    */
+/***********************/
+.project-preview-image {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #fff;
+    width: 100%;
+    height: 100%;
+}
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+.project-link-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+.project-link {
+    border: 1px solid #fff;
+    padding: 0.5rem;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+.visit-site {
+    background-color: transparent;
+    background: url(../../public/media/icons/web-media/external-link.svg) no-repeat left;
+    background-size: contain;
+}
+.view-code {
+    background-color: transparent;
+    background: url(../../public/media/icons/tech-branding/github.svg) no-repeat left;
+    background-size: contain;
 }

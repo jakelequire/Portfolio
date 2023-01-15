@@ -154,12 +154,12 @@
   }
   #name {
     background-color: transparent;
-    background: url(../../public/media/icons/user-icon.svg) no-repeat left;
+    background: url(../../public/media/icons/web-media/user-icon.svg) no-repeat left;
     background-size: contain;
   }
   #email {
     background-color: transparent;
-    background: url(../../public/media/icons/mail.svg) no-repeat left;
+    background: url(../../public/media/icons/web-media/mail.svg) no-repeat left;
     background-size: contain;
   }
 
