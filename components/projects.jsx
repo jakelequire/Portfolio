@@ -2,10 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
-
-import nextjs from "../public/media/icons/next3.svg";
-import react from "../public/media/icons/reactjs.svg";
-
+/* -- SVG -- */
+import nextjs from "../public/media/icons/tech-branding/next3.svg";
+import react from "../public/media/icons/tech-branding/reactjs.svg";
+import javascript from "../public/media/icons/tech-branding/javascript.svg";
+import typescript from "../public/media/icons/tech-branding/typescript.svg";
+/* -- PNG -- */
+import SolBobaHomepage from "../public/media/pictures/SolBobaHomepage.png";
 
 export default function Projects() {
     const { refs } = useCustomSmoothScroll();
@@ -13,19 +16,19 @@ export default function Projects() {
     /* Project data */
     const projects = {
         project1: {
-            name: "Project 1",
-            description: "This is a project",
-            technologies: [nextjs, react],
+            name: "Sol Boba",
+            description: "Small business website for a local boba tea shop. My first project!",
+            technologies: [nextjs, react, javascript],
         },
         project2: {
-            name: "Project 2",
-            description: "This is a project",
-            technologies: [nextjs, react],
+            name: "Portfolio",
+            description: "My personal portfolio website. Built to learn backend and frontend development.",
+            technologies: [nextjs, react, javascript],
         },
         project3: {
-            name: "Project 3",
-            description: "This is a project",
-            technologies: [nextjs, react],
+            name: "Coming Soon",
+            description: "New project coming soon! Practice for learning TypeScript.",
+            technologies: [nextjs, react, typescript],
         }
     }
     /* Project layout template */
@@ -69,13 +72,15 @@ export default function Projects() {
 
                         {/* Project 1 */}
                         <div className="project-preview-image">
-                            <Image src="/images/placeholder.png" alt="placeholder" width={500} height={500} />
+                            <Image src={SolBobaHomepage} alt="placeholder" width={500} height={500} />
+                            <div className="project-link-container">
+                                <a href="https://sol-boba.vercel.app/" target="_blank"
+                                rel="noreferrer" className="project-link">Visit Site</a>
+                                <a href="https://github.com/jakelequire/SolBoba" target="_blank"
+                                rel="noreferrer" className="project-link">View Code</a>
+                            </div>
                         </div>
                         {/* Project 2 */}
-                        <div className="project-preview-image">
-                            <Image src="/images/placeholder.png" alt="placeholder" width={500} height={500} />
-                        </div>
-
                     </div>
                 </div>
             </div>

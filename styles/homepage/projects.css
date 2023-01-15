@@ -44,7 +44,7 @@
 .projects-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 60%;
     width: 100%;
     padding-top: 2rem;
@@ -60,7 +60,6 @@
     padding: 1rem;
     gap: 2rem;
     border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -84,7 +83,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: auto;
+    height: 5.5rem;
     border-top: 1px solid rgb(200, 200, 200);
     border-bottom: 1px solid rgb(200, 200, 200);
     background-color: hsla(159, 100%, 52%, 0.2);
@@ -92,7 +91,18 @@
 
 .project-item-wrapper {
     padding-left: 1rem;
+    width: 65%;
 }
 .project-item-image {
     padding-right: 1rem;
+}
+
+.project-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    width: 45%;
+    border-right: 1px solid #fff;
 }
