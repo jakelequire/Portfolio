@@ -6,9 +6,11 @@ import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 import nextjs from "../public/media/icons/next3.svg";
 import react from "../public/media/icons/reactjs.svg";
 
+
 export default function Projects() {
     const { refs } = useCustomSmoothScroll();
 
+    /* Project data */
     const projects = {
         project1: {
             name: "Project 1",
@@ -26,6 +28,26 @@ export default function Projects() {
             technologies: [nextjs, react],
         }
     }
+    /* Project layout template */
+    const projectItems = Object.values(projects).map((project, index) => (
+        <div className="project-item" key={index}>
+            <div className="project-item-wrapper">
+                <h2 className="project-item-name">{project.name}</h2>
+                <p className="project-item-description">{project.description}</p>
+            </div>
+            <div className="project-item-image">
+                {project.technologies.map((technology, index) => (
+                    <Image
+                        src={technology}
+                        alt={technology}
+                        width={50}
+                        height={50}
+                        key={index}
+                    />
+                ))}
+            </div>
+        </div>
+    ));
 // >------------------------------------------------------------------------------------------
     return (
         <div className="projects-wrapper" id="projects" ref={refs[2]}>
@@ -36,33 +58,9 @@ export default function Projects() {
 
                 <div className="project-list">
                     <div className="project-item-container">
-
-                        {/* Project 1 */}
-                        <div className="project-item">
-                            <div className="project-item-wrapper">
-                                <h2 className="project-item-name">{projects.project1.name}</h2>
-                                <p className="project-item-description">{projects.project1.description}</p>
-                            </div>
-                            <div className="project-item-image">
-                                <Image src={projects.project1.technologies[0]}
-                                alt="placeholder" width={50} height={50} />
-                                <Image src={projects.project1.technologies[1]}
-                                alt="placeholder" width={50} height={50} />
-                            </div>
-                        </div>
-                        {/* Project 2 */}
-                        <div className="project-item">
-                            <div className="project-item-wrapper">
-                                <h2 className="project-item-name">{projects.project2.name}</h2>
-                                <p className="project-item-description">{projects.project2.description}</p>
-                            </div>
-                            <div className="project-item-image">
-                                <Image src={projects.project2.technologies[0]}
-                                alt="placeholder" width={50} height={50} />
-                                <Image src={projects.project2.technologies[1]}
-                                alt="placeholder" width={50} height={50} />
-                            </div>
-                        </div>
+                        {projectItems[0]}
+                        {projectItems[1]}
+                        {projectItems[2]}
                     </div>
                 </div>
 

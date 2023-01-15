@@ -50,6 +50,9 @@
     padding-top: 2rem;
 }
 
+/**********************/
+/* Project List Items */
+/**********************/
 .project-list {
     display: flex;
     height: 100%;
@@ -58,10 +61,10 @@
     gap: 2rem;
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
-/**********************/
-/* Project List Items */
-/**********************/
 
 .project-item-container {
     display: flex;
@@ -69,10 +72,27 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    gap: 0rem;
 }
 
 .project-item {
     display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: hsla(159, 100%, 52%, 0.2);
+}
+
+.project-item-wrapper {
+    padding-left: 1rem;
+}
+.project-item-image {
+    padding-right: 1rem;
 }
