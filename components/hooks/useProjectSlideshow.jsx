@@ -1,3 +1,9 @@
+/**
+ * @description Custom hook for project slideshow
+ * @param {string} project
+ * 
+ * @returns {string} projectKey
+ */
 import { useState, useEffect } from 'react';
 
 export default function useProjectSlideshow() {

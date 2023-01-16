@@ -9,8 +9,6 @@ import react from "../public/media/icons/tech-branding/reactjs.svg";
 import javascript from "../public/media/icons/tech-branding/javascript.svg";
 import typescript from "../public/media/icons/tech-branding/typescript.svg";
 import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
-/* -- PNG -- */
-
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { refs } = useCustomSmoothScroll();
@@ -134,12 +132,6 @@ export default function Projects() {
       </div>
     </div>
   ));
-  /* ----------------- */
-
-
-
-
-
   // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={refs[2]}>
