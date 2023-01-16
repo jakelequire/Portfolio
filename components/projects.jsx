@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 /* -- Hooks -- */
 import useCustomSmoothScroll from "./hooks/useCustomSmoothScroll.jsx";
+import useProjectSlideshow from "./hooks/useProjectSlideshow.jsx";
 /* -- SVG -- */
 import nextjs from "../public/media/icons/tech-branding/next3.svg";
 import react from "../public/media/icons/tech-branding/reactjs.svg";
@@ -15,6 +16,20 @@ import PortfolioBackendPreview from "../public/media/pictures/PortfolioBackend-p
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { refs } = useCustomSmoothScroll();
+	const [currentProject, setCurrentProject] = useProjectSlideshow();
+
+	const projectKey = () => {
+		const projectState = currentProject
+		if (projectState === 0) {
+			return "project1-active"
+		} else if (projectState === 1) {
+			return "project2-active"
+		} else if (projectState === 2) {
+			return "project3-active"
+		} else if (projectState === 3) {
+			return "project4-active"
+		}
+	}
 
   /* Project data */
   const projects = {
@@ -101,15 +116,8 @@ export default function Projects() {
     },
   };
   /* Image layout template */
-  const projectImage = Object.values(projectImages).map((project, index) => (
+  const projectLink = Object.values(projectImages).map((project, index) => (
     <div className="project-preview-image" key={index}>
-      <Image
-        src={project.image}
-        className="preview-image"
-        alt={project.alt}
-        width={774}
-        height={640}
-      />
       <div className="project-link-container">
         <a
           href={project.website}
@@ -135,7 +143,7 @@ export default function Projects() {
 
 
 
-	
+
   // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={refs[2]}>
@@ -144,25 +152,33 @@ export default function Projects() {
           <span id="project-P">P</span>rojects
         </h1>
       </div>
-      <div className="projects-container">
+      <div className="projects-container" id={projectKey()}> {/* This is the container for the background to change */}
         <div className="project-list">
           <div className="project-item-container">
-            <a className="project-items" id={projects.project1.id}>
+            <a className={`project-items ${currentProject === 0 ? 'project-active' : 'project-inactive'}`}
+						onClick={() => setCurrentProject(0)}>
               {projectItems[0]}
             </a>
-            <a className="project-items" id={projects.project2.id}>
+            <a className={`project-items ${currentProject === 1 ? 'project-active' : 'project-inactive'}`}
+						onClick={() => setCurrentProject(1)}>
               {projectItems[1]}
             </a>
-            <a className="project-items" id={projects.project3.id}>
+            <a className={`project-items ${currentProject === 2 ? 'project-active' : 'project-inactive'}`}
+						onClick={() => setCurrentProject(2)}>
               {projectItems[2]}
             </a>
-            <a className="project-items" id={projects.project4.id}>
+            <a className={`project-items ${currentProject === 3 ? 'project-active' : 'project-inactive'}`}
+						onClick={() => setCurrentProject(3)}>
               {projectItems[3]}
             </a>
           </div>
-        </div>
-
-        <div className="project-preview">{projectImage[0]}</div>
+					<div className="project-preview">
+    			{currentProject === 0 ? projectLink[0] : null}
+    			{currentProject === 1 ? projectLink[1] : null}
+    			{currentProject === 2 ? projectLink[2] : null}
+    			{currentProject === 3 ? projectLink[3] : null}
+					</div> 
+      	</div>
       </div>
     </div>
   );

@@ -47,7 +47,9 @@
     justify-content: space-between;
     height: 70%;
     width: 100%;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(211,211,211,1);
+    box-shadow: 0 5px 15px rgba(5,5,5,1);
 }
 
 /**********************/
@@ -56,12 +58,12 @@
 .project-list {
     display: flex;
     height: 100%;
-    width: 40%;
-    gap: 2rem;
+    gap: 5rem;
     border-left: 1px solid rgba(211,211,211,1);
     justify-content: flex-start;
     align-content: center;
     align-items: center;
+    z-index: 5;
 }
 
 .project-item-container {
@@ -70,8 +72,9 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 55%;
     height: 100%;
+    z-index: 5;
 }
 
 .project-item {
@@ -82,6 +85,7 @@
     justify-content: space-between;
     width: 100%;
     height: 6rem;
+    
 }
 .project-item-name {
     text-decoration: underline;
@@ -112,41 +116,55 @@
     color: rgb(200, 200, 200);
 }
 
-#project1 {
-    background-color: rgba(40,57,40,1);
+.project-active {
+    background-color: rgb(43, 86, 65);
     border-top: 2px solid rgba(211,211,211,1);
     border-bottom: 2px solid rgba(211,211,211,1);
 }
-#project2, #project3, #project4 {
+.project-inactive {
     background: linear-gradient(to right, 
-    rgba(175, 175, 175, 0.3), 
-    rgba(150, 150, 150, 0.2),
-    rgba(50, 50, 50, 0.1));
+    rgba(100, 100, 100, 0.9), 
+    rgba(50, 50, 50, 0.8),
+    rgba(25, 25, 25, 0.8));
+}
+
+#project1-active {
+    background: url(../../public/media/pictures/solboba-homepage.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+
+#project1-active::before,
+#project2-active::before,
+#project3-active::before,
+#project4-active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-box-shadow: inset 15px 15px 100px 100px rgba(0, 0, 0, 0.9);
+            box-shadow: inset 15px 15px 100px 100px rgba(0, 0, 0, 0.9);
+}
+#project1-active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color:rgba(5, 5, 5, 0.2)
 }
 
 /***********************/
-/*    Project Image    */
+/*    Project Link     */
 /***********************/
-.project-preview-image {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    height: 100%;
-    border-right: 1px solid rgba(211,211,211,1);
-}
-.preview-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
-}
-
 .project-link-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 3rem;
     justify-content: center;
@@ -156,6 +174,7 @@
     padding-top: 1rem;
     font-size: 1.5rem;
 }
+
 .project-link {
     display: flex;
     justify-content: center;
@@ -164,9 +183,9 @@
     align-content: center;
     position: relative;
     z-index: 2;
-    padding: 0.5rem;
-    padding-left: 1.3rem;
-    width: 30%;
+    padding: 1rem;
+    padding-left: 3.5rem;
+    width: 100%;
     border: 1px solid #fff;
     background-color:hsl(159, 100%, 52%, 0.2);
     color: #fff;
@@ -179,6 +198,7 @@
 .visit-site {
     background: url(../../public/media/icons/web-media/external-link.svg) no-repeat left;
     background-size: contain;
+    background-color: rgba(5, 5, 5, 0.85)
 }
     .visit-site:hover {
         background: url(../../public/media/icons/web-media/external-link-black.svg) no-repeat left;
@@ -189,6 +209,7 @@
 .view-code  {
     background: url(../../public/media/icons/tech-branding/github.svg) no-repeat left;
     background-size: contain;
+    background-color: rgba(5, 5, 5, 0.85);
 }
     .view-code:hover {
         background: url(../../public/media/icons/tech-branding/github-black.svg) no-repeat left;
