@@ -10,9 +10,7 @@ import javascript from "../public/media/icons/tech-branding/javascript.svg";
 import typescript from "../public/media/icons/tech-branding/typescript.svg";
 import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
 /* -- PNG -- */
-import SolBobaHomepage from "../public/media/pictures/SolBobaHomepage.png";
-import PortfolioPreview from "../public/media/pictures/portfolio-preview.png";
-import PortfolioBackendPreview from "../public/media/pictures/PortfolioBackend-preview.png";
+
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { refs } = useCustomSmoothScroll();
@@ -91,25 +89,20 @@ export default function Projects() {
   /* Project image data */
   const projectImages = {
     project1: {
-      image: SolBobaHomepage,
       alt: "Sol Boba Homepage",
       github: "https://github.com/jakelequire/SolBoba",
       website: "https://solboba.com/",
     },
     project2: {
-      image: PortfolioPreview,
       alt: "Personal Portfolio",
       github: "https://github.com/jakelequire/Portfolio",
       website: "https://jakelequire.dev/",
     },
     project3: {
-      image: PortfolioBackendPreview,
       alt: "Personal Portfolio - Backend",
       github: "https://github.com/jakelequire/portfolio-backend",
-      website: "https://jakelequire.dev/",
     },
     project4: {
-      image: SolBobaHomepage,
       alt: "Coming Soon",
       github: "",
       website: "placeholder",
@@ -119,6 +112,7 @@ export default function Projects() {
   const projectLink = Object.values(projectImages).map((project, index) => (
     <div className="project-preview-image" key={index}>
       <div className="project-link-container">
+			{index === 0 || index === 1 ? 
         <a
           href={project.website}
           target="_blank"
@@ -126,12 +120,14 @@ export default function Projects() {
           className="project-link visit-site"
         >
           Visit Site
-        </a>
+        </a> : null}
+
         <a
           href={project.github}
           target="_blank"
           rel="noreferrer"
           className="project-link view-code"
+					id={index === 3 ? "view-code-disabled" : ""}
         >
           View Code
         </a>
@@ -167,7 +163,7 @@ export default function Projects() {
 						onClick={() => setCurrentProject(2)}>
               {projectItems[2]}
             </a>
-            <a className={`project-items ${currentProject === 3 ? 'project-active' : 'project-inactive'}`}
+            <a  className={`project-items ${currentProject === 3 ? 'project-active' : 'project-inactive'}`}
 						onClick={() => setCurrentProject(3)}>
               {projectItems[3]}
             </a>

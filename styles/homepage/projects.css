@@ -117,9 +117,9 @@
 }
 
 .project-active {
-    background-color: rgb(43, 86, 65);
-    border-top: 2px solid rgba(211,211,211,1);
-    border-bottom: 2px solid rgba(211,211,211,1);
+    background-color: #13493d;
+    border-top: 1px solid rgba(211,211,211,1);
+    border-bottom: 1px solid rgba(211,211,211,1);
 }
 .project-inactive {
     background: linear-gradient(to right, 
@@ -129,9 +129,28 @@
 }
 
 #project1-active {
-    background: url(../../public/media/pictures/solboba-homepage.png) no-repeat center;
+    background: url(../../public/media/pictures/SolBobaHomepage-min.png) no-repeat center;
     background-size: contain;
     position: relative;
+}
+#project2-active {
+    background: url(../../public/media/pictures/portfolioPreview.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+#project3-active {
+    background: url(../../public/media/pictures/portfoliobackend.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+#project4-active {
+    background: url(../../public/media/pictures/comingsoon.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+
+#view-code-disabled {
+    visibility: hidden;
 }
 
 #project1-active::before,
@@ -145,6 +164,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
+    
     -webkit-box-shadow: inset 15px 15px 100px 100px rgba(0, 0, 0, 0.9);
             box-shadow: inset 15px 15px 100px 100px rgba(0, 0, 0, 0.9);
 }
