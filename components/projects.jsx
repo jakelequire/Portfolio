@@ -112,7 +112,7 @@ export default function Projects() {
   const projectLink = Object.values(projectImages).map((project, index) => (
     <div className="project-preview-image" key={index}>
       <div className="project-link-container">
-			{index === 0 || index === 1 ? 
+			{index === 0 ? 
         <a
           href={project.website}
           target="_blank"
