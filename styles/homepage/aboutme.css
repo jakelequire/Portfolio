@@ -39,6 +39,9 @@
     .dev-D {
         text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
     }
+    .dev-M {
+        text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
+    }
 
 .aboutme-caption {
     display: flex;
@@ -51,6 +54,12 @@
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.aboutme-resume-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* -- Toolkit -- */

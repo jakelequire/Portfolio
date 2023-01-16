@@ -228,19 +228,13 @@ export default function AboutMe() {
           ref={intersectionObserver.header}
         >
           <div className="aboutme-header a-header">
-            <h1 className="about-header">Meet the </h1>
+            <h1 className="about-header">
+              <span className="dev-M">M</span>
+              eet the</h1>
           </div>
           <div className="about-text-wrapper a-header">
             <span className="about-dev dev-D">D</span>
-            <span className="about-dev">e</span>
-            <span className="about-dev">v</span>
-            <span className="about-dev">e</span>
-            <span className="about-dev">l</span>
-            <span className="about-dev">o</span>
-            <span className="about-dev">p</span>
-            <span className="about-dev">e</span>
-            <span className="about-dev">r</span>
-            <span className="about-dev">.</span>
+            <span className="about-dev">eveloper.</span>
           </div>
         </div>
         <div className="aboutme-caption">
@@ -261,6 +255,12 @@ export default function AboutMe() {
             further enhance my development skills. I am excited to bring my
             skills and passion to new challenges and projects.
           </p>
+        </div>
+        <div className="aboutme-resume-btn">
+          <a href="#resume" className="resume-btn">
+            View Resume
+          </a>
+
         </div>
       </div>
       <div className="toolkit">
