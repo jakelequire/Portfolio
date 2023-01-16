@@ -221,153 +221,160 @@ export default function AboutMe() {
   /* ------------------------------------------------------------------------------------------------------------- */
   return (
     <div className="aboutme-wrapper" id="about" ref={refs[1]}>
-      <div className="aboutme">
-        <div
-          className="about-header-wrapper"
-          id="header"
-          ref={intersectionObserver.header}
-        >
-          <div className="aboutme-header a-header">
-            <h1 className="about-header">
-              <span className="dev-M">M</span>
-              eet the</h1>
+      <div className="aboutme-container">
+        <div className="aboutme">
+          <div
+            className="about-header-wrapper"
+            id="header"
+            ref={intersectionObserver.header}
+          >
+            <div className="aboutme-header a-header">
+              <h1 className="about-header">
+                <span className="dev-M">M</span>
+                eet the
+              </h1>
+            </div>
+            <div className="about-text-wrapper a-header">
+              <span className="about-dev dev-D">D</span>
+              <span className="about-dev">eveloper.</span>
+            </div>
           </div>
-          <div className="about-text-wrapper a-header">
-            <span className="about-dev dev-D">D</span>
-            <span className="about-dev">eveloper.</span>
+          <div className="aboutme-caption">
+            <p className="aboutme-caption-text">
+              Hello! My name is Jacob LeQuire and I am a full-stack web
+              developer with a strong passion for coding. Through self-study and
+              hands-on experience, I have developed expertise in technologies
+              such as JavaScript, HTML, CSS, React.js, Next.js, Node.js, and
+              more.
+              <br />
+              <br />
+              I have successfully built a full-stack website and am always eager
+              to take on new web development projects. I am a competitive person
+              who is committed to constantly improving my skills and staying
+              up-to-date on the latest trends and technologies in the field.
+              <br />
+              <br />
+              In my free time, I enjoy learning and exploring new technologies
+              to further enhance my development skills. I am excited to bring my
+              skills and passion to new challenges and projects.
+            </p>
+          </div>
+          <div className="aboutme-resume-btn">
+            <a href="#resume" className="resume-btn">
+              View Resume
+            </a>
           </div>
         </div>
-        <div className="aboutme-caption">
-          <p className="aboutme-caption-text">
-            Hello! My name is Jacob LeQuire and I am a full-stack web developer
-            with a strong passion for coding. Through self-study and hands-on
-            experience, I have developed expertise in technologies such as
-            JavaScript, HTML, CSS, React.js, Next.js, Node.js, and Firebase.
-            <br />
-            <br />
-            I have successfully built a full-stack website and am always eager
-            to take on new web development projects. I am a competitive person
-            who is committed to constantly improving my skills and staying
-            up-to-date on the latest trends and technologies in the field.
-            <br />
-            <br />
-            In my free time, I enjoy learning and exploring new technologies to
-            further enhance my development skills. I am excited to bring my
-            skills and passion to new challenges and projects.
-          </p>
-        </div>
-        <div className="aboutme-resume-btn">
-          <a href="#resume" className="resume-btn">
-            View Resume
-          </a>
-
-        </div>
-      </div>
-      <div className="toolkit">
-        <div
-          className="toolkit-container slideshow-visible"
-          id="slideshow"
-          ref={intersectionObserver.slideshow}
-        >
-          <div className="toolkit-header">
-            <h1 className="toolkit-header-text">My Toolkit</h1>
-          </div>
-          <div className="toolkit-slideshow">
-            <div className="slideshow-container">
-              <div className="slideshow-category">
-                <a
-                  className="category-FE"
-                  onClick={() => setCurrentCategory("frontend")}
-                  id={
-                    currentCategory === "frontend" ? "FE-active" : "FE-inactive"
-                  }
-                >
-                  Frontend
-                </a>
-                <a
-                  className="category-BE"
-                  onClick={() => setCurrentCategory("backend")}
-                  id={
-                    currentCategory === "backend" ? "BE-active" : "BE-inactive"
-                  }
-                >
-                  Backend
-                </a>
+        <div className="toolkit">
+          <div
+            className="toolkit-container slideshow-visible"
+            id="slideshow"
+            ref={intersectionObserver.slideshow}
+          >
+            <div className="toolkit-header">
+              <h1 className="toolkit-header-text">My Toolkit</h1>
+            </div>
+            <div className="toolkit-slideshow">
+              <div className="slideshow-container">
+                <div className="slideshow-category">
+                  <a
+                    className="category-FE"
+                    onClick={() => setCurrentCategory("frontend")}
+                    id={
+                      currentCategory === "frontend"
+                        ? "FE-active"
+                        : "FE-inactive"
+                    }
+                  >
+                    Frontend
+                  </a>
+                  <a
+                    className="category-BE"
+                    onClick={() => setCurrentCategory("backend")}
+                    id={
+                      currentCategory === "backend"
+                        ? "BE-active"
+                        : "BE-inactive"
+                    }
+                  >
+                    Backend
+                  </a>
+                </div>
+                {/* Determine which set of slides to display based on currentCategory */}
+                {currentCategory === "frontend" ? (
+                  <div className="slideshow-container">
+                    {FE_slides.map((slide, index) => (
+                      <div
+                        ref={refs[index]}
+                        key={index}
+                        className={
+                          index === FE_slideshowIndex
+                            ? "slideshow-active"
+                            : "slideshow-inactive"
+                        }
+                      >
+                        {slide.content}
+                      </div>
+                    ))}
+                    <div className="button-container">
+                      <a
+                        className="btn-prev"
+                        onClick={() => {
+                          buttonDirection("left");
+                          plusFE_Slides(-1);
+                        }}
+                      >
+                        &#11164;
+                      </a>
+                      <a
+                        className="btn-next"
+                        onClick={() => {
+                          buttonDirection("right");
+                          plusFE_Slides(1);
+                        }}
+                      >
+                        &#11166;
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="slideshow-container">
+                    {BE_slides.map((slide, index) => (
+                      <div
+                        ref={refs[index]}
+                        key={index}
+                        className={
+                          index === BE_slideshowIndex
+                            ? "slideshow-active"
+                            : "slideshow-inactive"
+                        }
+                      >
+                        {slide.content}
+                      </div>
+                    ))}
+                    <div className="button-container">
+                      <a
+                        className="btn-prev"
+                        onClick={() => {
+                          buttonDirection("left");
+                          plusBE_Slides(-1);
+                        }}
+                      >
+                        &#11164;
+                      </a>
+                      <a
+                        className="btn-next"
+                        onClick={() => {
+                          buttonDirection("right");
+                          plusBE_Slides(1);
+                        }}
+                      >
+                        &#11166;
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
-              {/* Determine which set of slides to display based on currentCategory */}
-              {currentCategory === "frontend" ? (
-                <div className="slideshow-container">
-                  {FE_slides.map((slide, index) => (
-                    <div
-                      ref={refs[index]}
-                      key={index}
-                      className={
-                        index === FE_slideshowIndex
-                          ? "slideshow-active"
-                          : "slideshow-inactive"
-                      }
-                    >
-                      {slide.content}
-                    </div>
-                  ))}
-                  <div className="button-container">
-                    <a
-                      className="btn-prev"
-                      onClick={() => {
-                        buttonDirection("left");
-                        plusFE_Slides(-1);
-                      }}
-                    >
-                      &#11164;
-                    </a>
-                    <a
-                      className="btn-next"
-                      onClick={() => {
-                        buttonDirection("right");
-                        plusFE_Slides(1);
-                      }}
-                    >
-                      &#11166;
-                    </a>
-                  </div>
-                </div>
-              ) : (
-                <div className="slideshow-container">
-                  {BE_slides.map((slide, index) => (
-                    <div
-                      ref={refs[index]}
-                      key={index}
-                      className={
-                        index === BE_slideshowIndex
-                          ? "slideshow-active"
-                          : "slideshow-inactive"
-                      }
-                    >
-                      {slide.content}
-                    </div>
-                  ))}
-                  <div className="button-container">
-                    <a
-                      className="btn-prev"
-                      onClick={() => {
-                        buttonDirection("left");
-                        plusBE_Slides(-1);
-                      }}
-                    >
-                      &#11164;
-                    </a>
-                    <a
-                      className="btn-next"
-                      onClick={() => {
-                        buttonDirection("right");
-                        plusBE_Slides(1);
-                      }}
-                    >
-                      &#11166;
-                    </a>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

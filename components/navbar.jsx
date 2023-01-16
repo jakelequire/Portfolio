@@ -61,8 +61,10 @@ export default function NavBar() {
               <p className="nav-logo-subtext">Web Developer</p>
             </div>
             <div className="social-media-container">
-              <a className="social-media-link" href=""> <GitHub /> </a>
-              <a className="social-media-link" href=""><LinkedIn /> </a>
+              <a className="social-media-link"
+              href="https://github.com/jakelequire"><GitHub /></a>
+              <a className="social-media-link"
+              href="https://www.linkedin.com/in/jacoblequire/"><LinkedIn /></a>
             </div>
           </div>
           <div className="nav-group">
