@@ -1,14 +1,15 @@
 .projects-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
     padding-left: 13%;
     padding-right: 5%;
     margin-bottom: 15rem;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
+    font-family: var(--font-family-josefin);
 }
 #project-P {
     text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
@@ -29,9 +30,9 @@
     .projects-header::before {
         content: "Projects";
         font-size: 20rem;
-        font-family: Roboto, sans-serif;
-        color: rgba(255, 255, 255, 0.03);
-        font-weight: 100;
+        font-family: var(--font-family-roboto);
+        font-weight: var(--font-weight-extrathin);
+        opacity: var(--opacity-5);
         position: absolute;
         background: inherit;
         z-index: 0;
@@ -48,7 +49,7 @@
     height: 70%;
     width: 100%;
     margin-top: 3rem;
-    border: 1px solid rgba(211,211,211,1);
+    border: 1px solid var(--font-color-light-4);
     box-shadow: 0 5px 15px rgba(5,5,5,1);
 }
 
@@ -59,7 +60,7 @@
     display: flex;
     height: 100%;
     width: 100%;
-    border-left: 1px solid rgba(211,211,211,1);
+    border-left: 1px solid var(--font-color-4);
     justify-content: space-between;
     align-content: center;
     align-items: center;
@@ -91,6 +92,7 @@
 }
 
 .project-item-name {
+    color: var(--font-color-0);
     text-decoration: underline;
     padding-bottom: 0.5rem;
 }
@@ -117,13 +119,13 @@
     z-index: 4;
 }
 .project-item-description {
-    color: rgb(200, 200, 200);
+    color: var(--font-color-2);
 }
 
 .project-active {
     background-color: #13493d;
-    border-top: 1px solid rgba(211,211,211,1);
-    border-bottom: 1px solid rgba(211,211,211,1);
+    border-top: 1px solid var(--font-color-4);
+    border-bottom: 1px solid var(--font-color-4);
 }
 .project-inactive {
     background: linear-gradient(to right, 
@@ -211,11 +213,11 @@
     width: 100%;
     border: 1px solid #fff;
     background-color:hsl(159, 100%, 52%, 0.2);
-    color: #fff;
+    color: var(--font-color-0);
     transition: all 0.125s ease-in-out;
 }
     .project-link:hover {
-        color: #000;
+        color: var(--font-hover-color-0);
     }
     
 .visit-site {
@@ -226,8 +228,8 @@
     .visit-site:hover {
         background: url(../../public/media/icons/web-media/external-link-black.svg) no-repeat left;
         background-size: contain;
-        background-color: hsl(159, 100%, 52%);
-        border-color: hsl(159, 100%, 52%);
+        background-color: var(--primary-color-green);
+        border-color: var(--primary-color-green);
     }
 .view-code  {
     background: url(../../public/media/icons/tech-branding/github.svg) no-repeat left;
@@ -237,6 +239,6 @@
     .view-code:hover {
         background: url(../../public/media/icons/tech-branding/github-black.svg) no-repeat left;
         background-size: contain;
-        background-color: hsl(159, 100%, 52%);
-        border-color: hsl(159, 100%, 52%);
+        background-color: var(--primary-color-green);
+        border-color: var(--primary-color-green);
     }

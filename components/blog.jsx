@@ -12,7 +12,7 @@ export default function Blog() {
                     <h1 className="blog-title"><span id="blog-B">B</span>log</h1>
                 </div>
                 <div className="blog-path">
-                    <a href="/blog">View More &#187;</a>
+                    <a className="blog-path-link" href="/blog">View More &#187;</a>
                 </div>
             </div>
             
