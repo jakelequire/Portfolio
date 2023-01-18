@@ -32,7 +32,7 @@
         font-size: 20rem;
         font-family: var(--font-family-roboto);
         font-weight: var(--font-weight-extrathin);
-        opacity: var(--opacity-5);
+        opacity: 0.05;
         position: absolute;
         background: inherit;
         z-index: 0;

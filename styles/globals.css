@@ -14,49 +14,11 @@ body {
   /******************************/
   /* -- Box Model -- */
   --box-sizing: border-box;
-  /* -- Margin -- */
-  --margin-0: 0;
-  --margin-5: 5%;
-  --margin-10: 10%;
-  --margin-15: 15%;
-  --margin-25: 25%;
-  --margin-30: 30%;
-  --margin-40: 40%;
-  --margin-50: 50%;
-  /* -- Padding -- */
-  --padding-0: 0;
-  --padding-025: 0.25rem;
-  --padding-05: 0.5rem;
-  --padding-10: 1rem;
-  --padding-15: 1.5rem;
-  --padding-20: 2rem;
-  --padding-25: 2.5rem;
-  --padding-30: 3rem;
-  --padding-35: 3.5rem;
-  --padding-40: 4rem;
-  --padding-45: 4.5rem;
-  --padding-50: 5rem;
   /* -- Font Family -- */
   --font-family-josefin: 'Josefin Sans', sans-serif;
   --font-family-lato: 'Lato', sans-serif;
   --font-family-fira: 'FiraCode', monospace;
   --font-family-roboto: 'Roboto', sans-serif;
-  /* -- Opacity -- */
-  --opacity-0: 0;
-  --opacity-5: 0.05;
-  --opacity-10: 0.1;
-  --opacity-20: 0.2;
-  --opacity-25: 0.25;
-  --opacity-30: 0.3;
-  --opacity-40: 0.4;
-  --opacity-50: 0.5;
-  --opacity-60: 0.6;
-  --opacity-70: 0.7;
-  --opacity-75: 0.75;
-  --opacity-80: 0.8;
-  --opacity-90: 0.9;
-  --opacity-95: 0.95;
-  --opacity-100: 1;
   /* -- Z-Index -- */
   --z-index-0: 0;
   --z-index-1: 1;
