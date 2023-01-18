@@ -1,0 +1,31 @@
+/************************/
+/* -- Custom Classes -- */
+/************************/
+
+/* -- Flexbox -- */
+.CC_FLX_ROW_CTR {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.CC_FLX_COL_CTR {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -- Buttons -- */
+.CC_PRIMARY_BTN {
+    background-color: var(--bg-element-0);
+    color: var(--font-color-0);
+    border: 1px solid var(--font-color-0);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
