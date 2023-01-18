@@ -167,36 +167,38 @@ body {
 /********************/
 /* -- Light Mode -- */
 /********************/
-@media (prefers-color-scheme: light) {
-  :root {
-  /* -- Background Color -- */
-  --bg-primary-theme: var(--bg-primary-theme-light);
-  /* -- Font Color -- */
-  --font-color-1: var(--font-color-dark-1);
-  --font-color-2: var(--font-color-dark-2);
-  --font-color-3: var(--font-color-dark-3);
-  --font-color-4: var(--font-color-dark-4);
-  /* -- Primary Colors --*/
-  --primary-color-green: hsl(159, 100%, 52%);
-  --primary-color-lightgreen: hsl(159, 100%, 62%);
-  --primary-color-darkgreen: hsl(159, 100%, 42%);
-  --primary-color-white: #ffffff;
-  --primary-color-lightgrey: #f9fafb;
-  --primary-color-darkgrey: rgb(15, 15, 15);
-  /* -- Secondary Colors -- */
-  --secondary-color: #00b159;
-  --secondary-color-light: #00c46b;
-  --secondary-color-dark: #009e4f;
-  /* -- Tertiary Colors -- */
-  --tertiary-color: #ffdd57;
-  --tertiary-color-light: #ffe66d;
-  --tertiary-color-dark: #ffcd3f;
-  /* -- Gradient Colors -- */
-  --gradient-linear-grey1: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
-  --gradient-linear-grey: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
-  --gradient-linear-darkgrey: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
-  }
-}
+
+/*@media (prefers-color-scheme: light) {
+/*  :root {
+/*  /* -- Background Color -- */
+/*  --bg-primary-theme: var(--bg-primary-theme-light);
+/*  /* -- Font Color -- */
+/*  --font-color-1: var(--font-color-dark-1);
+/*  --font-color-2: var(--font-color-dark-2);
+/*  --font-color-3: var(--font-color-dark-3);
+/*  --font-color-4: var(--font-color-dark-4);
+/*  /* -- Primary Colors --*/
+/*  --primary-color-green: hsl(159, 100%, 52%);
+/*  --primary-color-lightgreen: hsl(159, 100%, 62%);
+/*  --primary-color-darkgreen: hsl(159, 100%, 42%);
+/*  --primary-color-white: #ffffff;
+/*  --primary-color-lightgrey: #f9fafb;
+/*  --primary-color-darkgrey: rgb(15, 15, 15);
+/*  /* -- Secondary Colors -- */
+/*  --secondary-color: #00b159;
+/*  --secondary-color-light: #00c46b;
+/*  --secondary-color-dark: #009e4f;
+/*  /* -- Tertiary Colors -- */
+/*  --tertiary-color: #ffdd57;
+/*  --tertiary-color-light: #ffe66d;
+/*  --tertiary-color-dark: #ffcd3f;
+/*  /* -- Gradient Colors -- */
+/*  --gradient-linear-grey1: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
+/*  --gradient-linear-grey: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
+/*  --gradient-linear-darkgrey: linear-gradient(90deg, #f9fafb 0%, #f9fafb 100%);
+/*  }
+/*}
+
 
 /***************************/
 /* --- Scrollbar Style --- */
