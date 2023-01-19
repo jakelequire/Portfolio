@@ -266,11 +266,11 @@ export default function AboutMe() {
             id="slideshow"
             ref={intersectionObserver.slideshow}
           >
+            <div className="toolkit-slideshow">
+              <div className="slideshow-container">
             <div className="toolkit-header">
               <h1 className="toolkit-header-text">My Toolkit</h1>
             </div>
-            <div className="toolkit-slideshow">
-              <div className="slideshow-container">
                 <div className="slideshow-category">
                   <a
                     className="category-FE"

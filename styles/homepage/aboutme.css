@@ -105,8 +105,10 @@
 .slideshow-visible  {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position: relative;
     width: 90%;
+    height: 100%;
     height: auto;
 }
     .slideshow-visible::before {
@@ -122,15 +124,11 @@
 
 .toolkit-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
-    padding-top: 5rem;
-    font-size: 3rem;
+    justify-content: flex-start;
+    font-family: var(--font-family-josefin);
+    font-size:var(--font-size-3xl);
     color: var(--font-color-0);
     z-index: 2;
-
 }
 
 /* -- Slideshow -- */
