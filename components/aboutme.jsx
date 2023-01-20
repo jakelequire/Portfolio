@@ -222,6 +222,7 @@ export default function AboutMe() {
   return (
     <div className="aboutme-wrapper" id="about" ref={refs[1]}>
       <div className="aboutme-container">
+        <div className="aboutme-content-wrapper">
         <div className="aboutme">
           <div
             className="about-header-wrapper"
@@ -229,9 +230,7 @@ export default function AboutMe() {
             ref={intersectionObserver.header}
           >
             <div className="aboutme-header a-header">
-              <h2 className="about-header">
-                Meet the developer.
-              </h2>
+              <h2 className="about-header">Meet the developer.</h2>
             </div>
           </div>
           <div className="aboutme-caption">
@@ -267,10 +266,10 @@ export default function AboutMe() {
             ref={intersectionObserver.slideshow}
           >
             <div className="toolkit-slideshow">
-              <div className="slideshow-container">
-            <div className="toolkit-header">
-              <h1 className="toolkit-header-text">My Toolkit</h1>
-            </div>
+              <div className="slideshow-wrapper">
+                <div className="toolkit-header">
+                  <h1 className="toolkit-h">My Toolkit.</h1>
+                </div>
                 <div className="slideshow-category">
                   <a
                     className="category-FE"
@@ -373,6 +372,21 @@ export default function AboutMe() {
             </div>
           </div>
         </div>
+
+        
+        </div>
+          <div className="offer-container">
+            <div className="offer">
+              <div className="offer-header">
+                <h1 className="offer-h">What I Offer.</h1>
+              </div>
+              <div className="offer-content">
+                <div className="offer-content-wrapper">
+                        
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   );

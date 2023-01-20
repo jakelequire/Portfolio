@@ -11,21 +11,33 @@
     margin-bottom: 15rem;
 }
 
-.aboutme-container {
+.aboutme-content-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 75%;
+    padding: 3rem;
+    background-color: var(--bg-element-1);
+}
+
+.aboutme-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     align-items: center;
     width: 100%;
-    height: 50%;
+    padding: 3rem;
     background-color: var(--bg-element-1);
 }
 
 .aboutme {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     width: 50%;
     height: 100%;
     padding: 1.5rem;
@@ -35,15 +47,11 @@
     display: flex;
     border-bottom: solid var(--font-color-0);
     width: fit-content;
-    transition: opacity 0.5s ease-in-out;
-    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
-    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both 0.5s;
+    font-family: var(--font-family-josefin);
+    font-size:var(--font-size-3xl);
+    color: var(--font-color-0);
 }
-    .a-header {
-        color: var(--font-color-0);
-        font-family: var(--font-family-josefin);
-        font-size:var(--font-size-3xl);
-    }
+
     .about-text-wrapper {
         padding-left: 1rem;
         font-size: 5rem;
@@ -57,16 +65,26 @@
 
 .aboutme-caption {
     display: flex;
+    padding-top: 3rem;
 }
+
 .aboutme-caption-text {
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-light);
+    font-family: var(--font-family-fira);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrathin);
     color: var(--font-color-0);
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+    .aboutme-caption-text::first-letter {
+        font-size: 6rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--primary-color-green);
+        padding-right: 0.5rem;
+        margin-right: 0.5rem;
+        float: left;
+    }
 
 .aboutme-resume-btn {
     display: flex;
@@ -100,6 +118,33 @@
     width: 50%;
     height: 100%;
     font-family: var(--font-family-josefin);
+    align-items: flex-start;
+}
+.toolkit-header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-family: var(--font-family-josefin);
+    font-size:var(--font-size-3xl);
+    color: var(--font-color-0);
+    padding-bottom: 3rem;
+    z-index: 2;
+}
+.toolkit-h {
+    display: flex;
+    width: fit-content;
+    font-size: 3rem;
+    border-bottom: solid var(--font-color-0);
+}
+
+.slideshow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    padding-top: 1.5rem;
 }
 
 .slideshow-visible  {
@@ -122,14 +167,7 @@
         bottom: 0;
     }
 
-.toolkit-header {
-    display: flex;
-    justify-content: flex-start;
-    font-family: var(--font-family-josefin);
-    font-size:var(--font-size-3xl);
-    color: var(--font-color-0);
-    z-index: 2;
-}
+
 
 /* -- Slideshow -- */
 .slideshow-options-container {
@@ -149,10 +187,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: fit-content;
+    height: 25rem;
     flex-direction: column;
     padding-top: 1.5rem;
-    border: 1px solid #fff;
+    border: 1px solid var(--font-color-0);
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .slideshow-category{
