@@ -69,15 +69,15 @@ export default function NavBar() {
           </div>
           <div className="nav-group">
             <div className="nav-links-container">
-              <a className="nav-link nav-item " id="n-home" href="#home" 
+              <a className="nav-link nav-link-style" id="n-home" href="#home" 
               onClick={(e) => smoothScroll(e, 0)} ref={refs.home}>Home</a>
-              <a className="nav-link nav-item " id="n-about" href="#about" 
+              <a className="nav-link nav-link-style" id="n-about" href="#about" 
               onClick={(e) => smoothScroll(e, 1)} ref={refs.about}>About Me</a>
-              <a className="nav-link nav-item " id="n-projects" href="#projects" 
+              <a className="nav-link nav-link-style" id="n-projects" href="#projects" 
               onClick={(e) => smoothScroll(e, 2)} ref={refs.projects}>Projects</a>
-              <a className="nav-link nav-item " id="n-projects" href="#blog" 
+              <a className="nav-link nav-link-style" id="n-projects" href="#blog" 
               onClick={(e) => smoothScroll(e, 3)} ref={refs.blog}>Blog</a>
-              <a className="nav-link nav-item" id="n-contact" href="#contact" 
+              <a className="nav-link nav-link-style" id="n-contact" href="#contact" 
               onClick={(e) => smoothScroll(e, 4)} ref={refs.contact}>Contact</a>
             </div>
           </div>
@@ -90,3 +90,8 @@ export default function NavBar() {
         </div>
     );
 }
+
+
+/* 
+↳
+*/

@@ -91,69 +91,6 @@
   justify-content: center;
 }
 
-.nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 300;
-  -moz-transition: all 100ms ease-in;
-  -o-transition: all 100ms ease-in;
-  -webkit-transition: all 100ms ease-in;
-  transition: all 100ms ease-in;
-  -webkit-animation: focus-in-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: focus-in-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.nav-link::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: var(--primary-color-green);
-  transition: width 0.5s ease;
-}
-  .nav-link:hover::before {
-    color: var(--font-color-0);
-    width: 100%
-  }
-
-@-webkit-keyframes focus-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-@keyframes focus-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
 .nav-links-container {
   display: flex;
   flex-direction: column;
@@ -162,60 +99,45 @@
   width: 100%;
   height: fit-content;
   padding: 1rem;
+  align-items: flex-start;
 }
 
-#n-home, #n-about, #n-projects, #n-contact {
-  display: flex;
-  padding: 0.5rem;
-  padding-left: 2rem;
-  align-items: center;
-  justify-content: flex-start;
-  color: #fff;
-  font-weight: 300;
+.nav-link {
+  text-decoration: none;
+  color: var(--font-color-0);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
 }
-  #n-home:hover, #n-about:hover, #n-projects:hover, #n-contact:hover {
-    border: 1px solid var(--primary-color-green);
-    color: var(--font-hover-color-0);
-    font-weight: 400;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0)
-  }
 
- @-webkit-keyframes scale-in-hor-right {
-  0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
+.nav-link-style {
+  display: inline-block;
+  position: relative;
+  padding: 0.1rem 0;
+  transition-property: left, width; /* Add this */
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 }
-@keyframes scale-in-hor-right {
-  0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    opacity: 1;
-  }
+.nav-link-style::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: var(--primary-color-green);
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.nav-link-style:hover::after,
+.nav-link-style:focus::after,
+.nav-link-style:active::after {
+  left: 0;
+  right: auto;
+  width: 100%;
 }
 
 /* -- Theme Toggler -- */
-
 .theme-toggle-container {
   display: flex;
   flex-direction: column;
