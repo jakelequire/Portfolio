@@ -8,47 +8,35 @@
  * 
  */
 
-import { useRef, useEffect, useState} from 'react';
-
-
+import { useEffect, useState} from 'react';
+import useObserver from './useObserver';
 
 export default function useSmoothScroll() {
-  const [currentIndex, setIndex] = useState(null);
-  const refs = useRef({
-    0: useRef(null),
-    1: useRef(null),
-    2: useRef(null),
-    3: useRef(null),
-    4: useRef(null),
-  });
+  const { index, ref } = useObserver();
+
+  function smoothScroll(e, index) {
+    e.preventDefault();
+    setIndex(index);
+  }
 
   useEffect(() => {
-    if (currentIndex !== null) {
-      const element = document.getElementById(refs.current[currentIndex].current);
-      if (element) {
-        const elementPosition = element.offsetTop;
-        const currentPosition = window.pageYOffset;
-        const distance = elementPosition - currentPosition;
-        window.scrollBy({ top: distance, left: 0, behavior: 'smooth' });
-      }
+    if (index === 0) {
+      ref.home.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [currentIndex]);
-  console.log("refs current!: "+ refs.current ? refs.current : 'no refs')
-  console.log("currentindex!: " + currentIndex ? currentIndex : 'no index')
-  console.log("refs.current[currentIndex]!: " + refs.current[currentIndex] ? refs.current[currentIndex] : 'no refs[currentIndex]')
-  return { refs, currentIndex, setIndex };
-} 
+    if (index === 1) {
+      ref.about.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (index === 2) {
+      ref.projects.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (index === 3) {
+      ref.blog.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (index === 4) {
+      ref.contact.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [index, ref]);
 
-/* 
-function (index, refs) {
-  if (index !== null) {
-    const element = document.getElementById(refs[index].current);
-    if (element) {
-      const elementPosition = element.offsetTop;
-      const currentPosition = window.pageYOffset;
-      const distance = elementPosition - currentPosition;
-      window.scrollBy({ top: distance, left: 0, behavior: 'smooth' });
-    }
-  }
-}
-*/
+  return { smoothScroll, ref };
+
+} 

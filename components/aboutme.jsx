@@ -15,7 +15,7 @@ import backend from "../public/media/icons/web-media/backend.svg"
 import api from "../public/media/icons/web-media/api.svg"
 
 export default function AboutMe() {
-  const { refs } = useObserver();
+  const {visible, index, setIndex, ref } = useObserver();
 
   /* ## Slideshow ## */
   const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);
@@ -223,7 +223,7 @@ export default function AboutMe() {
 
   /* ------------------------------------------------------------------------------------------------------------- */
   return (
-    <div className="aboutme-wrapper" id="about" ref={refs[1]}>
+    <div className="aboutme-wrapper" id="about" ref={ref.about}>
       <div className="aboutme-container">
         <div className="aboutme-content-wrapper">
         <div className="aboutme">
@@ -298,7 +298,7 @@ export default function AboutMe() {
                   <div className="slideshow-container">
                     {FE_slides.map((slide, index) => (
                       <div
-                        ref={refs[index]}
+                        ref={ref[index]}
                         key={index}
                         className={
                           index === FE_slideshowIndex

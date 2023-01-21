@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 
 export default function Blog() {
-    const { refs } = useObserver();
+    const {visible, index, setIndex, ref } = useObserver();
 
 // >------------------------------------------------------------------------------------------
     return (
-        <div className="blog-wrapper" id="blog" ref={refs[3]}>
+        <div className="blog-wrapper" id="blog" ref={ref.blog}>
             <div className="blog-header">
                 <div className="blog-header-title">
                     <h1 className="blog-title"><span id="blog-B">B</span>log</h1>

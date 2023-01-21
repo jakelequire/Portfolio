@@ -8,7 +8,7 @@ import Resume from '../public/media/Resume.png';
 
 
 export default function Contact() {
-    const { refs } = useObserver();
+    const {visible, index, setIndex, ref } = useObserver();
 
     const resumeBtn = useRef(null);
     const resumeImg = useRef(null);
@@ -50,7 +50,7 @@ export default function Contact() {
       
 // >------------------------------------------------------------------------------------------
     return (
-        <div className="contact-wrapper" id="contact" ref={refs[4]}>
+        <div className="contact-wrapper" id="contact" ref={ref.contact}>
             <div className="contact-header">
                 <h1 className="contact-title"><span id="contact-C">C</span>ontact Me!</h1>
             </div>

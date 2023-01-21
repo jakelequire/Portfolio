@@ -11,7 +11,7 @@ import typescript from "../public/media/icons/tech-branding/typescript.svg";
 import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
-  const { refs } = useObserver();
+  const {visible, index, setIndex, ref } = useObserver();
 	const [currentProject, setCurrentProject] = useProjectSlideshow();
 
 	const projectKey = () => {
@@ -134,7 +134,7 @@ export default function Projects() {
   ));
   // >------------------------------------------------------------------------------------------
   return (
-    <div className="projects-wrapper" id="projects" ref={refs[2]}>
+    <div className="projects-wrapper" id="projects" ref={ref.projects}>
       <div className="projects-header">
         <h1 className="projects-header-text">
           <span id="project-P">P</span>rojects

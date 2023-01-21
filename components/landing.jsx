@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import useObserver from './hooks/useCustomSmoothScroll';
+import useObserver from './hooks/useObserver';
 
 
 
 export default function Landing() {
 
-  const { refs, currentIndex, setIndex } = useObserver();
+  const {visible, index, ref } = useObserver();
   
   function smoothScroll(e, index) {
     e.preventDefault();
@@ -14,7 +14,7 @@ export default function Landing() {
 
 // >------------------------------------------------------------------------------------------
   return (
-    <div className="landing-wrapper" id="home" ref={refs[0]}>
+    <div className="landing-wrapper" id="home" ref={ref.home}>
         <div className="landing">
           <div className="landing-header">
             <h1 className="lt-header">Hello,</h1>
