@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
+import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 
 export default function Blog() {
-    const { refs } = useCustomSmoothScroll();
+    const { refs } = useObserver();
 
 // >------------------------------------------------------------------------------------------
     return (

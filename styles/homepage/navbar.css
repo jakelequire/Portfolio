@@ -129,9 +129,7 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
-.nav-link-style:hover::after,
-.nav-link-style:focus::after,
-.nav-link-style:active::after {
+.nav-link-style:hover::after {
   left: 0;
   right: auto;
   width: 100%;

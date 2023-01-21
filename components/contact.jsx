@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import useCustomSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
+import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 
 import Resume from '../public/media/Resume.png';
 
@@ -8,7 +8,7 @@ import Resume from '../public/media/Resume.png';
 
 
 export default function Contact() {
-    const { refs } = useCustomSmoothScroll();
+    const { refs } = useObserver();
 
     const resumeBtn = useRef(null);
     const resumeImg = useRef(null);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 /* -- Hooks -- */
-import useCustomSmoothScroll from "./hooks/useCustomSmoothScroll.jsx";
+import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 import useProjectSlideshow from "./hooks/useProjectSlideshow.jsx";
 /* -- SVG -- */
 import nextjs from "../public/media/icons/tech-branding/next3.svg";
@@ -11,7 +11,7 @@ import typescript from "../public/media/icons/tech-branding/typescript.svg";
 import nodejs from "../public/media/icons/tech-branding/nodejs.svg";
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
-  const { refs } = useCustomSmoothScroll();
+  const { refs } = useObserver();
 	const [currentProject, setCurrentProject] = useProjectSlideshow();
 
 	const projectKey = () => {

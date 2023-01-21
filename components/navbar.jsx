@@ -1,35 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import { GitHub, LinkedIn } from '../public/media/icons/svg-icons'
 /* Hooks */
-import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
+import useSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 /* PNGs */
 import logo from '../public/media/logo.png'
 // >------------------------------------------------------------------------------------------
 export default function NavBar() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { refs, index, currentRef } = useObserver()
 
-  useEffect(() => {
-    if(currentRef){
-        const elements = document.querySelectorAll('.nav-link-style')
-        elements.forEach(e => e.classList.remove('active-vp'))
-        const element = document.getElementById(`${currentRef}`);
-        if (element) {
-            element.classList.add('active-vp');
-        }
-    }
-}, [currentRef]);
+  const { refs, setIndex, currentIndex} = useSmoothScroll();
   
-
-  function smoothScroll(event, newIndex) {
-    event.preventDefault();
-    setCurrentIndex(newIndex);
-    const element = document.querySelector(event.target.hash);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
 
 // >------------------------------------------------------------------------------------------
   return (
@@ -51,16 +30,25 @@ export default function NavBar() {
           </div>
           <div className="nav-group">
             <div className="nav-links-container">
-              <a className="nav-link nav-link-style"  id={`n-home`} href="#home" 
-              onClick={(e) => smoothScroll(e, 0)} ref={refs.home}>Home</a>
-              <a className="nav-link nav-link-style" id={`n-about`} href="#about" 
-              onClick={(e) => smoothScroll(e, 1)} ref={refs.about}>About Me</a>
-              <a className="nav-link nav-link-style" id={`n-projects`} href="#projects" 
-              onClick={(e) => smoothScroll(e, 2)} ref={refs.projects}>Projects</a>
-              <a className="nav-link nav-link-style" id={`n-blog`} href="#blog" 
-              onClick={(e) => smoothScroll(e, 3)} ref={refs.blog}>Blog</a>
-              <a className="nav-link nav-link-style" id={`n-contact`} href="#contact" 
-              onClick={(e) => smoothScroll(e, 4)} ref={refs.contact}>Contact</a>
+              <a className="nav-link nav-link-style" 
+              id={`home`} href="#home" 
+              onClick={(e) => setIndex(0)} ref={refs.home}>Home</a>
+
+              <a className="nav-link nav-link-style"
+              id={`about`} href="#about" 
+              onClick={(e) => setIndex(1)} ref={refs.about}>About Me</a>
+
+              <a className="nav-link nav-link-style"
+              id={`projects`} href="#projects" 
+              onClick={(e) => setIndex(2)} ref={refs.projects}>Projects</a>
+
+              <a className="nav-link nav-link-style"
+              id={`blog`} href="#blog" 
+              onClick={(e) => setIndex(3)} ref={refs.blog}>Blog</a>
+
+              <a className="nav-link nav-link-style"
+              id={`contact`} href="#contact" 
+              onClick={(e) => setIndex(4)} ref={refs.contact}>Contact</a>
             </div>
           </div>
           <div className="theme-toggle-container">
@@ -75,5 +63,5 @@ export default function NavBar() {
 
 
 /* 
-↳
+↳ :)
 */

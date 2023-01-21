@@ -354,7 +354,7 @@ export default function AboutMe() {
                           plusBE_Slides(-1);
                         }}
                       >
-                        &#11164;
+                          &#11164;
                       </a>
                       <a
                         className="btn-next"
