@@ -1,36 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import useObserver from './hooks/useCustomSmoothScroll';
 
 
-function useSmoothScroll(index, refs) {
-  if (index !== null) {
-    const element = document.getElementById(refs[index].current);
-    if (element) {
-      const elementPosition = element.offsetTop;
-      const currentPosition = window.pageYOffset;
-      const distance = elementPosition - currentPosition;
-      window.scrollBy({ top: distance, left: 0, behavior: 'smooth' });
-    }
-  }
-}
 
 export default function Landing() {
-  const refs = [
-    useRef('home'), //0 
-    useRef('about'), //1
-    useRef('projects'), //2
-    useRef('blog'), //3
-    useRef('contact') //4
-  ];
-  const [index, setIndex] = useState(null);
 
-  useEffect(() => {
-    useSmoothScroll(index, refs);
-  }, [index]);
-
-  function smoothScroll(event, newIndex) {
-    console.log(event, newIndex, refs[newIndex].current)
-    event.preventDefault();
-    setIndex(newIndex);
+  const { refs, currentIndex, setIndex } = useObserver();
+  
+  function smoothScroll(e, index) {
+    e.preventDefault();
+    setIndex(index);
   }
 
 // >------------------------------------------------------------------------------------------

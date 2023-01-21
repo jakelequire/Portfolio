@@ -10,6 +10,9 @@ import react from "../public/media/icons/tech-branding/reactjs.svg";
 import next from "../public/media/icons/tech-branding/next.svg";
 import node from "../public/media/icons/tech-branding/nodejs.svg";
 import firebase from "../public/media/icons/tech-branding/firebase.svg";
+import frontend from "../public/media/icons/web-media/frontend.svg"
+import backend from "../public/media/icons/web-media/backend.svg"
+import api from "../public/media/icons/web-media/api.svg"
 
 export default function AboutMe() {
   const { refs } = useObserver();
@@ -253,11 +256,7 @@ export default function AboutMe() {
               skills and passion to new challenges and projects.
             </p>
           </div>
-          <div className="aboutme-resume-btn">
-            <a href="#resume" className="about-resume-btn">
-              View Resume
-            </a>
-          </div>
+
         </div>
         <div className="toolkit">
           <div
@@ -373,19 +372,44 @@ export default function AboutMe() {
           </div>
         </div>
 
-        
         </div>
           <div className="offer-container">
-            <div className="offer">
-              <div className="offer-header">
-                <h1 className="offer-h">What I Offer.</h1>
-              </div>
-              <div className="offer-content">
                 <div className="offer-content-wrapper">
-                        
+                  <div className="offer-content-item">
+                    <Image src={frontend} height={50} width={50} alt="Frontend" />
+                    <div className="offer-content-text-wrapper">
+                      <h2 className="offer-content-h">Frontend Development</h2>
+                      <p className="offer-content-text">
+                        Experience with Frontend technologies such as React.js, HTML/CSS, and JavaScript.
+                      </p>
+                      </div>
+                  </div>
+
+                  <div className="offer-content-item">
+                    <Image src={backend} height={50} width={50} alt="Frontend" />
+                      <div className="offer-content-text-wrapper">
+                        <h2 className="offer-content-h">Backend Development</h2>
+                        <p className="offer-content-text">
+                          Experience with Backend technologies such as Next.js, Node.js, and Express.js.
+                        </p>
+                      </div>
+                  </div>
+
+                  <div className="offer-content-item">
+                    <Image src={api} height={50} width={50} alt="Frontend" />
+                      <div className="offer-content-text-wrapper">
+                        <h2 className="offer-content-h">API Development</h2>
+                        <p className="offer-content-text">
+                          Experience with API technologies such as RESTful APIs, GraphQL, and MongoDB.
+                        </p>
+                      </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+          </div>
+          <div className="aboutme-resume-btn">
+            <a href="#resume" className="about-resume-btn">
+              View Resume
+            </a>
           </div>
       </div>
     </div>

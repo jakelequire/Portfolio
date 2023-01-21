@@ -302,3 +302,58 @@
     .btn-next:active {
         transform: translate(1.5px, 0)
     }
+/* -- Offer -- */
+.offer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    z-index: 2;
+}
+
+.offer-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: -moz-fit-content;
+    height: fit-content;
+    gap: 10rem;
+    z-index: 2;
+}
+
+.offer-content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: fit-content;
+    gap: 1rem;
+    z-index: 2;
+}
+.offer-content-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    z-index: 2;
+}
+.offer-content-h {
+    font-family: var(--font-family-fira);
+    font-size: var(--font-size-3xl);
+    color: var(--font-color-0);
+}
+.offer-content-text {
+    font-family: var(--font-family-fira);
+    font-size: var(--font-size-base);
+    color: var(--font-color-0);
+}
