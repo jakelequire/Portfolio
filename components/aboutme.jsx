@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
-import useCustomSmoothScroll from "./hooks/useCustomSmoothScroll.jsx";
+import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 
 import html5 from "../public/media/icons/tech-branding/html5.svg";
 import css3 from "../public/media/icons/tech-branding/css3.svg";
@@ -12,7 +12,7 @@ import node from "../public/media/icons/tech-branding/nodejs.svg";
 import firebase from "../public/media/icons/tech-branding/firebase.svg";
 
 export default function AboutMe() {
-  const { refs } = useCustomSmoothScroll();
+  const { refs } = useObserver();
 
   /* ## Slideshow ## */
   const [FE_slideshowIndex, setFE_SlideshowIndex] = useState(0);

@@ -4,6 +4,9 @@
  * @param {Boolean} hoverState - Boolean value to determine if the animation should be playing or not
  * 
  * @returns {Object} - Returns the animation object
+ * 
+ * @reason - This hook is used to handle the lottie animations on the website. I wanted to use this hook
+ * to make the animations more dynamic and reusable.
  */
 import { useRef, useEffect } from 'react';
 import lottie from 'lottie-web';

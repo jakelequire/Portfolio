@@ -3,10 +3,13 @@
  * 
  * @returns {boolean} hover
  * @returns {object} ref
+ * 
+ * @reason This hook is used to adjust the scroll position of a component.
+ * I wanted to use this hook to make the flow of the website more smooth.
  */
 
 import { useRef, useState, useEffect } from 'react';
-export default function useCustomSmoothScroll() {
+export default function useObserver() {
     const refs = {
         home: useRef(null),
         about: useRef(null),
@@ -27,6 +30,5 @@ export default function useCustomSmoothScroll() {
         }
       }
     }, [index, refs]);
-  
     return { index, refs };
   }
