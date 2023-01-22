@@ -58,7 +58,6 @@ export default function AboutMe() {
   /* -- Front-end Slide Content -- */
   useEffect(() => {
     // this callback function will run after currentDirection is updated
-    console.log(currentDirection);
   }, [currentDirection]);
 
   const buttonDirection = (direction) => {
@@ -68,14 +67,12 @@ export default function AboutMe() {
       setCurrentDirection("slide-in-blurred-left blurred-right");
     }
   };
-  console.log(setCurrentDirection);
 
   const divRef = useRef(null);
   const [className, setClassName] = useState("active");
 
   useEffect(() => {
     if (divRef.current.className !== "active") {
-      console.log("active");
       setClassName("active");
     }
   }, [className]);
@@ -334,7 +331,7 @@ export default function AboutMe() {
                   <div className="slideshow-container">
                     {BE_slides.map((slide, index) => (
                       <div
-                        ref={refs[index]}
+                        ref={ref[index]}
                         key={index}
                         className={
                           index === BE_slideshowIndex

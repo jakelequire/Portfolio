@@ -1,16 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+
 import useObserver from './hooks/useObserver';
 
-
-
 export default function Landing() {
-
-  const {visible, index, ref } = useObserver();
-  
-  function smoothScroll(e, index) {
-    e.preventDefault();
-    setIndex(index);
-  }
+  const { ref } = useObserver();
 
 // >------------------------------------------------------------------------------------------
   return (

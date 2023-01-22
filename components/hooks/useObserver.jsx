@@ -19,14 +19,18 @@ export default function useObserver() {
         contact: useRef(null)
     };
 
-
-
     useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
+        const observerCallback = ([entry]) => {
             setVisible(entry.isIntersecting);
             setIndex(entry.target.id);
-        });
-        setTimeout(() => {
+            let newVisibility = {...visibility};
+            Object.keys(visibility).forEach(key => { 
+                if(key === entry.target.id) newVisibility[key] = true;
+                else newVisibility[key] = false; 
+            });
+            setVisibility(newVisibility);
+        }
+        const observer = new IntersectionObserver(observerCallback);
         if (ref.home.current) {
             observer.observe(ref.home.current);
         }
@@ -49,12 +53,7 @@ export default function useObserver() {
             if(ref.blog.current) observer.unobserve(ref.blog.current);
             if(ref.contact.current) observer.unobserve(ref.contact.current);
         };
-    }, 1000);
     }, [ref]);
 
-    // console.log("useObserver: ", visible, index)
-    // console.log("useObserver: ", ref)
-    // console.log("useObserver: ", ref.home.current)
-    console.log("useObserver: ", visibility)
-    return { visible, visibility, index, setIndex, ref };
+    return { visible, visibility, setVisibility, index, setIndex, ref };
 }

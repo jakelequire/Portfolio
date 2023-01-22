@@ -1,16 +1,30 @@
 import { useRef, useEffect, useState } from "react";
 import { GitHub, LinkedIn } from '../public/media/icons/svg-icons'
 /* Hooks */
-// import useSmoothScroll  from "./hooks/useCustomSmoothScroll.jsx";
 import useObserver from "./hooks/useObserver.jsx";
-/* PNGs */
-import logo from '../public/media/logo.png'
 // >------------------------------------------------------------------------------------------
 export default function NavBar() {
+  const {visible, visibility, setVisibility, index, setIndex, ref } = useObserver();
 
-  // const { refs, setIndex, currentIndex} = useSmoothScroll();
-  const {visible, visibility, index, setIndex, ref } = useObserver();
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisibility(true);
+      } else {
+        setVisibility(false);
+      }
+    });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
 
+ console.log(visibility);
+ console.log(index)
+ 
 // >------------------------------------------------------------------------------------------
   return (
         <div className="navbar">
@@ -33,40 +47,40 @@ export default function NavBar() {
             <div className="nav-links-container">
               <a className="nav-link nav-link-style" 
               id={`home`} href="#home" 
-              onClick={() => setIndex(0)} ref={ref.home}>
-                <span id={visibility.home ? "active" : "inactive"}>
+              onClick={() => setIndex(0)} >
+                <span className={visibility.home ? "N-active" : "inactive"}>
                 Home
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
               id={`about`} href="#about" 
-              onClick={(e) => setIndex(1)} ref={ref.about}>
-                <span id={visibility.about ? "active" : "inactive"}>
+              onClick={() => setIndex(1)} >
+                <span className={visibility.about ? "N-active" : "inactive"}>
                   About Me
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
               id={`projects`} href="#projects" 
-              onClick={(e) => setIndex(2)} ref={ref.projects}>
-                <span id={visibility.projects ? "active" : "inactive"}>
+              onClick={() => setIndex(2)} >
+                <span className={visibility.projects ? "N-active" : "inactive"}>
                   Projects
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
               id={`blog`} href="#blog" 
-              onClick={(e) => setIndex(3)} ref={ref.blog}>
-                <span id={visibility.blog ? "active" : "inactive"}>
+              onClick={() => setIndex(3)}>
+                <span className={visibility.blog ? "N-active" : "inactive"}>
                   Blog
                 </span>
                 </a>
 
               <a className="nav-link nav-link-style"
               id={`contact`} href="#contact" 
-              onClick={(e) => setIndex(4)} ref={ref.contact}>
-                <span id={visibility.contact ? "active" : "inactive"}>
+              onClick={() => setIndex(4)}>
+                <span className={visibility.contact ? "N-active" : "inactive"}>
                   Contact
                 </span>
               </a>
