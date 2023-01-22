@@ -402,11 +402,11 @@ export default function AboutMe() {
                       </div>
                   </div>
                 </div>
-          </div>
           <div className="aboutme-resume-btn">
             <a href="#resume" className="about-resume-btn">
               View Resume
             </a>
+          </div>
           </div>
       </div>
     </div>
