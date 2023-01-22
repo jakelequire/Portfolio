@@ -350,6 +350,7 @@
     width: 100%;
     height: fit-content;
     z-index: 2;
+    gap: 0.5rem
 }
 .offer-content-h {
     font-family: var(--font-family-fira);
