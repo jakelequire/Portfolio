@@ -9,6 +9,7 @@ import AboutMe from '../components/aboutme.jsx'
 import Projects from '../components/projects.jsx'
 import Blog from '../components/blog.jsx'
 import Contact from '../components/contact.jsx'
+import Footer from '../components/footer.jsx'
 /* */
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,6 +34,7 @@ export default function Home() {
           <Projects> </Projects>
           <Blog> </Blog>
           <Contact> </Contact>
+          <Footer> </Footer>
         </div>
       </main>
     </>

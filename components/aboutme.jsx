@@ -230,7 +230,7 @@ export default function AboutMe() {
             ref={intersectionObserver.header}
           >
             <div className="aboutme-header a-header">
-              <h2 className="about-header">Meet the developer.</h2>
+              <h2 className="about-header">Meet the Developer.</h2>
             </div>
           </div>
           <div className="aboutme-caption">
