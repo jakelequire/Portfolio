@@ -10,10 +10,7 @@ export default function useObserver() {
         blog: false,
         contact: false
     });
-    console.log("useObserver - useEffect");
-    console.log("useObserver - Visible: " + visibility.home);
-    console.log("useObserver - Visible: " + visibility.about);
-    console.warn("useObserver - Index: " + index);
+
     const ref = {
         home: useRef(null),
         about: useRef(null),
@@ -21,15 +18,14 @@ export default function useObserver() {
         blog: useRef(null),
         contact: useRef(null)
     };
-
-    const updateVisibility = (currentRef) => {
-        Object.keys(visibility).forEach((key) => { 
-            visibility[key] = ref[key].current === currentRef;
-        });
-    }
-    
     
     useEffect(() => {
+        const updateVisibility = (currentRef) => {
+            Object.keys(visibility).forEach((key) => { 
+                visibility[key] = ref[key].current === currentRef;
+            });
+        }
+
         const observerCallback = ([entry]) => {
             setVisible(entry.isIntersecting);
             setIndex(entry.target.id);
@@ -48,7 +44,7 @@ export default function useObserver() {
                 }
             });
         };
-    }, [ref]);
+    }, [ref, visibility]);
 
 
     return { visible, visibility, setVisibility, index, setIndex, ref };
