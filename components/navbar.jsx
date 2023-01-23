@@ -8,24 +8,6 @@ export default function NavBar() {
 
   const {visible, visibility, index, setIndex, ref } = useObserver();
 
-  const [navVisible, setNavVisible] = useState({
-    home: visibility.home,
-    about: visibility.about,
-    projects: visibility.projects,
-    blog: visibility.blog,
-    contact: visibility.contact
-  })
-
-  useEffect(() => {
-    setNavVisible({
-      home: visibility.home,
-      about: visibility.about,
-      projects: visibility.projects,
-      blog: visibility.blog,
-      contact: visibility.contact
-    })
-  }, [visibility])
-
    console.log("Navbar - Visible" + visible)
    console.log("Navbar - Ref: " + ref)
    console.log("Navbar - Index: " + index)
@@ -53,7 +35,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style" 
               id="n-home" href="#home" 
               onClick={() => setIndex(0)} >
-                <span className={navVisible.home ? "N-active" : "inactive"}>
+                <span className={visibility.home ? "N-active" : "inactive"}>
                 Home
                 </span>
               </a>
@@ -61,7 +43,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style"
               id="n-about" href="#about" 
               onClick={() => setIndex(1)} >
-                <span className={navVisible.about ? "N-active" : "inactive"}>
+                <span className={visibility.about ? "N-active" : "inactive"}>
                   About Me
                 </span>
               </a>
@@ -69,7 +51,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style"
               id="n-projects" href="#projects" 
               onClick={() => setIndex(2)} >
-                <span className={navVisible.projects ? "N-active" : "inactive"}>
+                <span className={visibility.projects ? "N-active" : "inactive"}>
                   Projects
                 </span>
               </a>
@@ -77,7 +59,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style"
               id="n-blog" href="#blog" 
               onClick={() => setIndex(3)}>
-                <span className={navVisible.blog ? "N-active" : "inactive"}>
+                <span className={visibility.blog ? "N-active" : "inactive"}>
                   Blog
                 </span>
                 </a>
@@ -85,7 +67,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style"
               id="n-contact" href="#contact" 
               onClick={() => setIndex(4)}>
-                <span className={navVisible.contact ? "N-active" : "inactive"}>
+                <span className={visibility.contact ? "N-active" : "inactive"}>
                   Contact
                 </span>
               </a>
