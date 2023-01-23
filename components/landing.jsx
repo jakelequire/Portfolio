@@ -7,8 +7,8 @@ export default function Landing() {
 
 // >------------------------------------------------------------------------------------------
   return (
-    <div className="landing-wrapper" id="home" ref={ref.home}>
-        <div className="landing">
+    <div className="landing-wrapper" id="home">
+        <div className="landing" ref={ref.home}>
           <div className="landing-header">
             <h1 className="lt-header">Hello,</h1>
             <div className="lt-text-wrapper">

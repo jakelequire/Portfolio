@@ -3,27 +3,32 @@ import { GitHub, LinkedIn } from '../public/media/icons/svg-icons'
 /* Hooks */
 import useObserver from "./hooks/useObserver.jsx";
 // >------------------------------------------------------------------------------------------
+
 export default function NavBar() {
-  const {visible, visibility, setVisibility, index, setIndex, ref } = useObserver();
+
+  const {visible, visibility, index, setIndex, ref } = useObserver();
+
+  const [navVisible, setNavVisible] = useState({
+    home: visibility.home,
+    about: visibility.about,
+    projects: visibility.projects,
+    blog: visibility.blog,
+    contact: visibility.contact
+  })
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setVisibility(true);
-      } else {
-        setVisibility(false);
-      }
-    });
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
+    setNavVisible({
+      home: visibility.home,
+      about: visibility.about,
+      projects: visibility.projects,
+      blog: visibility.blog,
+      contact: visibility.contact
+    })
+  }, [visibility])
 
- console.log(visibility);
- console.log(index)
+   console.log("Navbar - Visible" + visible)
+   console.log("Navbar - Ref: " + ref)
+   console.log("Navbar - Index: " + index)
  
 // >------------------------------------------------------------------------------------------
   return (
@@ -46,41 +51,41 @@ export default function NavBar() {
           <div className="nav-group">
             <div className="nav-links-container">
               <a className="nav-link nav-link-style" 
-              id={`home`} href="#home" 
+              id="n-home" href="#home" 
               onClick={() => setIndex(0)} >
-                <span className={visibility.home ? "N-active" : "inactive"}>
+                <span className={navVisible.home ? "N-active" : "inactive"}>
                 Home
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
-              id={`about`} href="#about" 
+              id="n-about" href="#about" 
               onClick={() => setIndex(1)} >
-                <span className={visibility.about ? "N-active" : "inactive"}>
+                <span className={navVisible.about ? "N-active" : "inactive"}>
                   About Me
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
-              id={`projects`} href="#projects" 
+              id="n-projects" href="#projects" 
               onClick={() => setIndex(2)} >
-                <span className={visibility.projects ? "N-active" : "inactive"}>
+                <span className={navVisible.projects ? "N-active" : "inactive"}>
                   Projects
                 </span>
               </a>
 
               <a className="nav-link nav-link-style"
-              id={`blog`} href="#blog" 
+              id="n-blog" href="#blog" 
               onClick={() => setIndex(3)}>
-                <span className={visibility.blog ? "N-active" : "inactive"}>
+                <span className={navVisible.blog ? "N-active" : "inactive"}>
                   Blog
                 </span>
                 </a>
 
               <a className="nav-link nav-link-style"
-              id={`contact`} href="#contact" 
+              id="n-contact" href="#contact" 
               onClick={() => setIndex(4)}>
-                <span className={visibility.contact ? "N-active" : "inactive"}>
+                <span className={navVisible.contact ? "N-active" : "inactive"}>
                   Contact
                 </span>
               </a>

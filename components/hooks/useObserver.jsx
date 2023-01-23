@@ -10,7 +10,10 @@ export default function useObserver() {
         blog: false,
         contact: false
     });
-
+    console.log("useObserver - useEffect");
+    console.log("useObserver - Visible: " + visibility.home);
+    console.log("useObserver - Visible: " + visibility.about);
+    console.warn("useObserver - Index: " + index);
     const ref = {
         home: useRef(null),
         about: useRef(null),
@@ -19,41 +22,34 @@ export default function useObserver() {
         contact: useRef(null)
     };
 
+    const updateVisibility = (currentRef) => {
+        Object.keys(visibility).forEach((key) => { 
+            visibility[key] = ref[key].current === currentRef;
+        });
+    }
+    
+    
     useEffect(() => {
         const observerCallback = ([entry]) => {
             setVisible(entry.isIntersecting);
             setIndex(entry.target.id);
-            let newVisibility = {...visibility};
-            Object.keys(visibility).forEach(key => { 
-                if(key === entry.target.id) newVisibility[key] = true;
-                else newVisibility[key] = false; 
-            });
-            setVisibility(newVisibility);
+            updateVisibility(entry.target);
         }
         const observer = new IntersectionObserver(observerCallback);
-        if (ref.home.current) {
-            observer.observe(ref.home.current);
-        }
-        if (ref.about.current) {
-            observer.observe(ref.about.current);
-        }
-        if (ref.projects.current) {
-            observer.observe(ref.projects.current);
-        }
-        if (ref.blog.current) {
-            observer.observe(ref.blog.current);
-        }
-        if (ref.contact.current) {
-            observer.observe(ref.contact.current);
-        }
+        Object.values(ref).forEach((r) => {
+            if (r.current) {
+                observer.observe(r.current);
+            }
+        });
         return () => {
-            if(ref.home.current) observer.unobserve(ref.home.current);
-            if(ref.about.current) observer.unobserve(ref.about.current);
-            if(ref.projects.current) observer.unobserve(ref.projects.current);
-            if(ref.blog.current) observer.unobserve(ref.blog.current);
-            if(ref.contact.current) observer.unobserve(ref.contact.current);
+            Object.values(ref).forEach((r) => {
+                if (r.current) {
+                    observer.unobserve(r.current);
+                }
+            });
         };
     }, [ref]);
+
 
     return { visible, visibility, setVisibility, index, setIndex, ref };
 }
