@@ -16,7 +16,7 @@ export default function Footer() {
                             </a>
                         </span>
                     </p>
-                    <p className="footer-header-subtext">Need to contact me? Email: 
+                    <p className="footer-header-subtext">Want to contact me? Email: 
                         <span className="footer-hyperlink">
                             <a id="footer-link" type="email"
                             href="mailto:inquire@jakelequire.dev">
