@@ -266,104 +266,106 @@ export default function AboutMe() {
                 <div className="toolkit-header">
                   <h1 className="toolkit-h">My Toolkit.</h1>
                 </div>
-                <div className="slideshow-category">
-                  <a
-                    className="category-FE"
-                    onClick={() => setCurrentCategory("frontend")}
-                    id={
-                      currentCategory === "frontend"
-                        ? "FE-active"
-                        : "FE-inactive"
-                    }
-                  >
-                    Frontend
-                  </a>
-                  <a
-                    className="category-BE"
-                    onClick={() => setCurrentCategory("backend")}
-                    id={
-                      currentCategory === "backend"
-                        ? "BE-active"
-                        : "BE-inactive"
-                    }
-                  >
-                    Backend
-                  </a>
-                </div>
-                {/* Determine which set of slides to display based on currentCategory */}
-                {currentCategory === "frontend" ? (
-                  <div className="slideshow-container">
-                    {FE_slides.map((slide, index) => (
-                      <div
-                        ref={ref[index]}
-                        key={index}
-                        className={
-                          index === FE_slideshowIndex
-                            ? "slideshow-active"
-                            : "slideshow-inactive"
-                        }
-                      >
-                        {slide.content}
-                      </div>
-                    ))}
-                    <div className="button-container">
-                      <a
-                        className="btn-prev"
-                        onClick={() => {
-                          buttonDirection("left");
-                          plusFE_Slides(-1);
-                        }}
-                      >
-                        &#11164;
-                      </a>
-                      <a
-                        className="btn-next"
-                        onClick={() => {
-                          buttonDirection("right");
-                          plusFE_Slides(1);
-                        }}
-                      >
-                        &#11166;
-                      </a>
-                    </div>
+                <div className="slideshow-inner-wrapper">
+                  <div className="slideshow-category">
+                    <a
+                      className="category-FE"
+                      onClick={() => setCurrentCategory("frontend")}
+                      id={
+                        currentCategory === "frontend"
+                          ? "FE-active"
+                          : "FE-inactive"
+                      }
+                    >
+                      Frontend
+                    </a>
+                    <a
+                      className="category-BE"
+                      onClick={() => setCurrentCategory("backend")}
+                      id={
+                        currentCategory === "backend"
+                          ? "BE-active"
+                          : "BE-inactive"
+                      }
+                    >
+                      Backend
+                    </a>
                   </div>
-                ) : (
-                  <div className="slideshow-container">
-                    {BE_slides.map((slide, index) => (
-                      <div
-                        ref={ref[index]}
-                        key={index}
-                        className={
-                          index === BE_slideshowIndex
-                            ? "slideshow-active"
-                            : "slideshow-inactive"
-                        }
-                      >
-                        {slide.content}
-                      </div>
-                    ))}
-                    <div className="button-container">
-                      <a
-                        className="btn-prev"
-                        onClick={() => {
-                          buttonDirection("left");
-                          plusBE_Slides(-1);
-                        }}
-                      >
+                  {/* Determine which set of slides to display based on currentCategory */}
+                  {currentCategory === "frontend" ? (
+                    <div className="slideshow-container">
+                      {FE_slides.map((slide, index) => (
+                        <div
+                          ref={ref[index]}
+                          key={index}
+                          className={
+                            index === FE_slideshowIndex
+                              ? "slideshow-active"
+                              : "slideshow-inactive"
+                          }
+                        >
+                          {slide.content}
+                        </div>
+                      ))}
+                      <div className="button-container">
+                        <a
+                          className="btn-prev"
+                          onClick={() => {
+                            buttonDirection("left");
+                            plusFE_Slides(-1);
+                          }}
+                        >
                           &#11164;
-                      </a>
-                      <a
-                        className="btn-next"
-                        onClick={() => {
-                          buttonDirection("right");
-                          plusBE_Slides(1);
-                        }}
-                      >
-                        &#11166;
-                      </a>
+                        </a>
+                        <a
+                          className="btn-next"
+                          onClick={() => {
+                            buttonDirection("right");
+                            plusFE_Slides(1);
+                          }}
+                        >
+                          &#11166;
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    <div className="slideshow-container">
+                      {BE_slides.map((slide, index) => (
+                        <div
+                          ref={ref[index]}
+                          key={index}
+                          className={
+                            index === BE_slideshowIndex
+                              ? "slideshow-active"
+                              : "slideshow-inactive"
+                          }
+                        >
+                          {slide.content}
+                        </div>
+                      ))}
+                      <div className="button-container">
+                        <a
+                          className="btn-prev"
+                          onClick={() => {
+                            buttonDirection("left");
+                            plusBE_Slides(-1);
+                          }}
+                        >
+                            &#11164;
+                        </a>
+                        <a
+                          className="btn-next"
+                          onClick={() => {
+                            buttonDirection("right");
+                            plusBE_Slides(1);
+                          }}
+                        >
+                          &#11166;
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
