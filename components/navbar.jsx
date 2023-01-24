@@ -7,36 +7,11 @@ import useObserver from "./hooks/useObserver.jsx";
 export default function NavBar() {
 
   const {visible, visibility, index, setIndex, ref } = useObserver();
-  const visibilityState = {
-    home: false,
-    about: false,
-    projects: false,
-    blog: false,
-    contact: false
-  }
-  useEffect(() => {
-    if(visibility.home) {
-      visibilityState.home = true;
-    }
-    if(visibility.about) {
-      visibilityState.about = true;
-    }
-    if(visibility.projects) {
-      visibilityState.projects = true;
-    }
-    if(visibility.blog) {
-      visibilityState.blog = true;
-    }
-    if(visibility.contact) {
-      visibilityState.contact = true;
-    }
-  }, [visibilityState])
+
 
    console.log("Navbar - Visible" + visible)
    console.log("Navbar - Visibility Home: " + visibility.home)
    console.log("Navbar - Visibility About: " + visibility.about)
-   console.log("Navbar - Visibility State Home: " + visibilityState.home)
-    console.log("Navbar - Visibility State About: " + visibilityState.about)
    console.log("Navbar - Ref: " + ref)
    console.log("Navbar - Index: " + index)
  
@@ -63,7 +38,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style" 
               id="n-home" href="#home" 
               onClick={() => setIndex(0)} >
-                <span className={visibilityState.home ? "N-active" : "inactive"}>
+                <span className={visibility.home ? "N-active" : "inactive"}>
                 Home
                 </span>
               </a>
@@ -71,7 +46,7 @@ export default function NavBar() {
               <a className="nav-link nav-link-style"
               id="n-about" href="#about" 
               onClick={() => setIndex(1)} >
-                <span className={visibilityState.about ? "N-active" : "inactive"}>
+                <span className={visibility.about ? "N-active" : "inactive"}>
                   About Me
                 </span>
               </a>

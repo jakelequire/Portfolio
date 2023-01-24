@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useDebugValue } from 'react';
 
 export default function useObserver() {
     const [visible, setVisible] = useState(false);
@@ -10,6 +11,7 @@ export default function useObserver() {
         blog: false,
         contact: false
     });
+    console.log(useDebugValue(visibility.home));
 
     const ref = {
         home: useRef(null),
@@ -21,10 +23,14 @@ export default function useObserver() {
     
     useEffect(() => {
         const updateVisibility = (currentRef) => {
-            Object.keys(visibility).forEach((key) => { 
-                visibility[key] = ref[key].current === currentRef;
+            setVisibility((prevVisibility) => {
+              const newVisibility = {...prevVisibility};
+              Object.keys(prevVisibility).forEach((key) => { 
+                newVisibility[key] = ref[key].current === currentRef;
+              });
+              return newVisibility;
             });
-        }
+          }          
 
         const observerCallback = ([entry]) => {
             setVisible(entry.isIntersecting);
@@ -46,6 +52,7 @@ export default function useObserver() {
         };
     }, [ref, visibility]);
 
+    
 
     return { visible, visibility, setVisibility, index, setIndex, ref };
 }
