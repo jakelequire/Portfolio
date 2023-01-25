@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import { ResponsiveRadar } from '@nivo/radar'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 
@@ -26,22 +26,21 @@ export default function Projects() {
             </div>
 
             <div className="project-description">
-            
+              <div className="preview-header">
+                <h1 className="preview-title">Data.</h1>
+              </div>
+              <div className="data-wrapper">
+                <div className="preview-sidebar"></div>
+                <div className="project-data">
 
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="project-preview">
             <div className="preview-wrapper">
-              <div className="preview-header">
-                <h1 className="preview-title">Preview.</h1>
-              </div>
-              <div className="preview-container">
-                <div className="preview-sidebar"></div>
-                <div className="preview-content">
 
-                </div>
-              </div>
               </div>
           </div> 
 

@@ -40,7 +40,8 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    height: 70%;
+    gap: 2rem;
+    height: 85%;
     width: 100%;
 }
 
@@ -74,7 +75,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #fff;
+    border: 1px solid #fff;
 }
 
 
@@ -84,11 +85,38 @@
     border-bottom: 3px solid var(--font-color-0);
 }
 
-.project-description {
+.data-wrapper {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
+.project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 60%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--bg-element-1)
+}
 
+.project-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid var(--font-color-0);
+}
 /* -- Preview -- */
 .project-preview {
     display: flex;
@@ -119,21 +147,13 @@
     width: 100%;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 2rem;
 }
 
 .preview-title {
     color: var(--font-color-0);
     font-size: var(--font-size-5xl);
     border-bottom: 3px solid var(--font-color-0);
-}
-
-.preview-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    height: 100%;
-    width: 100%;
-    padding-top: 2rem;
 }
 
 .preview-sidebar {
@@ -146,12 +166,4 @@
     border-bottom: 1px solid var(--font-color-0);
     background-color: #151515;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E") ;
-}
-
-.preview-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    border-bottom: 1px solid var(--font-color-0);
 }
