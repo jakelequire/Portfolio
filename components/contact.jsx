@@ -5,7 +5,10 @@ import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 import Resume from '../public/media/Resume.png';
 
 
-
+/*
+Note for self:
+    Maybe do something with a LinkedIn API to pull in my profile info
+*/
 
 export default function Contact() {
     const {visible, index, setIndex, ref } = useObserver();

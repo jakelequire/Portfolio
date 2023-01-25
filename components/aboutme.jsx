@@ -151,7 +151,7 @@ export default function AboutMe() {
             className={currentDirection}
             src={next}
             alt="NextJs"
-            width={200}
+            width={275}
             height={200}
           />
           <h1 className="BE_slideshow-text"> Next.js </h1>
