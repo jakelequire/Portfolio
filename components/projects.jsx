@@ -38,6 +38,9 @@ export default function Projects() {
               </div>
               <div className="preview-container">
                 <div className="preview-sidebar"></div>
+                <div className="preview-content">
+
+                </div>
               </div>
               </div>
           </div> 
