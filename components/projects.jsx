@@ -13,7 +13,7 @@ import TreeMap from '../public/media/icons/web-media/treemap-chart.svg'
 export default function Projects() {
   const { ref } = useObserver();
 
- const [iconHover, setIconHover] = useState(false);
+  const [iconHover, setIconHover] = useState(false);
 
   useEffect(() => {
     const icon = document.querySelector('.icon-radar-chart');
@@ -37,7 +37,10 @@ export default function Projects() {
                 <h1 className="p-title">My work.</h1>
               </div>
               <div className="items-container">
-
+                <div className="preview-sidebar"></div>
+                <div className="project-items">
+  
+                </div>
               </div>
             </div>
             {/* -- Data -- */}
