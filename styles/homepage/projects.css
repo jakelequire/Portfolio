@@ -142,7 +142,10 @@
 .icon-radar-chart {
     z-index: 4;
 }
-
+.icon-tree-map {
+    z-index: 4;
+    transform: scale(0.8);
+}
 .a-data-link {
     cursor: pointer;
     display: flex;

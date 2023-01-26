@@ -56,7 +56,7 @@ export default function Projects() {
                     width={50}
                     height={50} />
                   </a>
-                  <a className="a-data-link">
+                  <a className="">
                     <Image className="icon-tree-map"
                     src={TreeMap}
                     alt="Tree Map"
