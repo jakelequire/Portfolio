@@ -1,0 +1,32 @@
+[
+    {
+      "language": "fruity",
+      "chardonay": 42,
+      "carmenere": 95,
+      "syrah": 52
+    },
+    {
+      "language": "bitter",
+      "chardonay": 53,
+      "carmenere": 35,
+      "syrah": 54
+    },
+    {
+      "language": "heavy",
+      "chardonay": 47,
+      "carmenere": 23,
+      "syrah": 52
+    },
+    {
+      "language": "strong",
+      "chardonay": 70,
+      "carmenere": 106,
+      "syrah": 64
+    },
+    {
+      "language": "sunny",
+      "chardonay": 21,
+      "carmenere": 29,
+      "syrah": 74
+    }
+  ]
