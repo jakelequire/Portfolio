@@ -25,6 +25,32 @@ export default function Projects() {
     });
   }, []);
 
+  const projects = [
+    {
+      solboba: 
+      <div className="project-item">
+        <div className="project-title">
+          <h1 className="p-title">Project One.</h1>
+        </div>
+        <div className="item-description">
+          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+    },
+    {
+      portfolio:
+      <div className="project-item">
+        <div className="project-title">
+          <h1 className="p-title">Project Two.</h1>
+        </div>
+        <div className="item-description">
+          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+    }
+  ]
+
+
   // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={ref.projects}>
@@ -80,7 +106,7 @@ export default function Projects() {
                       dotSize={5}
                       dotColor={{ theme: 'background' }}
                       dotBorderWidth={5}
-                      blendMode="multiply"
+                      blendMode="normal"
                       motionConfig="wobbly"
                       colors={{ scheme: 'dark2' }}
                       legends={[
