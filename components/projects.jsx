@@ -37,10 +37,10 @@ export default function Projects() {
                 <h1 className="p-title">My work.</h1>
               </div>
               <div className="items-container">
-                <div className="preview-sidebar"></div>
                 <div className="project-items">
   
                 </div>
+                <div className="preview-sidebar"></div>
               </div>
             </div>
             {/* -- Data -- */}
