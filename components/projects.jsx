@@ -98,7 +98,7 @@ export default function Projects() {
                             {
                               on: 'hover',
                               style: {
-                                  itemTextColor: '#000'
+                                  itemTextColor: '#0affa9'
                               }
                             }
                           ]

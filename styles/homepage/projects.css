@@ -150,10 +150,11 @@
 
 .icon-radar-chart {
     z-index: 4;
+    transform: scale(0.7)
 }
 .icon-tree-map {
     z-index: 4;
-    transform: scale(0.8);
+    transform: scale(0.5);
 }
 .a-data-link {
     cursor: pointer;
@@ -174,9 +175,9 @@
     }
 
 #data-active::after {
-    content: "Radar Chart";
+    content: "Codebase";
     position: absolute;
-    top: 15%;
+    top: 25%;
     left: 3rem;
     width: 100%;
     height: 50%;
