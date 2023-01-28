@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image.js";
-import { ResponsiveRadar } from '@nivo/radar'
 /* -- Data -- */
 import { SolBoba } from './subComponents/projectData.jsx'
 /* -- Hooks -- */
@@ -99,37 +98,40 @@ export default function Projects() {
               <div className="items-container">
                 <div className="project-items">
 
-                  <a className="project-link _link-active"
+                  <a className={`project-link ${index === 0 ? "_link-active" : "_link-inactive"}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setIndex(0);
                   }}>
                     {projects[0].solboba}
-                    <span className="project-link-active"></span>
+                    {index === 0 ? activeIndex.active : activeIndex.inactive}
                   </a>
 
-                  <a className="project-link _link-inactive"
+                  <a className={`project-link ${index === 1 ? "_link-active" : "_link-inactive"}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setIndex(1);
                   }}>
                     {projects[1].portfolio}
+                    {index === 1 ? activeIndex.active : activeIndex.inactive}
                   </a>
 
-                  <a className="project-link _link-inactive"
+                  <a className={`project-link ${index === 2 ? "_link-active" : "_link-inactive"}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setIndex(2);
                   }}>
                     {projects[2].portfolio_backend}
+                    {index === 2 ? activeIndex.active : activeIndex.inactive}
                   </a>
 
-                  <a className="project-link _link-inactive"
+                  <a className={`project-link ${index === 3 ? "_link-active" : "_link-inactive"}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setIndex(3);
                   }}>
                     {projects[3].coming_soon}
+                    {index === 3 ? activeIndex.active : activeIndex.inactive}
                   </a>
                 </div>
                 <div className="preview-sidebar"></div>

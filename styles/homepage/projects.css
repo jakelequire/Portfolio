@@ -132,10 +132,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: var(--bg-element-2);
     color: var(--font-color-light-2);
     border-top: 1px solid var(--font-color-0);
     border-bottom: 1px solid var(--font-color-0);
     border-left: 1px solid var(--font-color-0);
+    transition: width 0.185s ease-in-out, background-color 0.185s ease-in-out;
 }
 
 ._link-inactive {
@@ -148,6 +150,10 @@
     border-top: 1px solid var(--font-color-4);
     border-bottom: 1px solid var(--font-color-4);
     border-left: 1px solid var(--font-color-4);
+    transition: width 0.185s ease-in-out;
+}
+._link-inactive:hover {
+    background-color: var(--bg-element-2)
 }
 
 .P-header-wrapper {
