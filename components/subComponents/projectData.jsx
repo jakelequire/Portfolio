@@ -51,7 +51,7 @@ export function SolBoba() {
            />  
        	},
        	{ /* -- TreeMap -- */
-        		TreeMap:
+        		treeMap:
               <ResponsiveTreeMap
                  data={treemap_SolBoba_Data}
                  identity="name"

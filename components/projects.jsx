@@ -188,7 +188,8 @@ export default function Projects() {
 
                 </div>
                   <div className="project-data">
-                    { SolBoba_DataCharts[0].radarChart }
+                  { dataIndex === 0 && SolBoba_DataCharts[0].radarChart }
+                  { dataIndex === 1 && SolBoba_DataCharts[1].treeMap }
                   </div>
               </div>
             </div>
