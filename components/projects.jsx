@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image.js";
 import { ResponsiveRadar } from '@nivo/radar'
 /* -- Data -- */
-import data from '../public/data/radar_SolBoba.json'
+import { SolBoba } from './subComponents/projectData.jsx'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 import useProjectIndex from "./hooks/useProjectIndex.jsx";
@@ -12,8 +12,9 @@ import TreeMap from '../public/media/icons/web-media/treemap-chart.svg'
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { ref } = useObserver();
-  const { index, setIndex } = useProjectIndex();
-  console.log("useProjectIndex: " + index)
+  const { index, setIndex, dataIndex, setDataIndex} = useProjectIndex();
+
+  const { SolBoba_DataCharts } = SolBoba();
 
   const [iconHover, setIconHover] = useState(false);
 
@@ -142,7 +143,11 @@ export default function Projects() {
               <div className="data-wrapper">
                 <div className="preview-sidebar">
                   <a className="a-data-link"
-                  id={iconHover ? "data-active" : "data-inactive"}>
+                  id={iconHover ? "data-active" : "data-inactive"}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setDataIndex(0);
+                  }}>
                     <Image className="icon-radar-chart"
                     src={RadarChart}
                     alt="Radar Chart"
@@ -158,42 +163,7 @@ export default function Projects() {
                   </a>
                 </div>
                   <div className="project-data">
-                    <ResponsiveRadar
-                      data={data}
-                      keys={[ 'lines', 'files', 'percentage' ]}
-                      indexBy="language"
-                      valueFormat=">-.2f"
-                      margin={{ top: 70, right: 80, bottom: 40, left: 40 }}
-                      borderColor={{ from: 'color' }}
-                      gridLabelOffset={25}
-                      dotSize={5}
-                      dotColor={{ theme: 'background' }}
-                      dotBorderWidth={5}
-                      blendMode="normal"
-                      motionConfig="wobbly"
-                      colors={{ scheme: 'dark2' }}
-                      legends={[
-                        {
-                          anchor: 'top-right',
-                          direction: 'column',
-                          translateX: -170,
-                          translateY: -40,
-                          itemWidth: 80,
-                          itemHeight: 20,
-                          itemTextColor: '#999',
-                          symbolSize: 12,
-                          symbolShape: 'circle',
-                          effects: [
-                            {
-                              on: 'hover',
-                              style: {
-                                  itemTextColor: '#0affa9'
-                              }
-                            }
-                          ]
-                        }
-                      ]}
-                    />
+                    { SolBoba_DataCharts[0].radarChart }
                   </div>
               </div>
             </div>
