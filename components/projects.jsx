@@ -28,9 +28,9 @@ export default function Projects() {
   const projects = [
     {
       solboba: 
-      <div className="project-item">
-        <div className="project-title">
-          <h1 className="p-title">Project One.</h1>
+      <div className="P-item-container">
+        <div className="P-header-wrapper">
+          <h2 className="p-header">Project One.</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -39,9 +39,31 @@ export default function Projects() {
     },
     {
       portfolio:
-      <div className="project-item">
-        <div className="project-title">
-          <h1 className="p-title">Project Two.</h1>
+      <div className="P-item-container">
+        <div className="P-header-wrapper">
+          <h2 className="p-header">Project Two.</h2>
+        </div>
+        <div className="item-description">
+          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+    },
+    {
+      portfolio_backend:
+      <div className="P-item-container">
+        <div className="P-header-wrapper">
+          <h2 className="p-header">Project Three.</h2>
+        </div>
+        <div className="item-description">
+          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+    },
+    {
+      coming_soon:
+      <div className="P-item-container">
+        <div className="P-header-wrapper">
+          <h2 className="p-header">Project Four.</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -64,7 +86,23 @@ export default function Projects() {
               </div>
               <div className="items-container">
                 <div className="project-items">
-  
+
+                  <a className="project-link">
+                    {projects[0].solboba}
+                    <span className="project-link-active"></span>
+                  </a>
+
+                  <a className="project-link">
+                    {projects[1].portfolio}
+                  </a>
+
+                  <a className="project-link">
+                    {projects[2].portfolio_backend}
+                  </a>
+
+                  <a className="project-link">
+                    {projects[3].coming_soon}
+                  </a>
                 </div>
                 <div className="preview-sidebar"></div>
               </div>

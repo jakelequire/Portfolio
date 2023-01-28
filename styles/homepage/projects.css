@@ -100,6 +100,54 @@
     padding: 1rem 0 1rem 1rem;
 }
 
+.P-item-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.project-link {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    position: relative;
+    border-top: 1px dashed var(--font-color-0);
+    border-bottom: 1px solid var(--font-color-0);
+    border-left: 1px solid var(--font-color-0);
+}
+.project-link-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    width: 1rem;
+    background-color: var(--primary-color-green);
+
+}
+.P-header-wrapper {
+
+}
+
+.p-header {
+    color: #fff;
+}
+
+.item-description {
+
+}
+
+.p-description {
+    color: #fff;
+}
+
 /******************/
 /* ---- Data ---- */
 /******************/
