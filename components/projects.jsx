@@ -2,16 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image.js";
 import { ResponsiveRadar } from '@nivo/radar'
 /* -- Data -- */
-import data from '../public/data/radarChart_One.json'
-// import dataTwo from '../public/data/treeMap_One.json'
+import data from '../public/data/radar_SolBoba.json'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
+import useProjectIndex from "./hooks/useProjectIndex.jsx";
 /* SVGs */
 import RadarChart from '../public/media/icons/web-media/radar-chart.svg'
 import TreeMap from '../public/media/icons/web-media/treemap-chart.svg'
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { ref } = useObserver();
+  const { index, setIndex } = useProjectIndex();
+  console.log("useProjectIndex: " + index)
 
   const [iconHover, setIconHover] = useState(false);
 
@@ -25,7 +27,14 @@ export default function Projects() {
     });
   }, []);
 
-  const projects = [
+
+  const activeIndex = {
+    active: <span className="project-link-active"></span>,
+    inactive: <span className="project-link-inactive"></span>
+  }
+
+/* -- Project Data -- */
+  const projects = [  
     {
       solboba: 
       <div className="P-item-container">
@@ -73,6 +82,8 @@ export default function Projects() {
   ]
 
 
+
+
   // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={ref.projects}>
@@ -87,20 +98,36 @@ export default function Projects() {
               <div className="items-container">
                 <div className="project-items">
 
-                  <a className="project-link _link-active">
+                  <a className="project-link _link-active"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIndex(0);
+                  }}>
                     {projects[0].solboba}
                     <span className="project-link-active"></span>
                   </a>
 
-                  <a className="project-link _link-inactive">
+                  <a className="project-link _link-inactive"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIndex(1);
+                  }}>
                     {projects[1].portfolio}
                   </a>
 
-                  <a className="project-link _link-inactive">
+                  <a className="project-link _link-inactive"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIndex(2);
+                  }}>
                     {projects[2].portfolio_backend}
                   </a>
 
-                  <a className="project-link _link-inactive">
+                  <a className="project-link _link-inactive"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIndex(3);
+                  }}>
                     {projects[3].coming_soon}
                   </a>
                 </div>

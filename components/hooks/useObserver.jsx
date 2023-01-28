@@ -11,7 +11,6 @@ export default function useObserver() {
         blog: false,
         contact: false
     });
-    console.log(useDebugValue(visibility.home));
 
     const ref = {
         home: useRef(null),
