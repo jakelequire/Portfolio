@@ -30,7 +30,7 @@ export default function Projects() {
       solboba: 
       <div className="P-item-container">
         <div className="P-header-wrapper">
-          <h2 className="p-header">Project One.</h2>
+          <h2 className="p-header">Sol Boba</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -41,7 +41,7 @@ export default function Projects() {
       portfolio:
       <div className="P-item-container">
         <div className="P-header-wrapper">
-          <h2 className="p-header">Project Two.</h2>
+          <h2 className="p-header">Portfolio</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -52,7 +52,7 @@ export default function Projects() {
       portfolio_backend:
       <div className="P-item-container">
         <div className="P-header-wrapper">
-          <h2 className="p-header">Project Three.</h2>
+          <h2 className="p-header">Protfolio Backend</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -63,7 +63,7 @@ export default function Projects() {
       coming_soon:
       <div className="P-item-container">
         <div className="P-header-wrapper">
-          <h2 className="p-header">Project Four.</h2>
+          <h2 className="p-header">Coming Soon</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -119,7 +119,6 @@ export default function Projects() {
                     <Image className="icon-radar-chart"
                     src={RadarChart}
                     alt="Radar Chart"
-                    title="Radar Chart"
                     width={50}
                     height={50} />
                   </a>
@@ -127,7 +126,6 @@ export default function Projects() {
                     <Image className="icon-tree-map"
                     src={TreeMap}
                     alt="Tree Map"
-                    title="Tree Map"
                     width={50}
                     height={50} />
                   </a>
