@@ -95,7 +95,7 @@ export function SolBoba() {
        	}
 	]
 
-    return { SolBoba_DataCharts }
+   return { SolBoba_DataCharts }
 }
 /*
 /*************************/

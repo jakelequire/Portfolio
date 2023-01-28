@@ -4,28 +4,43 @@ import Image from "next/image.js";
 import { SolBoba } from './subComponents/projectData.jsx'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
-import useProjectIndex from "./hooks/useProjectIndex.jsx";
 /* SVGs */
-import RadarChart from '../public/media/icons/web-media/radar-chart.svg'
-import TreeMap from '../public/media/icons/web-media/treemap-chart.svg'
+import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
+import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
+import TreeMapWhite from '../public/media/icons/web-media/treemap-chart-W.svg'
+import TreeMapGreen from '../public/media/icons/web-media/treemap-chart-G.svg'
+
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { ref } = useObserver();
-  const { index, setIndex, dataIndex, setDataIndex} = useProjectIndex();
+  const [index, setIndex] = useState(0);
+  const [dataIndex, setDataIndex] = useState(0);
 
   const { SolBoba_DataCharts } = SolBoba();
 
-  const [iconHover, setIconHover] = useState(false);
+  const [radarHover, setRadarHover] = useState(false);
+  const [treemapHover, setTreemapHover] = useState(false);
 
   useEffect(() => {
-    const icon = document.querySelector('.icon-radar-chart');
-    icon.addEventListener('mouseover', () => {
-      setIconHover(true);
+    const radarIcon = document.querySelector('.icon-radar-chart');
+    const treemapIcon = document.querySelector('.icon-tree-map');
+    radarIcon.addEventListener('mouseover', () => {
+      setRadarHover(true);
     });
-    icon.addEventListener('mouseout', () => {
-      setIconHover(false);
+    radarIcon.addEventListener('mouseout', () => {
+      setRadarHover(false);
     });
+    treemapIcon.addEventListener('mouseover', () => {
+      setTreemapHover(true);
+    }
+    );
+    treemapIcon.addEventListener('mouseout', () => {
+      setTreemapHover(false);
+    }
+    );
   }, []);
+
+
 
 
   const activeIndex = {
@@ -144,25 +159,33 @@ export default function Projects() {
               </div>
               <div className="data-wrapper">
                 <div className="preview-sidebar">
-                  <a className="a-data-link"
-                  id={iconHover ? "data-active" : "data-inactive"}
+
+                  <a className={`a-data-link ${dataIndex === 0 ? "data-active" : "data-inactive"}`}
+                  id={radarHover ? "radar-data-active" : "radar-data-inactive"}
                   onClick={(e) => {
                     e.preventDefault();
                     setDataIndex(0);
                   }}>
                     <Image className="icon-radar-chart"
-                    src={RadarChart}
+                    src={dataIndex === 0 ? RadarChartGreen : RadarChartWhite }
                     alt="Radar Chart"
                     width={50}
                     height={50} />
                   </a>
-                  <a className="">
+
+                  <a className={`a-data-link ${dataIndex === 1 ? "data-active" : "data-inactive"}`}
+                  id={treemapHover ? "tree-map-active" : "tree-map-data-inactive"}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setDataIndex(1);
+                  }}>
                     <Image className="icon-tree-map"
-                    src={TreeMap}
+                    src={dataIndex === 1 ? TreeMapGreen : TreeMapWhite }
                     alt="Tree Map"
                     width={50}
                     height={50} />
                   </a>
+
                 </div>
                   <div className="project-data">
                     { SolBoba_DataCharts[0].radarChart }
