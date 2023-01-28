@@ -87,20 +87,20 @@ export default function Projects() {
               <div className="items-container">
                 <div className="project-items">
 
-                  <a className="project-link">
+                  <a className="project-link _link-active">
                     {projects[0].solboba}
                     <span className="project-link-active"></span>
                   </a>
 
-                  <a className="project-link">
+                  <a className="project-link _link-inactive">
                     {projects[1].portfolio}
                   </a>
 
-                  <a className="project-link">
+                  <a className="project-link _link-inactive">
                     {projects[2].portfolio_backend}
                   </a>
 
-                  <a className="project-link">
+                  <a className="project-link _link-inactive">
                     {projects[3].coming_soon}
                   </a>
                 </div>
