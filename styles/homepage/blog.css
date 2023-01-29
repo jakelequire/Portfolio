@@ -47,8 +47,53 @@
     background-color: var(--bg-element-1);
 }
 
-
 .blog-featured-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-top: 2px dashed var(--font-color-0);
+    border-left: 2px dashed var(--font-color-0);
+}
+
+/**************************/
+/* -- Featured Article -- */
+/**************************/
+.blog-featured-content {
+
+}
+
+.blog-featured-thumbnail {
+    
+}
+
+.blog-featured-text {
+
+}
+
+.blog-featured-title {
+
+}
+
+.blog-featured-date {
+
+}
+
+.blog-featured-description {
+
+}
+
+.blog-featured-tags {
+
+}
+
+.blog-featured-category {
+
+}
+
+.featured-category {
 
 }
 
@@ -70,7 +115,7 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    height: 100%;
+    height: 70%;
     width: 100%;
     padding: 2rem;
     border-radius: 1.5rem;
