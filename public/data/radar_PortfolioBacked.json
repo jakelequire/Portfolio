@@ -1,0 +1,31 @@
+[
+    {
+      "language": "JavaScript",
+      "lines": 42,
+      "files": 195,
+      "percentage": 52,
+      "color": "#f7df1e"
+    },
+    {
+      "language": "TypeScript",
+      "lines": 63,
+      "files": 15,
+      "percentage": 24,
+      "color": "#3178c6"
+    },
+    {
+      "language": "JSX",
+      "lines": 17,
+      "files": 53,
+      "percentage": 92,
+      "color": "#61dafb"
+    },
+    {
+      "language": "CSS",
+      "lines": 140,
+      "files": 16,
+      "percentage": 24,
+      "color": "#264de4"
+    }
+  ]
+  

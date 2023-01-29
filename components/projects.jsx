@@ -4,6 +4,7 @@ import Image from "next/image.js";
 import { SolBoba } from './subComponents/projectData.jsx'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
+import useProjectIndex from "./hooks/useProjectIndex.jsx";
 /* SVGs */
 import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
 import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
@@ -13,8 +14,8 @@ import TreeMapGreen from '../public/media/icons/web-media/treemap-chart-G.svg'
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { ref } = useObserver();
-  const [index, setIndex] = useState(0);
-  const [dataIndex, setDataIndex] = useState(0);
+  const { index, setIndex, dataIndex, setDataIndex, curRadarData, curTreeMapData } = useProjectIndex();
+
 
   const { SolBoba_DataCharts } = SolBoba();
 
@@ -188,8 +189,8 @@ export default function Projects() {
 
                 </div>
                   <div className="project-data">
-                  { dataIndex === 0 && SolBoba_DataCharts[0].radarChart }
-                  { dataIndex === 1 && SolBoba_DataCharts[1].treeMap }
+                    {dataIndex === 0 ? curRadarData : null}
+                    {dataIndex === 1 ? curTreeMapData : null}
                   </div>
               </div>
             </div>
