@@ -22,7 +22,9 @@ export default function Projects() {
     curRadarData, 
     curTreeMapData,
     curWebsite,
-    curGithub
+    curGithub,
+    curName,
+    curImage
   } = useProjectIndex();
 
   const [radarHover, setRadarHover] = useState(false);
@@ -203,14 +205,25 @@ export default function Projects() {
           </div>
           {/* -- Project Preview -- */}          
           <div className="project-preview">
-            <div className="preview-btn-wrapper">
 
+            <div className="preview-btn-wrapper">
+              <div className="preview-btn-header">
+                <h1 className="preview-btn-title">{curName}.</h1>
+              </div>
+              <div className="preview-btns">
+                <a className="preview-btn" href={curGithub}>GitHub</a>
+                <a className="preview-btn" href={curWebsite}>Visit</a>
+              </div>
             </div>
+            
             <div className="preview-wrapper">
               <div className="preview-items-wrapper">
                 <div className="preview-sidebar"></div>
                 <div className="project-preview-item">
-
+                  <Image className="preview-image"
+                  id={index === 0 || index === 1 ? "image-active" : "image-inactive" }
+                  src={curImage}
+                  alt="Project Preview"/>
                 </div>
               </div>
             </div>

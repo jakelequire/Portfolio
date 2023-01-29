@@ -1,5 +1,21 @@
+/**
+ * @param {number} index - The index of the project to be displayed
+ * 
+ * @returns {object}    - The index of the project to be displayed, 
+ * |||||||||||||||||    - the index of the data to be displayed, 
+ * |||||||||||||||||    - the radar chart data, the treemap data, 
+ * |||||||||||||||||    - the website link, 
+ * |||||||||||||||||    - the github link, 
+ * |||||||||||||||||    - and the name of the project
+ * 
+ */
 import { useEffect, useState } from "react";
 import { SolBoba, Portfolio, PortfolioBackend, ComingSoon } from '../subComponents/projectData.jsx'
+
+import SolBoba_Image from '../../public/media/pictures/SolBobaHomepage-min.svg';
+import Portfolio_Image from '../../public/media/pictures/portfolioPreview.svg';
+import PortfolioBackend_Image from '../../public/media/pictures/portfoliobackend.svg';
+import ComingSoon_Image from '../../public/media/pictures/comingsoon.svg';
 
 export default function useProjectIndex() {
     const { SolBoba_DataCharts } = SolBoba();
@@ -15,6 +31,8 @@ export default function useProjectIndex() {
 
     const [curWebsite, setCurWebsite] = useState('');
     const [curGithub, setCurGithub] = useState('');
+    const [curName, setCurName] = useState('');
+    const [curImage, setCurImage] = useState();
 
     const websites = {
         solboba: "https://solboba.com",
@@ -32,15 +50,23 @@ export default function useProjectIndex() {
         if (index === 0) {
             setCurWebsite(websites.solboba);
             setCurGithub(gitHub.solboba);
+            setCurName('SolBoba');
+            setCurImage(SolBoba_Image)
         } else if (index === 1) {
             setCurWebsite(websites.portfolio);
             setCurGithub(gitHub.portfolio);
+            setCurName('Portfolio');
+            setCurImage(Portfolio_Image)
         } else if (index === 2) {
             setCurWebsite(websites.portfolio_backend);
             setCurGithub(gitHub.portfolio_backend);
+            setCurName('Portfolio Backend');
+            setCurImage(PortfolioBackend_Image)
         } else if (index === 3) {
             setCurWebsite(websites.comingsoon);
             setCurGithub(gitHub.comingsoon);
+            setCurName('Coming Soon');
+            setCurImage(ComingSoon_Image)
         }
     }, [index]);
     
@@ -68,6 +94,8 @@ export default function useProjectIndex() {
         curRadarData, 
         curTreeMapData, 
         curWebsite, 
-        curGithub 
+        curGithub,
+        curName,
+        curImage
     }
 }
