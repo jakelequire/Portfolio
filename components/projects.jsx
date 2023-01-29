@@ -130,7 +130,7 @@ export default function Projects() {
             <div className="project-item">
               <div className="project-content-wrapper">
                 <div className="project-title">
-                  <h1 className="p-title">My work.</h1>
+                  <h1 className="preview-title">My work.</h1>
                 </div>
                 <div className="items-container">
                   <div className="project-items">

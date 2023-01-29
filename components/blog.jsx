@@ -11,8 +11,8 @@ export default function Blog() {
                 <div className="blog-featured-wrapper">
                     
                     <div className="blog-featured">
-                        <div className="featured-header">
-                            <h2 className="blog-featured-title">Featured Article.</h2>
+                        <div className="preview-header">
+                            <h2 className="preview-title">Featured Article.</h2>
                         </div>
                         <div className="blog-featured-content">
 
@@ -20,8 +20,8 @@ export default function Blog() {
                     </div>
 
                     <div className="blog-recents">
-                        <div className="recents-header">
-                            <h2 className="blog-preview-title">Recent Articles.</h2>
+                        <div className="preview-header">
+                            <h2 className="preview-title">Recent Articles.</h2>
                         </div>
 
                     </div>
@@ -31,7 +31,7 @@ export default function Blog() {
                 <div className="blog-preview-wrapper">
                     <div className="blog-preview">
                         <div className="preview-header">
-                            
+                            <h2 className="preview-title">Article Preview.</h2>
                         </div>
 
                     </div>

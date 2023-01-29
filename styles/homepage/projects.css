@@ -112,12 +112,6 @@
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23666' stroke-width='2' stroke-dasharray='12%2c 17' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
-.p-title {
-    color: var(--font-color-0);
-    font-size: var(--font-size-5xl);
-    border-bottom: 3px solid var(--font-color-0);
-}
-
 .project-items {
     display: flex;
     flex-direction: column;
@@ -325,7 +319,7 @@
 
 .preview-title {
     color: var(--font-color-0);
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
     border-bottom: 3px solid var(--font-color-0);
 }
 
