@@ -4,8 +4,10 @@ import Image from "next/image.js";
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 import useProjectIndex from "./hooks/useProjectIndex.jsx";
 /* SVGs */
-import ExternalLink from "../public/media/icons/web-media/external-link-black.svg";
-import GitHub from "../public/media/icons/tech-branding/github-black.svg";
+import ExternalLink_W from "../public/media/icons/web-media/external-link-black.svg";
+import ExternalLink from "../public/media/icons/web-media/external-link.svg";
+import GitHub_W from "../public/media/icons/tech-branding/github-black.svg";
+import GitHub from "../public/media/icons/tech-branding/github.svg";
 import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
 import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
 import TreeMapWhite from '../public/media/icons/web-media/treemap-chart-W.svg'
@@ -29,6 +31,8 @@ export default function Projects() {
 
   const [radarHover, setRadarHover] = useState(false);
   const [treemapHover, setTreemapHover] = useState(false);
+  const [gitBtnHover, setGitBtnHover] = useState(false);
+  const [webBtnHover, setWebBtnHover] = useState(false);
 
   useEffect(() => {
     const radarIcon = document.querySelector('.icon-radar-chart');
@@ -47,14 +51,31 @@ export default function Projects() {
     });
   }, []);
 
+  useEffect(() => {
+    const gitBtn = document.querySelector('.github-btn');
+    const webBtn = document.querySelector('.website-btn');
+    gitBtn.addEventListener('mouseover', () => {
+      setGitBtnHover(true);
+    });
+    gitBtn.addEventListener('mouseout', () => {
+      setGitBtnHover(false);
+    });
+    webBtn.addEventListener('mouseover', () => {
+      setWebBtnHover(true);
+    });
+    webBtn.addEventListener('mouseout', () => {
+      setWebBtnHover(false);
+    });
+  }, []);
+
   const activeIndex = {
     active:
     <span className="project-link-active">
       <a href={curWebsite} className="link-active-website">
-        <Image src={ExternalLink} alt="Website Link" width={30} height={30} />
+        <Image src={ExternalLink_W} alt="Website Link" width={30} height={30} />
       </a>
       <a href={curGithub} className="link-active-github">
-        <Image src={GitHub} alt="GitHub Link" width={30} height={30} />
+        <Image src={GitHub_W} alt="GitHub Link" width={30} height={30} />
       </a>
     </span>
     ,
@@ -108,7 +129,7 @@ export default function Projects() {
     }
   ]
 
-  // >------------------------------------------------------------------------------------------
+// >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={ref.projects}>
       <div className="projects-container">
@@ -207,12 +228,25 @@ export default function Projects() {
           <div className="project-preview">
 
             <div className="preview-btn-wrapper">
-              <div className="preview-btn-header">
-                <h1 className="preview-btn-title">{curName}.</h1>
-              </div>
+
               <div className="preview-btns">
-                <a className="preview-btn" href={curGithub}>GitHub</a>
-                <a className="preview-btn" href={curWebsite}>Visit</a>
+                <a className="preview-btn github-btn" href={curGithub}>
+                  <Image className="icon-github"
+                  src={gitBtnHover ? GitHub_W : GitHub}
+                  alt="Github Icon"
+                  width={50}
+                  height={50} />
+                  GitHub
+                </a>
+                <a className="preview-btn website-btn" 
+                href={curWebsite}>
+                  <Image className="icon-website"
+                  src={webBtnHover ? ExternalLink_W : ExternalLink }
+                  alt="Website Icon"
+                  width={40}
+                  height={40} />
+                  Visit
+                </a>
               </div>
             </div>
             
