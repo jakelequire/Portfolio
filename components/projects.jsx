@@ -203,14 +203,19 @@ export default function Projects() {
           </div>
           {/* -- Project Preview -- */}          
           <div className="project-preview">
-            <div className="preview-wrapper">
-              <div className="project-preview-item">
+            <div className="preview-btn-wrapper">
 
-              </div>
-              <div className="preview-sidebar"></div>
             </div>
-          </div> 
+            <div className="preview-wrapper">
+              <div className="preview-items-wrapper">
+                <div className="preview-sidebar"></div>
+                <div className="project-preview-item">
 
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

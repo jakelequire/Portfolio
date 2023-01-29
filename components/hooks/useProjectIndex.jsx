@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { SolBoba, Portfolio, PortfolioBackend, ComingSoon } from '../subComponents/projectData.jsx'
 
-
-
 export default function useProjectIndex() {
     const { SolBoba_DataCharts } = SolBoba();
     const { Portfolio_DataCharts } = Portfolio();
