@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image.js";
-/* -- Data -- */
-import { SolBoba } from './subComponents/projectData.jsx'
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
 import useProjectIndex from "./hooks/useProjectIndex.jsx";
 /* SVGs */
+import ExternalLink from "../public/media/icons/web-media/external-link-black.svg";
+import GitHub from "../public/media/icons/tech-branding/github-black.svg";
 import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
 import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
 import TreeMapWhite from '../public/media/icons/web-media/treemap-chart-W.svg'
@@ -14,10 +14,16 @@ import TreeMapGreen from '../public/media/icons/web-media/treemap-chart-G.svg'
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
   const { ref } = useObserver();
-  const { index, setIndex, dataIndex, setDataIndex, curRadarData, curTreeMapData } = useProjectIndex();
-
-
-  const { SolBoba_DataCharts } = SolBoba();
+  const { 
+    index, 
+    setIndex, 
+    dataIndex, 
+    setDataIndex, 
+    curRadarData, 
+    curTreeMapData,
+    curWebsite,
+    curGithub
+  } = useProjectIndex();
 
   const [radarHover, setRadarHover] = useState(false);
   const [treemapHover, setTreemapHover] = useState(false);
@@ -33,23 +39,26 @@ export default function Projects() {
     });
     treemapIcon.addEventListener('mouseover', () => {
       setTreemapHover(true);
-    }
-    );
+    });
     treemapIcon.addEventListener('mouseout', () => {
       setTreemapHover(false);
-    }
-    );
+    });
   }, []);
 
-
-
-
   const activeIndex = {
-    active: <span className="project-link-active"></span>,
+    active:
+    <span className="project-link-active">
+      <a href={curWebsite} className="link-active-website">
+        <Image src={ExternalLink} alt="Website Link" width={30} height={30} />
+      </a>
+      <a href={curGithub} className="link-active-github">
+        <Image src={GitHub} alt="GitHub Link" width={30} height={30} />
+      </a>
+    </span>
+    ,
     inactive: <span className="project-link-inactive"></span>
   }
 
-/* -- Project Data -- */
   const projects = [  
     {
       solboba: 
@@ -77,7 +86,7 @@ export default function Projects() {
       portfolio_backend:
       <div className="P-item-container">
         <div className="P-header-wrapper">
-          <h2 className="p-header">Protfolio Backend</h2>
+          <h2 className="p-header">Portfolio Backend</h2>
         </div>
         <div className="item-description">
           <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -96,9 +105,6 @@ export default function Projects() {
       </div>
     }
   ]
-
-
-
 
   // >------------------------------------------------------------------------------------------
   return (
@@ -198,7 +204,10 @@ export default function Projects() {
           {/* -- Project Preview -- */}          
           <div className="project-preview">
             <div className="preview-wrapper">
+              <div className="project-preview-item">
 
+              </div>
+              <div className="preview-sidebar"></div>
             </div>
           </div> 
 

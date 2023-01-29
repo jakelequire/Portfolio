@@ -123,7 +123,7 @@
     align-content: center;
     align-items: center;
     height: 100%;
-    width: 1rem;
+    width: 2.5rem;
     background-color: var(--primary-color-green);
 
 }
@@ -155,17 +155,6 @@
     ._link-inactive:hover {
         background-color: var(--bg-element-2)
     }
-
-.P-header-wrapper {
-
-}
-
-.p-header {
-}
-
-.item-description {
-
-}
 
 .p-description {
     font-family: var(--font-family-fira);

@@ -15,6 +15,37 @@ export default function useProjectIndex() {
     const [curRadarData, setCurRadarData] = useState([]);
     const [curTreeMapData, setCurTreeMapData] = useState([]);
 
+    const [curWebsite, setCurWebsite] = useState('');
+    const [curGithub, setCurGithub] = useState('');
+
+    const websites = {
+        solboba: "https://solboba.com",
+        portfolio: "https://portfolio-2021.vercel.app",
+        portfolio_backend: "https://portfolio-backend-2021.herokuapp.com",
+        comingsoon: "https://comingsoon-2021.vercel.app"
+      }
+      const gitHub = {
+        solboba: "https://github.com/jakelequire/SolBoba",
+        portfolio: "https://github.com/jakelequire/Portfolio",
+        portfolio_backend: "https://github.com/jakelequire/portfolio-backend"
+      }
+    
+    useEffect(() => {
+        if (index === 0) {
+            setCurWebsite(websites.solboba);
+            setCurGithub(gitHub.solboba);
+        } else if (index === 1) {
+            setCurWebsite(websites.portfolio);
+            setCurGithub(gitHub.portfolio);
+        } else if (index === 2) {
+            setCurWebsite(websites.portfolio_backend);
+            setCurGithub(gitHub.portfolio_backend);
+        } else if (index === 3) {
+            setCurWebsite(websites.comingsoon);
+            setCurGithub(gitHub.comingsoon);
+        }
+    }, [index]);
+    
     useEffect(() => {
         if (index === 0) {
             setCurRadarData(SolBoba_DataCharts[0].radarChart);
@@ -31,7 +62,14 @@ export default function useProjectIndex() {
         }
     }, [index]);
 
-    return { index, setIndex, dataIndex, setDataIndex, curRadarData, curTreeMapData }
-
-
+    return {
+        index, 
+        setIndex, 
+        dataIndex, 
+        setDataIndex, 
+        curRadarData, 
+        curTreeMapData, 
+        curWebsite, 
+        curGithub 
+    }
 }

@@ -17,7 +17,6 @@ import treemap_ComingSoon_Data from '../../public/data/treemap_ComingSoon.json'
 /* ----  Sol Boba  ---- */
 /************************/
 export function SolBoba() {
-
    const SolBoba_DataCharts = [
      	{ /* -- Radar Chart -- */
        	radarChart: 
@@ -107,10 +106,8 @@ export function SolBoba() {
 				</div>
        	}
 	]
-
    return { SolBoba_DataCharts }
 }
-/*
 /*************************/
 /* ----  Portfolio  ---- */
 /*************************/
@@ -204,10 +201,8 @@ export function Portfolio() {
 			 </div>
 		  }
  ]
-
  return { Portfolio_DataCharts }
 }
-
 /********************************/
 /* ---- Portfolio Backend  ---- */
 /********************************/
@@ -301,10 +296,8 @@ export function PortfolioBackend() {
 			 </div>
 		  }
  ]
-
  return { PortfolioBackend_DataCharts }
 }
-
 /***************************/
 /* ----  Coming Soon  ---- */
 /***************************/
