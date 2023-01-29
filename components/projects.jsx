@@ -245,7 +245,7 @@ export default function Projects() {
             
             <div className="preview-wrapper">
               <div className="preview-items-wrapper">
-                <div className="preview-sidebar"></div>
+                <div className="custom_preview-sidebar"></div>
                 <div className="project-preview-item">
                   <Image className="preview-image"
                   id={index === 0 || index === 1 ? "image-active" : "image-inactive" }
