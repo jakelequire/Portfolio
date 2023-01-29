@@ -32,7 +32,7 @@ export default function useProjectIndex() {
     const [curWebsite, setCurWebsite] = useState('');
     const [curGithub, setCurGithub] = useState('');
     const [curName, setCurName] = useState('');
-    const [curImage, setCurImage] = useState();
+    const [curImage, setCurImage] = useState('');
 
     const websites = {
         solboba: "https://solboba.com",

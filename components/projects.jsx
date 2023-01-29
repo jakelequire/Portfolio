@@ -69,16 +69,7 @@ export default function Projects() {
   }, []);
 
   const activeIndex = {
-    active:
-    <span className="project-link-active">
-      <a href={curWebsite} className="link-active-website">
-        <Image src={ExternalLink_W} alt="Website Link" width={30} height={30} />
-      </a>
-      <a href={curGithub} className="link-active-github">
-        <Image src={GitHub_W} alt="GitHub Link" width={30} height={30} />
-      </a>
-    </span>
-    ,
+    active: <span className="project-link-active"></span>,
     inactive: <span className="project-link-inactive"></span>
   }
 
@@ -137,49 +128,51 @@ export default function Projects() {
           {/* -- List of Projects -- */}
           <div className="project-heading">
             <div className="project-item">
-              <div className="project-title">
-                <h1 className="p-title">My work.</h1>
-              </div>
-              <div className="items-container">
-                <div className="project-items">
-
-                  <a className={`project-link ${index === 0 ? "_link-active" : "_link-inactive"}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIndex(0);
-                  }}>
-                    {projects[0].solboba}
-                    {index === 0 ? activeIndex.active : activeIndex.inactive}
-                  </a>
-
-                  <a className={`project-link ${index === 1 ? "_link-active" : "_link-inactive"}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIndex(1);
-                  }}>
-                    {projects[1].portfolio}
-                    {index === 1 ? activeIndex.active : activeIndex.inactive}
-                  </a>
-
-                  <a className={`project-link ${index === 2 ? "_link-active" : "_link-inactive"}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIndex(2);
-                  }}>
-                    {projects[2].portfolio_backend}
-                    {index === 2 ? activeIndex.active : activeIndex.inactive}
-                  </a>
-
-                  <a className={`project-link ${index === 3 ? "_link-active" : "_link-inactive"}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIndex(3);
-                  }}>
-                    {projects[3].coming_soon}
-                    {index === 3 ? activeIndex.active : activeIndex.inactive}
-                  </a>
+              <div className="project-content-wrapper">
+                <div className="project-title">
+                  <h1 className="p-title">My work.</h1>
                 </div>
-                <div className="preview-sidebar"></div>
+                <div className="items-container">
+                  <div className="project-items">
+    
+                    <a className={`project-link ${index === 0 ? "_link-active" : "_link-inactive"}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIndex(0);
+                    }}>
+                      {projects[0].solboba}
+                      {index === 0 ? activeIndex.active : activeIndex.inactive}
+                    </a>
+                  
+                    <a className={`project-link ${index === 1 ? "_link-active" : "_link-inactive"}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIndex(1);
+                    }}>
+                      {projects[1].portfolio}
+                      {index === 1 ? activeIndex.active : activeIndex.inactive}
+                    </a>
+                  
+                    <a className={`project-link ${index === 2 ? "_link-active" : "_link-inactive"}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIndex(2);
+                    }}>
+                      {projects[2].portfolio_backend}
+                      {index === 2 ? activeIndex.active : activeIndex.inactive}
+                    </a>
+                  
+                    <a className={`project-link ${index === 3 ? "_link-active" : "_link-inactive"}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIndex(3);
+                    }}>
+                      {projects[3].coming_soon}
+                      {index === 3 ? activeIndex.active : activeIndex.inactive}
+                    </a>
+                  </div>
+                  <div className="preview-sidebar"></div>
+                </div>
               </div>
             </div>
             {/* -- Data -- */}
