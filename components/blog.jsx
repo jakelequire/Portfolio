@@ -17,19 +17,25 @@ export default function Blog() {
 
    const currentlyFeatured = {
       content:
-      <div className="blog-featured-content">
-         <div className="blog-featured-thumbnail">
-            <Image src={featuredArticle.thumbnail} alt={featuredArticle.title} />
+      <div className="featured-content">
+         <div className="featured-thumbnail">
+            <Image 
+				className="thumbnail"
+				src={featuredArticle.thumbnail}
+				alt={featuredArticle.title}
+				/>
          </div>
-			<div className="blog-featured-text">
-				<h3 className="blog-featured-title">{featuredArticle.title}</h3>
-				<p className="blog-featured-date">{featuredArticle.date}</p>
-				<p className="blog-featured-description">{featuredArticle.description}</p>
+			<div className="featured-text">
+				<h3 className="featured-title">{featuredArticle.title}</h3>
+				<p className="featured-date">{featuredArticle.date}</p>
 			</div>
-			<div className="blog-featured-tags">
+			<div className="featured-description-wrapper">
+				<p className="featured-description">{featuredArticle.description}</p>
+			</div>
+			<div className="featured-tags">
 
 			</div>
-			<div className="blog-featured-category">
+			<div className="featured-category">
 				<p className="featured-category">{featuredArticle.category}</p>
 			</div>
       </div>
@@ -48,7 +54,7 @@ export default function Blog() {
                      <h2 className="preview-title">Featured Article.</h2>
                   </div>
                   <div className="blog-featured-content">
-
+							{currentlyFeatured.content}
                   </div>
                </div>
 
