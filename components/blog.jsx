@@ -76,6 +76,9 @@ export default function Blog() {
                   <div className="preview-header">
                      <h2 className="preview-title">Article Preview.</h2>
                   </div>
+						<div className="preview-content">
+
+						</div>
                </div>
             </div>
 				
