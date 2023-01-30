@@ -10,9 +10,8 @@ export default function Blog() {
       thumbnail: featuredThumbnail,
       title: "Featured Article",
       date: "2021-01-01",
-      description: "",
-		category: "", 
-		tags: []
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
+		tags: ["tag1", "tag2", "tag3"],
 	}
 
    const currentlyFeatured = {
@@ -33,10 +32,9 @@ export default function Blog() {
 				<p className="featured-description">{featuredArticle.description}</p>
 			</div>
 			<div className="featured-tags">
-
-			</div>
-			<div className="featured-category">
-				<p className="featured-category">{featuredArticle.category}</p>
+				{featuredArticle.tags.map((tag, index) => {
+					return <p className="featured-tag" key={index}>#{tag}</p>
+				})}
 			</div>
       </div>
    }
@@ -55,13 +53,21 @@ export default function Blog() {
                   </div>
                   <div className="blog-featured-content">
 							{currentlyFeatured.content}
+						<div className="featured-button-wrapper">
+							<span className="f-dot f-dot-active"></span>
+							<span className="f-dot"></span>
+							<span className="f-dot"></span>
+						</div>
                   </div>
                </div>
 
                <div className="blog-recents">
-                  <div className="preview-header">
-						
-                  </div>
+						<div className="blog-recents-content">
+							<div className="article-buttons">
+								<a className="recent-button" href="#">All Articles</a>
+								<a className="recent-button" href="#">View Recent</a>
+							</div>
+						</div>
                </div>
             </div>
 
