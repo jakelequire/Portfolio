@@ -32,6 +32,8 @@
     align-items: center;
     width: 100%;
     padding: 3rem;
+    border-left: 2px dashed var(--font-color-3);
+    border-top: 2px dashed var(--font-color-3);
 }
 
 .aboutme {

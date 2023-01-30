@@ -12,7 +12,7 @@
 import { useEffect, useState } from "react";
 import { SolBoba, Portfolio, PortfolioBackend, ComingSoon } from '../subComponents/projectData.jsx'
 
-import SolBoba_Image from '../../public/media/pictures/SolBobaHomepage-min.svg';
+import SolBoba_Image from '../../public/media/pictures/SolBobaHomepage.svg';
 import Portfolio_Image from '../../public/media/pictures/portfolioPreview.svg';
 import PortfolioBackend_Image from '../../public/media/pictures/portfoliobackend.svg';
 import ComingSoon_Image from '../../public/media/pictures/comingsoon.svg';
