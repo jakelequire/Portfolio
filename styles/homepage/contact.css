@@ -19,52 +19,18 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-top: 5rem;
   flex-wrap: wrap;
 }
 .contact-info {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   align-content: center;
-  width: 100%;
+  gap: 1rem;
+  padding: 3rem;
   height: 100%;
-  margin-top: 2rem;
+  width: 100%;
 }
-
-#contact-C {
-    text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
-}
-
-.contact-header {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: auto;
-    width: 100%;
-    font-size: 4rem;
-    padding-bottom: 0.5rem;
-    color: var(--font-color-0);
-    border-bottom: solid #fff;
-}
-    .contact-header::before {
-        content: "Contact";
-        font-size: 20rem;
-        font-family: var(--font-family-lato);
-        color: rgba(255, 255, 255, 0.03);
-        font-weight: 100;
-        position: absolute;
-        background: inherit;
-        z-index: 0;
-        top: -60%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
 
 .contact-form {
   display: flex;
@@ -72,7 +38,7 @@
   align-content: center;
   justify-content: center;
   color: #fff;
-  background-color: rgb(14, 14, 14);
+  background-color: var(--bg-element-1);
   box-shadow: 0 5px 25px 0 rgb(0 0 0 / 60%);
   padding: 2.5rem;
   width: 90%;
@@ -223,7 +189,6 @@ form [type = "email"] {
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-top: 5rem;
 }
 
 .resume {
@@ -233,7 +198,7 @@ form [type = "email"] {
   align-content: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(14, 14, 14);
+  background-color: var(--bg-element-1);
   box-shadow: 0 5px 25px 0 rgb(0 0 0 / 60%);
   padding: 2.5rem;
   width: 70%;
