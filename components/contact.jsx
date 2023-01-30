@@ -54,6 +54,11 @@ export default function Contact() {
 // >------------------------------------------------------------------------------------------
     return (
         <div className="contact-wrapper" id="contact" ref={ref.contact}>
+            <div className="index-category-header">
+                <h1 className="category-header-text">
+                    Contact.
+                </h1>
+            </div>
             <div className="contact-info">
                 <div className="contact">
                     <form ref={formRef} className="contact-form" action="/contact" method="POST">

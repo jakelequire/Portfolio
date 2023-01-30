@@ -43,6 +43,11 @@ export default function Blog() {
 // >------------------------------------------------------------------------------------------
     return (
       <div className="blog-wrapper" id="blog" ref={ref.blog}>
+               <div className="index-category-header">
+        <h1 className="category-header-text">
+          Blog.
+        </h1>
+      </div>
          <div className="blog-container">
 
             <div className="blog-featured-wrapper">

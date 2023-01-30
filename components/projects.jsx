@@ -123,6 +123,11 @@ export default function Projects() {
 // >------------------------------------------------------------------------------------------
   return (
     <div className="projects-wrapper" id="projects" ref={ref.projects}>
+      <div className="index-category-header">
+        <h1 className="category-header-text">
+          Projects.
+        </h1>
+      </div>
       <div className="projects-container">
         <div className="project-list">
           {/* -- List of Projects -- */}
