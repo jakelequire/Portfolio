@@ -229,15 +229,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
     width: 30%;
     height: auto;
 }
 
 .recent-button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #fff;
+    text-decoration: none;
     padding: 1rem 1.5rem;
     width: 100%;
+    border: 1px solid var(--primary-color-green);
+    color: var(--font-color-0);
 }
+    .recent-button:hover {
+        background-color: var(--primary-color-green);
+        color: #000;
+    }
