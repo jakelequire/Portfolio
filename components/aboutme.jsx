@@ -223,7 +223,7 @@ export default function AboutMe() {
     <div className="aboutme-wrapper" id="about" ref={ref.about}>
             <div className="index-category-header">
         <h1 className="category-header-text">
-          About Me.
+          About Me
         </h1>
       </div>
       <div className="aboutme-container">

@@ -56,7 +56,7 @@ export default function Contact() {
         <div className="contact-wrapper" id="contact" ref={ref.contact}>
             <div className="index-category-header">
                 <h1 className="category-header-text">
-                    Contact.
+                    Contact
                 </h1>
             </div>
             <div className="contact-info">

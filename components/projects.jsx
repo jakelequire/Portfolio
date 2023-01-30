@@ -125,7 +125,7 @@ export default function Projects() {
     <div className="projects-wrapper" id="projects" ref={ref.projects}>
       <div className="index-category-header">
         <h1 className="category-header-text">
-          Projects.
+          Projects
         </h1>
       </div>
       <div className="projects-container">
