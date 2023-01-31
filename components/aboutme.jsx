@@ -217,7 +217,6 @@ export default function AboutMe() {
         observer.unobserve(el.current)
       );
   }, []);
-
   /* ------------------------------------------------------------------------------------------------------------- */
   return (
     <div className="aboutme-wrapper" id="about" ref={ref.about}>
