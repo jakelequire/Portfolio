@@ -47,27 +47,15 @@
 
 .about-visible {
     display: flex;
-    border-bottom: solid var(--font-color-0);
     width: fit-content;
     font-family: var(--font-family-josefin);
     font-size:var(--font-size-3xl);
     color: var(--font-color-0);
 }
 
-    .about-text-wrapper {
-        padding-left: 1rem;
-        font-size: 5rem;
-    }
-    .dev-D {
-        text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
-    }
-    .dev-M {
-        text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159;
-    }
-
 .aboutme-caption {
     display: flex;
-    padding-top: 3rem;
+    padding-top: 2rem;
 }
 
 .aboutme-caption-text {
@@ -132,12 +120,6 @@
     color: var(--font-color-0);
     padding-bottom: 3rem;
     z-index: 2;
-}
-.toolkit-h {
-    display: flex;
-    width: fit-content;
-    font-size: 3rem;
-    border-bottom: solid var(--font-color-0);
 }
 
 .slideshow-wrapper {

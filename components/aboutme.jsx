@@ -235,7 +235,7 @@ export default function AboutMe() {
             ref={intersectionObserver.header}
           >
             <div className="aboutme-header a-header">
-              <h2 className="about-header">Meet the Developer.</h2>
+              <h2 className="preview-title">Meet the Developer.</h2>
             </div>
           </div>
           <div className="aboutme-caption">
@@ -269,7 +269,7 @@ export default function AboutMe() {
             <div className="toolkit-slideshow">
               <div className="slideshow-wrapper">
                 <div className="toolkit-header">
-                  <h1 className="toolkit-h">My Toolkit.</h1>
+                  <h1 className="preview-title">My Toolkit.</h1>
                 </div>
                 <div className="slideshow-inner-wrapper">
                   <div className="slideshow-category">
