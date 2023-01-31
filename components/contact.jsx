@@ -11,19 +11,8 @@ Note for self:
 */
 
 export default function Contact() {
-    const {visible, index, setIndex, ref } = useObserver();
+    const { ref } = useObserver();
 
-    const resumeBtn = useRef(null);
-    const resumeImg = useRef(null);
-  // mental note: make this a custom hook to reference the same event listeners
-    useEffect(() => {
-        resumeBtn.current.addEventListener('mouseover', function() {
-            resumeImg.current.setAttribute('id', 'mouseover-active');
-        });
-        resumeBtn.current.addEventListener('mouseout', function() {
-            resumeImg.current.removeAttribute('id');
-        });
-    }, []);
     /* ----------------------------------- */
     const formRef = useRef(null);
 
@@ -98,8 +87,15 @@ export default function Contact() {
 
                 <div className="resume-container">
                     <div className="resume" id="resume">
-                        <button ref={resumeBtn} className="resume-btn">View File</button>
-                        <Image ref={resumeImg} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
+                        <div className="resume-header">
+                            <h1 className="preview-title">Resume.</h1>
+                        </div>
+                        <div className="resume-info">
+                            <div className="resume-content">
+
+                                <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -219,71 +219,59 @@ form [type = "email"] {
   position: relative;
   flex-direction: column;
   align-content: center;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   padding: 2rem;
   border-radius: 1.5rem;
   background-color: var(--bg-element-1);
+  align-items: flex-start;
 }
-  .resume::after {
-    content: "Resume";
-    display: flex;
-    z-index: 1;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-    font-size: 3.5rem;
-    font-weight: 100;
-    font-style: italic; 
-    position: absolute;
-    top: 5%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--font-color-0)
-  }
 
+.resume-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  border-right: 1px dashed var(--font-color-4);
+  border-top: 1px dashed var(--font-color-4);
+}
 
-.resume-title {
-  position: absolute;
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.resume-header {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2rem;
 }
 
 .resume-img {
-  height: auto;
+  object-fit: contain;
+  filter: brightness(0.75);
   z-index: 2;
-  width: 60%;
-  border: 2px solid #fff;
-  opacity: 0.5;
-  transition: opacity 0.6s ease;
-}
-  .resume-img:hover {
-    opacity: 0.8;
-  }
-.resume-btn {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  align-content: center;
-  margin-top: 1rem;
-  position: absolute;
-  z-index: 5;
-  font-size: 1rem;
-  font-weight: 300;
-  color: #fff;
-  background-color: rgb(38, 38, 38);
-  border: none;
-  border-radius: 1rem;
-  padding: 0.8rem 2.5rem;
-  transition: background-color 0.5s ease;
-}
-.resume-btn:hover {
-  color: #000;
-  background-color: hsl(159, 100%, 52%);
 }
 
-#mouseover-active {
-  opacity: 0.8;
+.resume-btn {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, -50%);
+  z-index: 4;
+  font-size: var(--font-size-3xl);
+  color: #000;
 }
