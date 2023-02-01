@@ -69,8 +69,8 @@ export default function Blog() {
                <div className="blog-recents">
 						<div className="blog-recents-content">
 							<div className="article-buttons">
-								<a className="recent-button" href="/blog">All Articles</a>
-								<a className="recent-button">View Recent</a>
+								<a className="recent-button" href="/">All Articles</a>
+								<a className="recent-button" href="/">View Recent</a>
 							</div>
 						</div>
                </div>
