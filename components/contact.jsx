@@ -13,6 +13,13 @@ Note for self:
 export default function Contact() {
     const { ref } = useObserver();
 
+    const [resumeHover, setResumeHover] = useState(false);
+
+    useEffect( () => {
+        const elHover = document.querySelector("resume-btn")
+        
+    })
+
     /* ----------------------------------- */
     const formRef = useRef(null);
 

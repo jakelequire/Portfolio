@@ -18,16 +18,14 @@ export default function Landing() {
               </div>
               <div className="lt2-container">
                 <span className="lt2-text" id="lt2-J">J</span>
-                <span className="lt2-text">a</span>
-                <span className="lt2-text">k</span>
-                <span className="lt2-text">e</span>
-                <span className="lt2-text">.</span>
+                <span className="lt2-text">ake</span>
               </div>
-              </div>
+            </div>
           </div>
 
           <div className="landing-subheader">
             <h3 className="l-subheader">Front-end / Back-end Web Developer</h3>
+            <p className="prod-subtext">&#91;Under Development&#93;</p>
           </div>
     
           <div className="landing-btn">

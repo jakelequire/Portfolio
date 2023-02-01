@@ -11,7 +11,10 @@
   font-family: var(--font-family-josefin);
   font-weight: var(--font-weight-regular);
 }
-
+.prod-subtext {
+  padding-top: 0.5rem;
+  color: rgb(150, 0, 0);
+}
 .landing {
   display: flex;
   flex-direction: column;
