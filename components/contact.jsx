@@ -92,7 +92,7 @@ export default function Contact() {
                         </div>
                         <div className="resume-info">
                             <div className="resume-content">
-
+                                <a className="resume-btn">View File</a>
                                 <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
                             </div>
                         </div>
