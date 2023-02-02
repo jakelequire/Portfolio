@@ -1,5 +1,6 @@
 import Image from "next/image";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
+import { SecondaryButton } from "./subComponents/components";
 /* Thumbnails */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
 
@@ -69,8 +70,8 @@ export default function Blog() {
                <div className="blog-recents">
 						<div className="blog-recents-content">
 							<div className="article-buttons">
-								<a className="recent-button" href="/">All Articles</a>
-								<a className="recent-button" href="/">View Recent</a>
+                        <SecondaryButton link="/" text="View Recent" />
+                        <SecondaryButton link="/" text="All Articles" />
 							</div>
 						</div>
                </div>

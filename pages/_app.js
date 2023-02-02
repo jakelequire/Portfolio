@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '../styles/custom-class.css'
+import '../styles/components.css'
 /* -- Homepage --*/
 import '../styles/homepage/navbar.css'
 import '../styles/homepage/landing.css'
