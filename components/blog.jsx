@@ -70,8 +70,8 @@ export default function Blog() {
                <div className="blog-recents">
 						<div className="blog-recents-content">
 							<div className="article-buttons">
-                        <SecondaryButton link="/" text="View Recent" />
                         <SecondaryButton link="/" text="All Articles" />
+                        <SecondaryButton link="/" text="View Recent" />
 							</div>
 						</div>
                </div>

@@ -67,6 +67,7 @@
   height: 100%;
   border-left: 1px solid var(--font-color-4);
   border-top: 1px solid var(--font-color-4);
+  border-bottom: 1px solid var(--font-color-4);
 }
 
   .form-subject textarea {
@@ -207,6 +208,7 @@
   width: 100%;
   border-right: 1px solid var(--font-color-4);
   border-top: 1px solid var(--font-color-4);
+  border-bottom: 1px solid var(--font-color-4);
 }
 
 .resume-content {
