@@ -33,20 +33,6 @@ export default function Projects() {
     curGithub
   } = useProjectIndex();
 
-  const [currentImage, setCurrentImage] = useState(SolBoba_Image);
-
-  useEffect(() => {
-    if (index === 0) {
-      setCurrentImage(SolBoba_Image);
-    } else if (index === 1) {
-      setCurrentImage(Portfolio_Image);
-    } else if (index === 2) {
-      setCurrentImage(PortfolioBackend_Image);
-    } else if (index === 3) {
-      setCurrentImage(ComingSoon_Image);
-    }
-  }, [index]);
-
   const [radarHover, setRadarHover] = useState(false);
   const [treemapHover, setTreemapHover] = useState(false);
   const [gitBtnHover, setGitBtnHover] = useState(false);
