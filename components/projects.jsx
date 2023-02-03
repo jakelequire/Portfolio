@@ -13,6 +13,11 @@ import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
 import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
 import TreeMapWhite from '../public/media/icons/web-media/treemap-chart-W.svg'
 import TreeMapGreen from '../public/media/icons/web-media/treemap-chart-G.svg'
+/* Slideshow */
+import SolBoba_Image from '../public/media/pictures/SolBobaHomepage.webp';
+import Portfolio_Image from '../public/media/pictures/portfolioPreview.webp';
+import PortfolioBackend_Image from '../public/media/pictures/portfoliobackend.webp';
+import ComingSoon_Image from '../public/media/pictures/comingsoon.webp';
 
 // >------------------------------------------------------------------------------------------
 export default function Projects() {
@@ -25,10 +30,22 @@ export default function Projects() {
     curRadarData, 
     curTreeMapData,
     curWebsite,
-    curGithub,
-    curName,
-    curImage
+    curGithub
   } = useProjectIndex();
+
+  const [currentImage, setCurrentImage] = useState(SolBoba_Image);
+
+  useEffect(() => {
+    if (index === 0) {
+      setCurrentImage(SolBoba_Image);
+    } else if (index === 1) {
+      setCurrentImage(Portfolio_Image);
+    } else if (index === 2) {
+      setCurrentImage(PortfolioBackend_Image);
+    } else if (index === 3) {
+      setCurrentImage(ComingSoon_Image);
+    }
+  }, [index]);
 
   const [radarHover, setRadarHover] = useState(false);
   const [treemapHover, setTreemapHover] = useState(false);
@@ -254,7 +271,12 @@ export default function Projects() {
                 <div className="project-preview-item">
                   <Image className="preview-image"
                   id={index === 0 || index === 1 ? "image-active" : "image-inactive" }
-                  src={curImage}
+                  src={
+                    index === 0 ? SolBoba_Image :
+                    index === 1 ? Portfolio_Image :
+                    index === 2 ? PortfolioBackend_Image :
+                    index === 3 ? ComingSoon_Image : ""
+                  }
                   alt="Project Preview"/>
                 </div>
               </div>

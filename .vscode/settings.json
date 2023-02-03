@@ -11,12 +11,14 @@
         "nextjs",
         "nivo",
         "ontact",
+        "portfoliobackend",
         "reactjs",
         "recents",
         "rojects",
         "searchbar",
         "solboba",
         "treemap",
-        "webfontloader"
+        "webfontloader",
+        "webp"
     ]
 }
