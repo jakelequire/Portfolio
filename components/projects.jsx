@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SecondaryButton } from "./subComponents/components.jsx";
 import Image from "next/image.js";
 /* -- Hooks -- */
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
@@ -228,23 +229,22 @@ export default function Projects() {
             <div className="preview-btn-wrapper">
 
               <div className="preview-btns">
-                <a className="preview-btn github-btn" href={curGithub}>
-                  <Image className="icon-github"
-                  src={gitBtnHover ? GitHub_W : GitHub}
-                  alt="Github Icon"
-                  width={50}
-                  height={50} />
-                  GitHub
-                </a>
-                <a className="preview-btn website-btn" 
-                href={curWebsite}>
-                  <Image className="icon-website"
-                  src={webBtnHover ? ExternalLink_W : ExternalLink }
-                  alt="Website Icon"
-                  width={40}
-                  height={40} />
-                  Visit
-                </a>
+                <SecondaryButton
+                altClass="github-btn"
+                text="GitHub"
+                link={curGithub}
+                image={gitBtnHover ? GitHub_W : GitHub}
+                width={35}
+                height={35}
+                />
+                <SecondaryButton
+                altClass="website-btn"
+                text="Website"
+                link={curWebsite}
+                image={webBtnHover ? ExternalLink_W : ExternalLink}
+                width={35}
+                height={35}
+                />
               </div>
             </div>
             
