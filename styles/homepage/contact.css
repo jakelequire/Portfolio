@@ -134,7 +134,7 @@
   font-size: 1rem;
   font-family: var(--font-family-fira);
   color: var(--font-color-0);
-  background-color: var(--bg-element-2)!important;
+  background-color: rgba(42, 46, 53, 0.25)!important;
 }
   #name, #email {
     font-size: 1rem;

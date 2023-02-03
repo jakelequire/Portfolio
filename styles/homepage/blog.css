@@ -235,6 +235,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    background-color: rgba(42, 46, 53, 0.25);
     border-top: 1px solid var(--font-color-4);
     border-bottom: 1px solid var(--font-color-4);
 }
