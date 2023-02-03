@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { PrimaryButton } from './subComponents/components.jsx';
+import { PrimaryButton, TertiaryButton } from './subComponents/components.jsx';
 import Image from 'next/image';
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 
@@ -100,7 +100,11 @@ export default function Contact() {
                         </div>
                         <div className="resume-info">
                             <div className="resume-content">
-                                <a className="resume-btn">View File</a>
+                                <TertiaryButton
+                                altClass="resume-btn"
+                                link="/"
+                                text="View File"
+                                />
                                 <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
                             </div>
                         </div>

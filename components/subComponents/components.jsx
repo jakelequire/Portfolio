@@ -23,3 +23,11 @@ export function SecondaryButton(props) {
     </a>
   );
 }
+
+export function TertiaryButton(props) {
+	return (
+		<a href={props.link} className={`tertiary-button ${props.altClass}`}>
+			{props.text}
+		</a>
+	);
+}

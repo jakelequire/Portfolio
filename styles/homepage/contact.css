@@ -224,7 +224,7 @@
 
 .resume-header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   height: 100%;
   width: 100%;
@@ -240,9 +240,5 @@
 .resume-btn {
   position: absolute;
   display: flex;
-  padding: 1rem 1.5rem;
-  border: 1px solid var(--primary-color-green);
-  font-size: var(--font-size-3xl);
-  color: var(--primary-color-green);
   z-index: 5;
 }
