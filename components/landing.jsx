@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
+import { PrimaryButton } from './subComponents/components.jsx';
 import useObserver from './hooks/useObserver';
 
 export default function Landing() {
@@ -29,8 +29,7 @@ export default function Landing() {
           </div>
     
           <div className="landing-btn">
-            <a className="l-btn" href="#contact" onClick={
-                (e) => smoothScroll(e, 4)}>Contact Me!</a>
+            <PrimaryButton link="#contact" text="Contact Me!" />
           </div>
 
         </div>
