@@ -158,10 +158,10 @@ body {
   --font-color-3: var(--font-color-light-3);
   --font-color-4: var(--font-color-light-4);
   /* -- Font Hover Color -- */
-  --font-hover-color-0: var(--font-hover-color-0);
-  --font-hover-color-1: var(--font-hover-color-1);
-  --font-hover-color-2: var(--font-hover-color-2);
-  --font-hover-color-3: var(--font-hover-color-3);
+  --hover-color-0: var(--font-hover-color-0);
+  --hover-color-1: var(--font-hover-color-1);
+  --hover-color-2: var(--font-hover-color-2);
+  --hover-color-3: var(--font-hover-color-3);
   
   }
 }

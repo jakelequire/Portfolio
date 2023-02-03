@@ -47,57 +47,7 @@
     #lt2-J {
       text-shadow: -1px 0 #00b159, -2px 0 #00b159, -3px 0 #00b159, -4px 0 #00b159, -5px 0 #00b159, -6px 0 #00b159, -7px 0 #00b159, -8px 0 #00b159;
     }
-    @-webkit-keyframes tracking-in-contract {
-        0% {
-          letter-spacing: 0.5em;
-          opacity: 0;
-        }
-        40% {
-          opacity: 0.6;
-        }
-        100% {
-          letter-spacing: normal;
-          opacity: 1;
-        }
-      }
-      @keyframes tracking-in-contract {
-        0% {
-          letter-spacing: 0.5em;
-          opacity: 0;
-        }
-        40% {
-          opacity: 0.6;
-        }
-        100% {
-          letter-spacing: normal;
-          opacity: 1;
-        }
-      }
-      
-      @-webkit-keyframes text-focus-in {
-        0% {
-          -webkit-filter: blur(5px);
-                  filter: blur(5px);
-          opacity: 0;
-        }
-        100% {
-          -webkit-filter: blur(0px);
-                  filter: blur(0px);
-          opacity: 1;
-        }
-      }
-      @keyframes text-focus-in {
-        0% {
-          -webkit-filter: blur(5px);
-                  filter: blur(5px);
-          opacity: 0;
-        }
-        100% {
-          -webkit-filter: blur(0px);
-                  filter: blur(0px);
-          opacity: 1;
-        }
-      }
+
 .landing-subheader {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);

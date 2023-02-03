@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { PrimaryButton } from './subComponents/components.jsx';
 import Image from 'next/image';
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 
@@ -85,7 +86,7 @@ export default function Contact() {
                                 </div>
                             </div>
                             <div className="form-button">
-                                <button href={null} className="f-btn" type="submit">Send</button>
+                                <PrimaryButton link="/" text="Send" />
                             </div>
                         </form>
                     </div>
