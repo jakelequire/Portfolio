@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { SecondaryButton } from "./subComponents/components.jsx";
 import Image from "next/image";
 
 import useObserver from "./hooks/useCustomSmoothScroll.jsx";
@@ -409,9 +410,10 @@ export default function AboutMe() {
                   </div>
                 </div>
           <div className="aboutme-resume-btn">
-            <a href="#resume" className="about-resume-btn">
-              View Resume
-            </a>
+            <SecondaryButton
+            link="#resume"
+            text="View Resume"
+            />
           </div>
           </div>
       </div>

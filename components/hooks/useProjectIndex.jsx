@@ -7,7 +7,6 @@
  * |||||||||||||||||    - the website link, 
  * |||||||||||||||||    - the github link, 
  * |||||||||||||||||    - and the name of the project
- * 
  */
 import { useEffect, useState } from "react";
 import { SolBoba, Portfolio, PortfolioBackend, ComingSoon } from '../subComponents/projectData.jsx'
@@ -36,7 +35,7 @@ export default function useProjectIndex() {
 
     const websites = {
         solboba: "https://solboba.com",
-        portfolio: "https://portfolio-2021.vercel.app",
+        portfolio: "https://jakelequire.dev",
         portfolio_backend: "https://portfolio-backend-2021.herokuapp.com",
         comingsoon: "https://comingsoon-2021.vercel.app"
       }

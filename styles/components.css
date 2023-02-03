@@ -38,6 +38,7 @@
     text-decoration: none;
     padding: 1rem 1.5rem;
     width: 75%;
+    font-family: var(--font-family-josefin);
     font-size: var(--font-size-xl);
     border: 1px solid var(--primary-color-green);
     color: var(--font-color-0)

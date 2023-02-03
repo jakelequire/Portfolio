@@ -81,24 +81,9 @@
     justify-content: center;
     align-items: center;
     padding-top: 3rem;
+    width: 20%;
 }
-.about-resume-btn{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2rem;
-    font-family: var(--font-family-josefin);
-    font-size: var(--font-size-2xl);
-    color: var(--font-color-0);
-    border: 2px solid var(--primary-color-green);
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-}
-    .about-resume-btn:hover {
-        background-color: var(--primary-color-green);
-        color: var(--font-hover-color-0);
-    }
+
 /*****************/
 /* -- Toolkit -- */
 /*****************/
