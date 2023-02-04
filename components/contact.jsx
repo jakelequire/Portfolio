@@ -93,19 +93,17 @@ export default function Contact() {
                 </div>
 
                 <div className="resume-container">
-                    <div className="resume" id="resume">
-                        <div className="resume-header">
-                            <h1 className="preview-title">Resume.</h1>
-                        </div>
-                        <div className="resume-info">
-                            <div className="resume-content">
-                                <TertiaryButton
-                                altClass="resume-btn"
-                                link="/"
-                                text="View File"
-                                />
-                                <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={575} height={650}/>
-                            </div>
+                    <div className="resume-header">
+                        <h1 className="preview-title">Resume.</h1>
+                    </div>
+                    <div className="resume-info">
+                        <div className="resume-content">
+                            <TertiaryButton
+                            altClass="resume-btn"
+                            link="/"
+                            text="View File"
+                            />
+                            <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={518} height={585}/>
                         </div>
                     </div>
                 </div>
