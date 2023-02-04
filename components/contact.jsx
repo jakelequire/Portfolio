@@ -1,19 +1,25 @@
 import { useEffect, useState, useRef } from 'react';
 import { PrimaryButton, TertiaryButton } from './subComponents/components.jsx';
 import Image from 'next/image';
+import dynamic from "next/dynamic";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 /* PNGs */
 import Resume from '../public/media/Resume.png';
-
+const ResumeDownload = "/assets/JakeLeQuireResume.pdf";
 /*
 Note for self:
     Maybe do something with a LinkedIn API to pull in my profile info
 */
 
 export default function Contact() {
-    const { ref } = useObserver();
+    const [isLoading, setIsLoading] = useState(false);
+    const handleClick = () => {
+        setIsLoading(true);
+        window.open(ResumeDownload, "_blank");
+        setIsLoading(false);
+      };
 
-    const [resumeHover, setResumeHover] = useState(false);
+    const { ref } = useObserver();
 
     useEffect( () => {
         const elHover = document.querySelector("resume-btn")
@@ -100,8 +106,8 @@ export default function Contact() {
                         <div className="resume-content">
                             <TertiaryButton
                             altClass="resume-btn"
-                            link="/"
-                            text="View File"
+                            text={isLoading ? "Loading..." : "View File"}
+                            onClick={handleClick}
                             />
                             <Image ref={Resume} className="resume-img" id src={Resume} alt="resume" width={518} height={585}/>
                         </div>

@@ -26,7 +26,7 @@ export function SecondaryButton(props) {
 
 export function TertiaryButton(props) {
 	return (
-		<a href={props.link} className={`tertiary-button ${props.altClass}`}>
+		<a href={props.link} onClick={props.onClick} target="_blank" className={`tertiary-button ${props.altClass}`}>
 			{props.text}
 		</a>
 	);
