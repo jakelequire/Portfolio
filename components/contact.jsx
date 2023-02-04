@@ -2,9 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { PrimaryButton, TertiaryButton } from './subComponents/components.jsx';
 import Image from 'next/image';
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
-
+/* PNGs */
 import Resume from '../public/media/Resume.png';
-
 
 /*
 Note for self:

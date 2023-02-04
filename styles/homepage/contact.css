@@ -156,13 +156,32 @@
     background: url(../../public/media/icons/web-media/user-icon.svg) no-repeat left;
     background-size: contain;
   }
+
   #email {
     background-color: transparent;
     background: url(../../public/media/icons/web-media/mail.svg) no-repeat left;
     background-size: contain;
   }
-
-
+input:focus,
+textarea:focus {
+  outline: none;
+  }
+  #name:focus {
+    border-bottom: 1px solid var(--primary-color-green);
+    background: url(../../public/media/icons/web-media/user-icon-green.svg) no-repeat left;
+    background-size: contain;
+  }
+  #email:focus {
+    border-bottom: 1px solid var(--primary-color-green);
+    background: url(../../public/media/icons/web-media/mail-green.svg) no-repeat left;
+    background-size: contain;
+  }
+  #subject:focus {
+    border-bottom: 1px solid var(--primary-color-green);
+  }
+  #message:focus {
+    border: 1px solid var(--primary-color-green);
+  }
 
 .form-button {
   display: flex;
@@ -171,7 +190,6 @@
   align-content: center;
   margin-top: 1rem;
 }
-
 /********************/
 /* ---- Resume ---- */
 /********************/
