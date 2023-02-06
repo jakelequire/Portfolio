@@ -15,6 +15,8 @@ export default function Blog() {
 		tags: ["tag1", "tag2", "tag3"],
 	}
 
+   
+
    const currentlyFeatured = {
       content:
       <div className="featured-content">
