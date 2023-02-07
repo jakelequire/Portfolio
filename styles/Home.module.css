@@ -18,6 +18,16 @@
   min-height: 250vh;
 }
 
+.testdev {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-primary-theme);
+  background-attachment: fixed;
+  min-height: 250vh;
+}
+
 .landing-wrapper {
   z-index: 1;
 }
