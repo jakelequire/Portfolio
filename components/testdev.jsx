@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TestDev() {
+export default function Test_Dev() {
     const UpdateArticle = (props) => {
         const [title, setTitle] = useState('');
         const [categories, setCategories] = useState([]);
