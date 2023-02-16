@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
-import Test_Dev from '../components/TestDev'
+import Test_Dev from '../components/test'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function TestDev() {
