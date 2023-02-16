@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
-import TestDev from '../components/TestDev'
+import Test from '../components/test.jsx'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function TestDev() {
@@ -21,7 +20,7 @@ export default function TestDev() {
       </Head>
       <main className={styles.testdev}>
         <div className="testdev-page-wrapper">
-            <TestDev> </TestDev>
+            <Test> </Test>
         </div>
       </main>
     </>
