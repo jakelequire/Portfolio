@@ -1,26 +1,12 @@
-
-
-# Objective for today 1/11/23
-
-1. Finish the styling for search-query.css.
-2. Figure out how to parse the backend data into the frontend.
-3. Figure out how to display the data in the frontend.
-4. Figure out how to make the data interactive.
-
-
-
 # Notes:
 
-/blog page
-4 columns, 2 rows
 
-## information to parse:
-1. Thumbnail
-2. Title
-3. Description
-4. Date
-5. Category
-6. Tags
 
-## default to display on page load /blog:
-- Recent posts
+
+
+
+
+## Current Known Issues:
+    1. On the initial page load, the aboutme component is not loading the images in the slideshow until each image has been viewed.
+    2. Similar issue to the projects component. In the preview of each project item, the image is not loading until the item has been viewed.
+    3. Also a similar issue but with the contact component. The icons in the contact form are not loading until the item has been in focus.
