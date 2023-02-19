@@ -21,10 +21,14 @@ export default function Test_Dev() {
         <a className="DEV_btn">Fetch Articles</a>
       </div>
       {articles.map((article) => (
-        <div key={article.id}>
-          <h3>{article.title}</h3>
-          <p>{article.date}</p>
-          <p>{article.content}</p>
+        <div className="DEV_articles"key={article.id}>
+          <p id="Testing">Title: </p> <span>{article.title}</span>
+          <p id="Testing">Date: </p> <span>{article.date}</span>
+          <p id="Testing">Category: </p> <span>{article.category}</span>
+          <p id="Testing">Tags: </p> <span>{article.tags}</span>
+          <p id="Testing">Image: </p> <span>{article.image}</span>
+          <p id="Testing">ImageAlt: </p> <span>{article.imageAlt}</span>
+          <p id="Testing">Content: </p> <span>{article.content}</span>
         </div>
       ))}
     </div>

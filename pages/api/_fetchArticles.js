@@ -26,7 +26,7 @@ function createArticle(title, date, content, tags, category, image, imageAlt) {
  * @returns {Promise} A promise that resolves to an array of articles.
  */
 export default async function importArticles() {
-    const response = await axios.get("http://localhost:3001/articles");
+    const response = await axios.get("http://localhost:3001/articles?query=alphabetically");
     const articles = response.data;
 
     const articleObject = articles.map((article) => {
