@@ -12,23 +12,42 @@ const darkTheme = {
  };
  
 /**
- * Return the array of `article objects`.
+ * Returns an array of articles from the API based on the type of request.
  *
- * @returns {Promise<[]>}
+ * @param {string} params
+ * @param {string} typeOfReq
+ * 
+ * @returns {Promise<[]>} An array of articles.
  */
-async function getArticles() {
-  const articles = await importArticles("date");
-  return articles.map((article) => new createArticle(
-   	article.id,
-   	article.title,
-   	article.date,
-   	article.tags,
-   	article.category,
-   	article.image,
-   	article.imageAlt,
-   	article.content,
-  ));
-}
+async function getArticles(params, typeOfReq = "date") {
+	const articles = await importArticles(typeOfReq);
+ 
+	if (params === "topthree") {
+	  	return articles
+		 	.slice(0, 1)
+		 	.map((article) => new createArticle(
+				article.id,
+				article.title,
+				article.date,
+				article.tags,
+				article.category,
+				article.image,
+				article.imageAlt,
+				article.content,
+		 	));
+	}
+ 
+	return articles.map((article) => new createArticle(
+	  	article.id,
+	  	article.title,
+	  	article.date,
+	  	article.tags,
+	  	article.category,
+	  	article.image,
+	  	article.imageAlt,
+	  	article.content,
+	));
+ }
 /**
  * Exports a `ReactMarkdown` component.
  * 
@@ -43,7 +62,7 @@ export default function ArticleMarkdown() {
   	useEffect(() => {
   	  async function fetchArticles() {
   	    setLoading(true);
-  	    const newArticles = await getArticles();
+  	    const newArticles = await getArticles("topthree");
   	    setArticles(newArticles);
   	    setLoading(false);
   	  }
@@ -86,12 +105,9 @@ export default function ArticleMarkdown() {
   	);
 }
 
-function articleFilter(filter) {
-
-}
-
 /*
 {article.title}
 {article.date}
 {article.tags} 
-{article.category} */
+{article.category} 
+*/
