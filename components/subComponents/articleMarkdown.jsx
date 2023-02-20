@@ -2,6 +2,7 @@ import importArticles from '../../pages/api/_fetchArticles';
 import { createArticle } from '../../pages/api/_fetchArticles';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 
 /**
  * Return the array of `article objects`.
@@ -47,17 +48,37 @@ export default function ArticleMarkdown() {
     <div className="Markdown-Article">
       {loading ? <p>Loading...</p> :
       articles.map((article) => (
-        <div key={article.id}>
-          <ReactMarkdown 
-            children={article.content}
-            className='DEV'>
-            {article.category}
-          </ReactMarkdown>
-          <h2 id="DEV"></h2>
-          <p id="DEV">{article.date}</p>
-          <p id="DEV">{article.category}</p>
-          <p id="DEV">{article.tags}</p>
-        </div>
+        	<div key={article.id}>
+        	   <h3 id="_DEV">{article.id}</h3>
+        	  	<h2 id="DEV">{article.title}</h2>
+        	  	<p id="DEV">{article.date}</p>
+        	  	<p id="DEV">{article.category}</p>
+        	  	<p id="DEV">{article.tags}</p>
+        	  	<ReactMarkdown 
+        	  	  children={article.content}
+        	  	  className='DEV'
+						components={{
+							code({ node, inline, className, children, ...props }) {
+							  const match = /language-(\w+)/.exec(className || "");
+							  return !inline && match ? (
+								 <SyntaxHighlighter
+									children={String(children).replace(/\n$/, "")}
+									// style={dark}
+									language={match[1]}
+									PreTag="div"
+									{...props}
+								 />
+							  ) : (
+								 <code className={className} {...props}>
+									{children}
+								 </code>
+							  );
+							}
+						 }}
+				>
+        	  	  {article.content}
+        	  	</ReactMarkdown>
+        	</div>
       ))}
     </div>
   );
