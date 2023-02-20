@@ -9,8 +9,14 @@ import ReactMarkdown from 'react-markdown';
 const darkTheme = {
 	...vscDarkPlus,
 	backgroundColor: '#191919'
- };
- 
+};
+
+
+
+export async function articleRequest() {
+
+}
+
 /**
  * Returns an array of articles from the API based on the type of request.
  *
@@ -19,7 +25,7 @@ const darkTheme = {
  * 
  * @returns {Promise<[]>} An array of articles.
  */
-async function getArticles(params, typeOfReq = "date") {
+async function getArticles(params, typeOfReq) {
 	const articles = await importArticles(typeOfReq);
  
 	if (params === "topthree") {
@@ -36,73 +42,70 @@ async function getArticles(params, typeOfReq = "date") {
 				article.content,
 		 	));
 	}
- 
-	return articles.map((article) => new createArticle(
-	  	article.id,
-	  	article.title,
-	  	article.date,
-	  	article.tags,
-	  	article.category,
-	  	article.image,
-	  	article.imageAlt,
-	  	article.content,
-	));
  }
+
 /**
  * Exports a `ReactMarkdown` component.
  * 
- * @returns {JSX.Element}
+ * @returns {JSX.Element} A `ReactMarkdown` component.
  */
-export default function ArticleMarkdown() {
-  	const [articles, setArticles] = useState([]);
-  	const [loading, setLoading] = useState(true);
-
-
-  	// Use the effect hook to fetch the articles and set the state when the component mounts
-  	useEffect(() => {
-  	  async function fetchArticles() {
-  	    setLoading(true);
-  	    const newArticles = await getArticles("topthree");
-  	    setArticles(newArticles);
-  	    setLoading(false);
-  	  }
-
-  	  fetchArticles();
-  	}, []);
-
-  	return (
-    <div className="Markdown-Article">
-      {loading ? <p>Loading...</p> :
-      articles.map((article) => (
-        	<div className='DEV-article' key={article.id}>
-        	   <h4 id="_DEV">{article.title}</h4>
-        	  	<ReactMarkdown 
-        	  	  	children={article.content}
-						components={{
-							code({ node, inline, className, children, ...props }) {
-							  const match = /language-(\w+)/.exec(className || "");
-							  return !inline && match ? (
-								 <SyntaxHighlighter
-									children={String(children).replace(/\n$/, "")}
-									style={darkTheme}
-									language={match[1]}
-									PreTag="div"
-									{...props}
-								 />
-							   ) : (
-								 <code className={className} {...props}>
-									{children}
-								 </code>
-							   );
-							}
-						}}
-				>
-        	  	{article.content} 
-        	  	</ReactMarkdown>
-        	</div>
-      ))}
-    </div>
-  	);
+export function ArticleMarkdown() {
+	const [articles, setArticles] = useState([]);
+	const [metaData, setMetaData] = useState({});
+	const [loading, setLoading] = useState(true);
+  
+	async function Article() {
+	  const articles = await getArticles();
+	  const articleData = articles.map((article) =>
+		new createArticle(
+		  article.id,
+		  article.title,
+		  article.date,
+		  article.tags,
+		  article.category,
+		  article.image,
+		  article.imageAlt,
+		  article.content,
+		),
+	  );
+	  setMetaData(articleData);
+	  const articleItems = articles.map((article) => (
+		<div className="DEV-article" key={article.id}>
+		  <h4 id="_DEV">{article.title}</h4>
+		  <ReactMarkdown
+			children={article.content}
+			components={{
+			  code({ node, inline, className, children, ...props }) {
+				const match = /language-(\w+)/.exec(className || "");
+				return !inline && match ? (
+				  <SyntaxHighlighter
+					children={String(children).replace(/\n$/, "")}
+					style={darkTheme}
+					language={match[1]}
+					PreTag="div"
+					{...props}
+				  />
+				) : (
+				  <code className={className} {...props}>
+					{children}
+				  </code>
+				);
+			  },
+			}}
+		  >
+			{article.content}
+		  </ReactMarkdown>
+		</div>
+	  ));
+	  setArticles(articleItems); // Pass the articleItems array to setArticles()
+	  setLoading(false);
+	}
+  
+	useEffect(() => {
+	  Article();
+	}, []);
+  
+	return [articles]; // Return an array of articles and metaData objects
 }
 
 /*

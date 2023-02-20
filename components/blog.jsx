@@ -1,15 +1,18 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 import { SecondaryButton } from "./subComponents/components";
-import ArticleMarkdown from './subComponents/articleMarkdown';
-
-/* Thumbnails */
+import { ArticleMarkdown } from './subComponents/articleMarkdown';
+/* Thumbnail Images */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
+
+
 
 export default function Blog() {
    const { ref } = useObserver();
-    
-   const featuredArticle = {
+
+
+   const _featuredArticle = {
       thumbnail: featuredThumbnail,
       title: "Featured Article",
       date: "2021-01-01",
@@ -18,26 +21,25 @@ export default function Blog() {
 	}
 
    
-
    const currentlyFeatured = {
       content:
       <div className="featured-content">
          <div className="featured-thumbnail">
             <Image 
 				className="thumbnail"
-				src={featuredArticle.thumbnail}
-				alt={featuredArticle.title}
+				src={_featuredArticle.thumbnail}
+				alt={_featuredArticle.title}
 				/>
          </div>
 			<div className="featured-text">
-				<h3 className="featured-title">{featuredArticle.title}</h3>
-				<p className="featured-date">{featuredArticle.date}</p>
+				<h3 className="featured-title">{_featuredArticle.title}</h3>
+				<p className="featured-date">{_featuredArticle.date}</p>
 			</div>
 			<div className="featured-description-wrapper">
-				<p className="featured-description">{featuredArticle.description}</p>
+				<p className="featured-description">{_featuredArticle.description}</p>
 			</div>
 			<div className="featured-tags">
-				{featuredArticle.tags.map((tag, index) => {
+				{_featuredArticle.tags.map((tag, index) => {
 					return <p className="featured-tag" key={index}>#{tag}</p>
 				})}
 			</div>
@@ -87,7 +89,7 @@ export default function Blog() {
                      <h2 className="preview-title">Article Preview.</h2>
                   </div>
 						<div className="preview-content">
-
+                     <ArticleMarkdown />
 						</div>
                </div>
             </div>
