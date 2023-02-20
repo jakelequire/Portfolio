@@ -3,12 +3,17 @@ import PropTypes from "prop-types";
 
 /**
  * Sends a `GET` request to the server to get all articles.
+ * @param {string} prop - A string to filter articles by. If no string is provided, all articles are returned.
  * 
  * @returns {Promise} A promise that resolves to an array of articles.
  */
-export default async function importArticles() {
-    const response = await axios.get("http://localhost:3001/articles?query=alphabetically");
-    const articles = response.data;
+export default async function importArticles(prop) {
+    const url = prop
+    ? `http://localhost:3001/articles?query=${prop}`
+    : 'http://localhost:3001/articles';
+
+  const response = await axios.get(url);
+  const articles = response.data;
 
     const articleObject = articles.map((article) => {
         const { id, title, date, tags, category, image, imageAlt, content } = article;
@@ -16,6 +21,7 @@ export default async function importArticles() {
     })
     return articleObject;
 }
+
 /**
  * Represents the format of an article.
  * @param {string} id

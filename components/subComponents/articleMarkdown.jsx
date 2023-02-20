@@ -1,9 +1,9 @@
 import importArticles from '../../pages/api/_fetchArticles';
 import { createArticle } from '../../pages/api/_fetchArticles';
 import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import ReactMarkdown from 'react-markdown';
 
 // Customizable dark theme options
 const darkTheme = {
@@ -17,7 +17,7 @@ const darkTheme = {
  * @returns {Promise<[]>}
  */
 async function getArticles() {
-  const articles = await importArticles();
+  const articles = await importArticles("date");
   return articles.map((article) => new createArticle(
    	article.id,
    	article.title,
@@ -35,22 +35,23 @@ async function getArticles() {
  * @returns {JSX.Element}
  */
 export default function ArticleMarkdown() {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  	const [articles, setArticles] = useState([]);
+  	const [loading, setLoading] = useState(true);
 
-  // Use the effect hook to fetch the articles and set the state when the component mounts
-  useEffect(() => {
-    async function fetchArticles() {
-      setLoading(true);
-      const newArticles = await getArticles();
-      setArticles(newArticles);
-      setLoading(false);
-    }
 
-    fetchArticles();
-  }, []);
+  	// Use the effect hook to fetch the articles and set the state when the component mounts
+  	useEffect(() => {
+  	  async function fetchArticles() {
+  	    setLoading(true);
+  	    const newArticles = await getArticles();
+  	    setArticles(newArticles);
+  	    setLoading(false);
+  	  }
 
-  return (
+  	  fetchArticles();
+  	}, []);
+
+  	return (
     <div className="Markdown-Article">
       {loading ? <p>Loading...</p> :
       articles.map((article) => (
@@ -82,8 +83,13 @@ export default function ArticleMarkdown() {
         	</div>
       ))}
     </div>
-  );
+  	);
 }
+
+function articleFilter(filter) {
+
+}
+
 /*
 {article.title}
 {article.date}

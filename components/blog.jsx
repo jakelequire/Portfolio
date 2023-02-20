@@ -1,6 +1,8 @@
 import Image from "next/image";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 import { SecondaryButton } from "./subComponents/components";
+import ArticleMarkdown from './subComponents/articleMarkdown';
+
 /* Thumbnails */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
 
