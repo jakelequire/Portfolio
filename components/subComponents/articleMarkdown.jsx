@@ -3,18 +3,18 @@ import { createArticle } from '../../pages/api/_fetchArticles';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
+// Customizable dark theme options
 const darkTheme = {
 	...vscDarkPlus,
 	backgroundColor: '#191919'
  };
  
-
 /**
  * Return the array of `article objects`.
  *
- * @returns {JSX.Element}
+ * @returns {Promise<[]>}
  */
 async function getArticles() {
   const articles = await importArticles();
@@ -29,7 +29,6 @@ async function getArticles() {
    	article.content,
   ));
 }
-
 /**
  * Exports a `ReactMarkdown` component.
  * 
@@ -56,7 +55,7 @@ export default function ArticleMarkdown() {
       {loading ? <p>Loading...</p> :
       articles.map((article) => (
         	<div className='DEV-article' key={article.id}>
-        	   <h4 id="_DEV">{article.id}</h4>
+        	   <h4 id="_DEV">{article.title}</h4>
         	  	<ReactMarkdown 
         	  	  	children={article.content}
 						components={{

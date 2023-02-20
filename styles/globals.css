@@ -235,7 +235,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 50%;
   height: 100%;
   color: var(--font-color-4);
   background-color: #262626;
