@@ -3,6 +3,13 @@ import { createArticle } from '../../pages/api/_fetchArticles';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const darkTheme = {
+	...vscDarkPlus,
+	backgroundColor: '#191919'
+ };
+ 
 
 /**
  * Return the array of `article objects`.
@@ -12,14 +19,14 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 async function getArticles() {
   const articles = await importArticles();
   return articles.map((article) => new createArticle(
-    article.id,
-    article.title,
-    article.date,
-    article.tags,
-    article.category,
-    article.image,
-    article.imageAlt,
-    article.content,
+   	article.id,
+   	article.title,
+   	article.date,
+   	article.tags,
+   	article.category,
+   	article.image,
+   	article.imageAlt,
+   	article.content,
   ));
 }
 
@@ -48,38 +55,38 @@ export default function ArticleMarkdown() {
     <div className="Markdown-Article">
       {loading ? <p>Loading...</p> :
       articles.map((article) => (
-        	<div key={article.id}>
-        	   <h3 id="_DEV">{article.id}</h3>
-        	  	<h2 id="DEV">{article.title}</h2>
-        	  	<p id="DEV">{article.date}</p>
-        	  	<p id="DEV">{article.category}</p>
-        	  	<p id="DEV">{article.tags}</p>
+        	<div className='DEV-article' key={article.id}>
+        	   <h4 id="_DEV">{article.id}</h4>
         	  	<ReactMarkdown 
-        	  	  children={article.content}
-        	  	  className='DEV'
+        	  	  	children={article.content}
 						components={{
 							code({ node, inline, className, children, ...props }) {
 							  const match = /language-(\w+)/.exec(className || "");
 							  return !inline && match ? (
 								 <SyntaxHighlighter
 									children={String(children).replace(/\n$/, "")}
-									// style={dark}
+									style={darkTheme}
 									language={match[1]}
 									PreTag="div"
 									{...props}
 								 />
-							  ) : (
+							   ) : (
 								 <code className={className} {...props}>
 									{children}
 								 </code>
-							  );
+							   );
 							}
-						 }}
+						}}
 				>
-        	  	  {article.content}
+        	  	{article.content} 
         	  	</ReactMarkdown>
         	</div>
       ))}
     </div>
   );
 }
+/*
+{article.title}
+{article.date}
+{article.tags} 
+{article.category} */
