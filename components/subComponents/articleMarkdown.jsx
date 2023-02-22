@@ -8,10 +8,10 @@ import ReactMarkdown from 'react-markdown';
 // Customizable dark theme options
 const darkTheme = {
 	...vscDarkPlus,
-	backgroundColor: '#191919'
+	backgroundColor: '#191919',
 };
 /**
- * Fetches an array of article objects.
+ * Fetches an array of article objects from API.
  *
  * @async
  * @returns {Promise<Object[]>} - An array of objects containing article data.
@@ -67,7 +67,6 @@ export default class Article extends React.Component {
 		const articleItems =
 			articles.map((article) => (
 				<div className="DEV-article" key={article.id}>
-					<h4 id="_DEV">{article.title}</h4>
 					<ReactMarkdown
 						children={article.content}
 						components={{

@@ -6,8 +6,6 @@ import Article from './subComponents/articleMarkdown';
 /* Thumbnail Images */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
 
-
-
 export default function Blog() {
    const { ref } = useObserver();
 
@@ -20,7 +18,6 @@ export default function Blog() {
 		tags: ["tag1", "tag2", "tag3"],
 	}
 
-   
    const currentlyFeatured = {
       content:
       <div className="featured-content">
@@ -60,9 +57,7 @@ export default function Blog() {
             <div className="blog-featured-wrapper">
 
                <div className="blog-featured">
-                  <div className="preview-header">
-                     <h2 className="preview-title">Featured Article.</h2>
-                  </div>
+
                   <div className="blog-featured-content">
 							{currentlyFeatured.content}
 						<div className="featured-button-wrapper">
@@ -85,11 +80,8 @@ export default function Blog() {
 
             <div className="blog-preview-wrapper">
                <div className="blog-preview">
-                  <div className="preview-header">
-                     <h2 className="preview-title">Article Preview.</h2>
-                  </div>
 						<div className="preview-content">
-                     <Article index={0} />
+                     <Article index={1} />
 						</div>
                </div>
             </div>
