@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 import { SecondaryButton } from "./subComponents/components";
-import { ArticleMarkdown } from './subComponents/articleMarkdown';
+import Article from './subComponents/articleMarkdown';
 /* Thumbnail Images */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
 
@@ -89,7 +89,7 @@ export default function Blog() {
                      <h2 className="preview-title">Article Preview.</h2>
                   </div>
 						<div className="preview-content">
-                     <ArticleMarkdown />
+                     <Article />
 						</div>
                </div>
             </div>
