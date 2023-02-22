@@ -89,7 +89,7 @@ export default function Blog() {
                      <h2 className="preview-title">Article Preview.</h2>
                   </div>
 						<div className="preview-content">
-                     <Article />
+                     <Article index={0} />
 						</div>
                </div>
             </div>

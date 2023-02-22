@@ -11,7 +11,10 @@ const darkTheme = {
 	backgroundColor: '#191919'
 };
 /**
- * @returns {object[]} - Returns an array of objects containing the article data.
+ * Fetches an array of article objects.
+ *
+ * @async
+ * @returns {Promise<Object[]>} - An array of objects containing article data.
  */
 async function getArticles() {
 	const articles = await importArticles();
@@ -19,19 +22,23 @@ async function getArticles() {
 }
 
 /**
- * This class is used to create an article object that can be passed to the Article component.
- * 
- * @param {string} id
- * @param {string} title
- * @param {string} date
- * @param {string[]} tags
- * @param {string} category
- * @param {string} image
- * @param {string} imageAlt
- * @param {string} content
- * @returns {object} 
+ * Displays a single article based on the provided index.
+ *
+ * @component
+ * @example
+ * <Article index={2} />
+ *
+ * @param {Object} props - Component props.
+ * @param {number} props.index - The index of the article to be displayed.
+ * @returns {JSX.Element} - A React component that displays the article.
  */
 export default class Article extends React.Component {
+	/**
+	 * Initializes the Article component with state values.
+	 *
+	 * @constructor
+	 * @param {Object} props - Props to be passed down to the component.
+	 */
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -56,6 +63,7 @@ export default class Article extends React.Component {
 			),
 		);
 		this.setState({ metaData: articleData });
+		console.log("metaData", articleData); 
 		const articleItems =
 			articles.map((article) => (
 				<div className="DEV-article" key={article.id}>
@@ -85,14 +93,20 @@ export default class Article extends React.Component {
 					</ReactMarkdown>
 				</div>
 			));
-		this.setState({ articles: articleItems }); // Pass the articleItems array to setArticles()
+		this.setState({ articles: articleItems });
 		this.setState({ loading: false });
 	}
 
+	/**
+	 * Renders the Article component.
+	 *
+	 * @returns {JSX.Element} A React component that displays the specified article.
+	 */
 	render() {
+		const index = this.props.index || 0;
 		return (
 			<div>
-				{this.state.articles}
+				{this.state.articles[index]}
 			</div>
 		);
 	}
