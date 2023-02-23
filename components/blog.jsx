@@ -12,7 +12,7 @@ export default function Blog() {
 
    const _featuredArticle = {
       thumbnail: featuredThumbnail,
-      title: "Featured Article",
+      title: "Test",
       date: "2021-01-01",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
 		tags: ["tag1", "tag2", "tag3"],
@@ -81,7 +81,7 @@ export default function Blog() {
             <div className="blog-preview-wrapper">
                <div className="blog-preview">
 						<div className="preview-content">
-                     <Article index={1} />
+                     <Article className={"_article"} index={1} />
 						</div>
                </div>
             </div>

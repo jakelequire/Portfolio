@@ -250,8 +250,9 @@ body {
 
 .DEV-article {
   display: flex;
+  overflow-y: scroll;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
   height: 100%;
@@ -261,11 +262,19 @@ body {
 .DEV-article > h1,
 .DEV-article > h2,
 .DEV-article > h3 {
+  color: #dbdbdb;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
+}
+.DEV-article > p {
+  color: #c3c3c3;
 }
 .DEV-article > ul > li > a {
   text-decoration: none;
   line-height: 1.5rem;
   color: var(--primary-color-green)!important;
+}
+
+._article {
+  height: 100%;
 }

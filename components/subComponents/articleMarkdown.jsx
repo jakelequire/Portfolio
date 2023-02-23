@@ -45,6 +45,7 @@ export default class Article extends React.Component {
 			articles: [],
 			metaData: [],
 			loading: true,
+			className: this.props.className,
 		};
 	}
 
@@ -104,9 +105,16 @@ export default class Article extends React.Component {
 	render() {
 		const index = this.props.index || 0;
 		return (
-			<div>
+			<div className={this.props.className}>
 				{this.state.articles[index]}
 			</div>
 		);
 	}
+
+	state() {
+		return (
+			this.metaData
+		)
+	}
+	
 }
