@@ -20,7 +20,28 @@ async function getArticles() {
 	const articles = await importArticles();
 	return articles;
 }
-
+/**
+ * 
+ * @param {*} index 
+ * @returns 
+ */
+export async function articleMetadata(index) {
+	const metadata = await getArticles();
+	const articleData = metadata.map((article) =>
+		new createArticle(
+			article.id,
+			article.title,
+			article.date,
+			article.tags,
+			article.category,
+			article.image,
+			article.imageAlt,
+			article.content,
+		),
+	);
+	return articleData[index];
+}
+console.log("articleMetadata", articleMetadata());
 /**
  * Displays a single article based on the provided index.
  *
@@ -64,7 +85,6 @@ export default class Article extends React.Component {
 			),
 		);
 		this.setState({ metaData: articleData });
-		console.log("metaData", articleData); 
 		const articleItems =
 			articles.map((article) => (
 				<div className="DEV-article" key={article.id}>
@@ -110,11 +130,4 @@ export default class Article extends React.Component {
 			</div>
 		);
 	}
-
-	state() {
-		return (
-			this.metaData
-		)
-	}
-	
 }
