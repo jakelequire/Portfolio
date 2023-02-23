@@ -2,21 +2,37 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import useObserver  from "./hooks/useCustomSmoothScroll.jsx";
 import { SecondaryButton } from "./subComponents/components";
-import Article from './subComponents/articleMarkdown';
+import Article, { articleMetadata } from './subComponents/articleMarkdown';
+import { createArticle } from '../pages/api/_fetchArticles';
 /* Thumbnail Images */
 import featuredThumbnail from "../public/media/thumbnails/featured.webp"
 
 export default function Blog() {
    const { ref } = useObserver();
 
+   const [articleIndex, setArticleIndex] = useState(0);
+   const [metaData, setMetaData] = useState([]);
+   const [loading, setLoading] = useState(true);
 
-   const _featuredArticle = {
-      thumbnail: featuredThumbnail,
-      title: "Test",
-      date: "2021-01-01",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
-		tags: ["tag1", "tag2", "tag3"],
-	}
+   useEffect(() => {
+      const getMetaData = async () => {
+         const articles = await articleMetadata(articleIndex);
+         setMetaData(articles);
+         setLoading(false);
+      }
+      getMetaData();
+   }, []);
+
+   const _featuredArticle = new createArticle({
+      id: metaData.id,
+      title: metaData.title,
+      description: metaData.description,
+      date: metaData.date,
+      tags: metaData.tags,
+      category: metaData.category,
+      imageAlt: metaData.imageAlt,
+      content: metaData.content,
+   });
 
    const currentlyFeatured = {
       content:
@@ -24,22 +40,24 @@ export default function Blog() {
          <div className="featured-thumbnail">
             <Image 
 				className="thumbnail"
-				src={_featuredArticle.thumbnail}
+				src={featuredThumbnail}
 				alt={_featuredArticle.title}
 				/>
          </div>
 			<div className="featured-text">
-				<h3 className="featured-title">{_featuredArticle.title}</h3>
-				<p className="featured-date">{_featuredArticle.date}</p>
+				<h3 className="featured-title">{metaData.title}</h3>
+				<p className="featured-date">{metaData.date}</p>
 			</div>
 			<div className="featured-description-wrapper">
-				<p className="featured-description">{_featuredArticle.description}</p>
+				<p className="featured-description">{metaData.description}</p>
 			</div>
+         {/* 
 			<div className="featured-tags">
-				{_featuredArticle.tags.map((tag, index) => {
-					return <p className="featured-tag" key={index}>#{tag}</p>
-				})}
+            {metaData.tags.map((tag, index) => {
+               return <p className="featured-tag" key={index}>{tag}</p>
+            })}
 			</div>
+         */}
       </div>
    }
 

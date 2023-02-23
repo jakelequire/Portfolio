@@ -31,6 +31,7 @@ export async function articleMetadata(index) {
 		new createArticle(
 			article.id,
 			article.title,
+			article.description,
 			article.date,
 			article.tags,
 			article.category,
@@ -76,6 +77,7 @@ export default class Article extends React.Component {
 			new createArticle(
 				article.id,
 				article.title,
+				article.description,
 				article.date,
 				article.tags,
 				article.category,

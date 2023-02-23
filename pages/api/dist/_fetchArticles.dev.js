@@ -34,13 +34,14 @@ function importArticles(prop) {
           articleObject = articles.map(function (article) {
             var id = article.id,
                 title = article.title,
+                description = article.description,
                 date = article.date,
                 tags = article.tags,
                 category = article.category,
                 image = article.image,
                 imageAlt = article.imageAlt,
                 content = article.content;
-            return new createArticle(id, title, date, tags, category, image, imageAlt, content);
+            return new createArticle(id, title, description, date, tags, category, image, imageAlt, content);
           });
           return _context.abrupt("return", articleObject);
 
@@ -55,6 +56,7 @@ function importArticles(prop) {
  * Represents the format of an article.
  * @param {string} id
  * @param {string} title
+ * @param {string} description
  * @param {string} date
  * @param {string[]} tags
  * @param {string} category
@@ -65,9 +67,10 @@ function importArticles(prop) {
  */
 
 
-function createArticle(id, title, date, tags, category, image, imageAlt, content) {
+function createArticle(id, title, description, date, tags, category, image, imageAlt, content) {
   this.id = id;
   this.title = title;
+  this.description = description;
   this.date = date;
   this.tags = tags;
   this.category = category;
@@ -79,6 +82,7 @@ function createArticle(id, title, date, tags, category, image, imageAlt, content
 createArticle.propTypes = {
   id: _propTypes["default"].string.isRequired,
   title: _propTypes["default"].string.isRequired,
+  description: _propTypes["default"].string.isRequired,
   date: _propTypes["default"].string.isRequired,
   tags: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired,
   category: _propTypes["default"].string.isRequired,

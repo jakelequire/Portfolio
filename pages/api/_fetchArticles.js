@@ -16,8 +16,8 @@ export default async function importArticles(prop) {
   const articles = response.data;
 
     const articleObject = articles.map((article) => {
-        const { id, title, date, tags, category, image, imageAlt, content } = article;
-        return new createArticle( id, title, date, tags, category, image, imageAlt, content);
+        const { id, title, description, date, tags, category, image, imageAlt, content } = article;
+        return new createArticle( id, title, description, date, tags, category, image, imageAlt, content);
     })
     return articleObject;
 }
@@ -26,6 +26,7 @@ export default async function importArticles(prop) {
  * Represents the format of an article.
  * @param {string} id
  * @param {string} title
+ * @param {string} description
  * @param {string} date
  * @param {string[]} tags
  * @param {string} category
@@ -34,9 +35,10 @@ export default async function importArticles(prop) {
  * @param {string} content
  * @returns {Object} An article object.
  */
-function createArticle(id, title, date, tags, category, image, imageAlt, content ) {
+function createArticle(id, title, description, date, tags, category, image, imageAlt, content ) {
     this.id = id;
     this.title = title;
+    this.description = description;
     this.date = date;
     this.tags = tags;
     this.category = category;
@@ -47,6 +49,7 @@ function createArticle(id, title, date, tags, category, image, imageAlt, content
 createArticle.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
     category: PropTypes.string.isRequired,
