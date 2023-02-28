@@ -230,6 +230,7 @@
 
 .preview-content {
     display: flex;
+    overflow-y: scroll;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -238,4 +239,8 @@
     background-color: rgba(42, 46, 53, 0.25);
     border-top: 1px solid var(--font-color-4);
     border-bottom: 1px solid var(--font-color-4);
+}
+
+.featured-article::before {
+
 }

@@ -99,7 +99,7 @@ export default function Blog() {
             <div className="blog-preview-wrapper">
                <div className="blog-preview">
 						<div className="preview-content">
-                     <Article className={"_article"} index={1} />
+                     <Article className="featured-article" index={1} />
 						</div>
                </div>
             </div>
