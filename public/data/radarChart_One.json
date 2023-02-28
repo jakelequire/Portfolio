@@ -1,27 +1,27 @@
 [
   {
-    "language": "JavaScript",
+    "language": "Example",
     "lines": 42,
     "files": 95,
     "percentage": 52,
     "color": "#f7df1e"
   },
   {
-    "language": "TypeScript",
+    "language": "Example",
     "lines": 53,
     "files": 35,
     "percentage": 54,
     "color": "#3178c6"
   },
   {
-    "language": "JSX",
+    "language": "Example",
     "lines": 47,
     "files": 23,
     "percentage": 52,
     "color": "#61dafb"
   },
   {
-    "language": "CSS",
+    "language": "Example",
     "lines": 70,
     "files": 106,
     "percentage": 64,
