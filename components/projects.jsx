@@ -87,7 +87,7 @@ export default function Projects() {
     "portfolio": {
       "id": "portfolio",
       "title": "Portfolio",
-      "description": "My second project. .",
+      "description": "My second project. I wanted to create a portfolio that was more than just a static website.",
       "tech": ["React.js", "Next.js", "Axios"]
     },
     "portfolio_backend": {

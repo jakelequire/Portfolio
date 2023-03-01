@@ -46,7 +46,6 @@ console.log("articleMetadata", articleMetadata());
 /**
  * Displays a single article based on the provided index.
  *
- * @component
  * @example
  * <Article index={2} />
  *

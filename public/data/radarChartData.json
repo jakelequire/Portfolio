@@ -1,0 +1,86 @@
+[
+    {
+      "name": "SolBoba",
+      "data": {
+        "JavaScript": {
+          "Lines": 153,
+          "Files": 35,
+          "Percentage": 14
+        },
+        "CSS": {
+          "Lines": 27,
+          "Files": 123,
+          "Percentage": 55
+        }
+      },
+      "Stats": {
+        "LoadTime": 0.00,
+        "FirstPaint": 0.00,
+        "FCP": 0.00
+      }
+    },
+
+    {
+      "name": "Portfolio",
+      "data": {
+        "JavaScript": {
+          "Lines": 153,
+          "Files": 35,
+          "Percentage": 14
+        },
+        "CSS": {
+          "Lines": 27,
+          "Files": 123,
+          "Percentage": 55
+        }
+      },
+      "Stats": {
+        "LoadTime": 0.00,
+        "FirstPaint": 0.00,
+        "FCP": 0.00
+      }
+    },
+
+    {
+      "name": "PortfolioBackend",
+      "data": {
+        "JavaScript": {
+          "Lines": 153,
+          "Files": 35,
+          "Percentage": 14
+        },
+        "CSS": {
+          "Lines": 27,
+          "Files": 123,
+          "Percentage": 55
+        }
+      },
+      "Stats": {
+        "LoadTime": 0.00,
+        "FirstPaint": 0.00,
+        "FCP": 0.00
+      }
+    },
+    
+    {
+      "name": "ComingSoon",
+      "data": {
+        "JavaScript": {
+          "Lines": 153,
+          "Files": 35,
+          "Percentage": 14
+        },
+        "CSS": {
+          "Lines": 27,
+          "Files": 123,
+          "Percentage": 55
+        }
+      },
+      "Stats": {
+        "LoadTime": 0.00,
+        "FirstPaint": 0.00,
+        "FCP": 0.00
+      }
+    }
+]
+  
