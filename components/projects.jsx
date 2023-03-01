@@ -85,7 +85,7 @@ export default function Projects() {
           <h2 className="p-header">Sol Boba</h2>
         </div>
         <div className="item-description">
-          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p className="p-description">My first project! The first time I've been hands on using modern technologies. (Unfinished)</p>
         </div>
       </div>
     },
@@ -96,7 +96,7 @@ export default function Projects() {
           <h2 className="p-header">Portfolio</h2>
         </div>
         <div className="item-description">
-          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p className="p-description">My second project. The goal was to push what I have learned.</p>
         </div>
       </div>
     },
@@ -107,7 +107,7 @@ export default function Projects() {
           <h2 className="p-header">Portfolio Backend</h2>
         </div>
         <div className="item-description">
-          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p className="p-description">I separated the front and the backend to push each respective area. First time using TypeScript.</p>
         </div>
       </div>
     },
@@ -118,7 +118,7 @@ export default function Projects() {
           <h2 className="p-header">Coming Soon</h2>
         </div>
         <div className="item-description">
-          <p className="p-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p className="p-description"></p>
         </div>
       </div>
     }
