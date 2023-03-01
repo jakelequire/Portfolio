@@ -77,52 +77,50 @@ export default function Projects() {
     inactive: <span className="project-link-inactive"></span>
   }
 
-  const projects = [  
-    {
-      solboba: 
-      <div className="P-item-container">
-        <div className="P-header-wrapper">
-          <h2 className="p-header">Sol Boba</h2>
-        </div>
-        <div className="item-description">
-          <p className="p-description">My first project! The first time I've been hands on using modern technologies. (Unfinished)</p>
-        </div>
-      </div>
+  const projects = {
+    "solboba": {
+      "id": "solboba",
+      "title": "Sol Boba",
+      "description": "My first project! The first time I've been hands on using modern technologies. [Unfinished]",
+      "tech": ["React.js", "Next.js"]
     },
-    {
-      portfolio:
-      <div className="P-item-container">
-        <div className="P-header-wrapper">
-          <h2 className="p-header">Portfolio</h2>
-        </div>
-        <div className="item-description">
-          <p className="p-description">My second project. The goal was to push what I have learned.</p>
-        </div>
-      </div>
+    "portfolio": {
+      "id": "portfolio",
+      "title": "Portfolio",
+      "description": "My second project. .",
+      "tech": ["React.js", "Next.js", "Axios"]
     },
-    {
-      portfolio_backend:
-      <div className="P-item-container">
-        <div className="P-header-wrapper">
-          <h2 className="p-header">Portfolio Backend</h2>
-        </div>
-        <div className="item-description">
-          <p className="p-description">I separated the front and the backend to push each respective area. First time using TypeScript.</p>
-        </div>
-      </div>
+    "portfolio_backend": {
+      "id": "portfolio_backend",
+      "title": "Portfolio Backend",
+      "description": "A separate repository to gain a better understanding of backend development.",
+      "language": ["TypeScript", "JavaScript"],
+      "tech": ["Node.js", "Express.js", "Axios"]
     },
-    {
-      coming_soon:
-      <div className="P-item-container">
-        <div className="P-header-wrapper">
-          <h2 className="p-header">Coming Soon</h2>
-        </div>
-        <div className="item-description">
-          <p className="p-description"></p>
-        </div>
-      </div>
+    "coming_soon": {
+      "id": "coming_soon",
+      "title": "Coming Soon",
+      "description": "",
+      "language": [""],
+      "tech": [""]
     }
-  ]
+  }
+
+  const projectConstructor = (index) => {
+    const projectData = Object.values(projects).map((project) => {
+      return (
+        <div className="P-item-container">
+          <div className="P-header-wrapper">
+            <h2 className="p-header">{project.title}</h2>
+          </div>
+          <div className="item-description">
+            <p className="p-description">{project.description}</p>
+          </div>
+        </div>
+      )
+    })
+    return projectData[index];
+  }
 
 // >------------------------------------------------------------------------------------------
   return (
@@ -149,7 +147,7 @@ export default function Projects() {
                       e.preventDefault();
                       setIndex(0);
                     }}>
-                      {projects[0].solboba}
+                      {projectConstructor(0)}
                       {index === 0 ? activeIndex.active : activeIndex.inactive}
                     </a>
                   
@@ -158,7 +156,7 @@ export default function Projects() {
                       e.preventDefault();
                       setIndex(1);
                     }}>
-                      {projects[1].portfolio}
+                      {projectConstructor(1)}
                       {index === 1 ? activeIndex.active : activeIndex.inactive}
                     </a>
                   
@@ -167,7 +165,7 @@ export default function Projects() {
                       e.preventDefault();
                       setIndex(2);
                     }}>
-                      {projects[2].portfolio_backend}
+                      {projectConstructor(2)}
                       {index === 2 ? activeIndex.active : activeIndex.inactive}
                     </a>
                   
@@ -176,7 +174,7 @@ export default function Projects() {
                       e.preventDefault();
                       setIndex(3);
                     }}>
-                      {projects[3].coming_soon}
+                      {projectConstructor(3)}
                       {index === 3 ? activeIndex.active : activeIndex.inactive}
                     </a>
                   </div>
