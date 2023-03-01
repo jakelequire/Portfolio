@@ -4,11 +4,10 @@ import radarChartData from '../../public/data/radarChartData.json'
 import treeMapData from '../../public/data/treeMapData.json'
 
 /**
- * 
  * @param {Number} index 
  * @returns 
  */
-export function RadarData(index) {
+export function RadarData(index = 0) {
   const radarCharts = radarChartData.map((data) => {
     return (
       <div key={index} className="chartData">
@@ -60,7 +59,7 @@ export function RadarData(index) {
  * 
  * @returns {Object}
  */
-export function TreeMapData(index) {
+export function TreeMapData(index = 0) {
 	const treeMapCharts = treeMapData.map((data) => {
 	return (
 		<div key={index} className="chartData">
