@@ -1,71 +1,80 @@
 import { ResponsiveRadar } from '@nivo/radar'
-import { ResponsiveTreeMap } from '@nivo/treemap'
 import radarChartData from '../../public/data/radarChartData.json'
+import { ResponsiveTreeMap } from '@nivo/treemap'
 import treeMapData from '../../public/data/treeMapData.json'
+
 
 /**
  * @param {Number} index 
  * @returns 
  */
-export function RadarData(index = 0) {
-  const radarCharts = radarChartData.map((data) => {
-    return (
-      <div key={index} className="chartData">
-        <ResponsiveRadar
-          className="radarChart"
-          data={data}
-          keys={['lines', 'files', 'percentage']}
-          indexBy="language"
-          valueFormat=">-.2f"
-          margin={{ top: 70, right: 80, bottom: 40, left: 40 }}
-          borderColor={{ from: 'color' }}
-          gridLabelOffset={25}
-          dotSize={5}
-          dotColor={{ theme: 'background' }}
-          dotBorderWidth={5}
-          blendMode="normal"
-          motionConfig="gentle"
-          colors={{ scheme: 'dark2' }}
-          legends={[
-            {
-              anchor: 'top-right',
-              direction: 'column',
-              translateX: -170,
-              translateY: -40,
-              itemWidth: 80,
-              itemHeight: 20,
-              itemTextColor: '#999',
-              symbolSize: 12,
-              symbolShape: 'circle',
-              effects: [
-                {
-                  on: 'hover',
-                  style: {
-                    itemTextColor: '#0affa9',
-                  },
-                },
-              ],
-            },
-          ]}
-        />
-      </div>
-    )
-  })
-
-  return <div>{radarCharts[index]}</div>
-}
+export function RadarData(index) {
+	// Transform JSON data into an array of datasets
+	const datasets = radarChartData.map((item) => {
+	  const { name, data } = item
+	  return {
+		id: name,
+		data: Object.entries(data).map(([language, values]) => ({
+		  language,
+		  ...values,
+		})),
+	  }
+	})
+  
+	return (
+	  <div className="chartData">
+		<ResponsiveRadar
+		  className="radarChart"
+		  data={datasets[index].data}
+		  keys={['JavaScript', 'CSS']}
+		  indexBy="language"
+		  valueFormat=">-.2f"
+		  margin={{ top: 70, right: 80, bottom: 40, left: 40 }}
+		  borderColor={{ from: 'color' }}
+		  gridLabelOffset={25}
+		  dotSize={5}
+		  dotColor={{ theme: 'background' }}
+		  dotBorderWidth={5}
+		  blendMode="normal"
+		  motionConfig="gentle"
+		  colors={{ scheme: 'dark2' }}
+		  legends={[
+			{
+			  anchor: 'top-right',
+			  direction: 'column',
+			  translateX: -170,
+			  translateY: -40,
+			  itemWidth: 80,
+			  itemHeight: 20,
+			  itemTextColor: '#999',
+			  symbolSize: 12,
+			  symbolShape: 'circle',
+			  effects: [
+				{
+				  on: 'hover',
+				  style: {
+					itemTextColor: '#0affa9',
+				  },
+				},
+			  ],
+			},
+		  ]}
+		/>
+	  </div>
+	)
+  }
 /**
  * @param {Number} index 
  * 
  * @returns {Object}
  */
-export function TreeMapData(index = 0) {
+export function TreeMapData(index) {
 	const treeMapCharts = treeMapData.map((data) => {
 	return (
 		<div key={index} className="chartData">
 			<ResponsiveTreeMap
 				className="treeMapChart"
-				data={data}
+				data={data.TreeMapData}
 				identity="name"
 				value="loc"
 				valueFormat= " >-.2f"
@@ -79,9 +88,6 @@ export function TreeMapData(index = 0) {
 				nodeOpacity={0.1}
 				borderWidth={2}
 				borderColor={{ from: 'color', modifiers: [['darker', 0]] }}
-				animate={true}
-				motionStiffness={90}
-				motionDamping={15}
 			/>
 		</div>
 	)
