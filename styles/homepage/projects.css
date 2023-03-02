@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    height: 130vh;
+    height: 120vh;
     width: 100vw;
     padding-left: 13%;
     padding-right: 5%;
@@ -220,7 +220,10 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    border: 1px solid var(--font-color-4);
+    border-top: 1px solid var(--font-color-1);
+    border-bottom: 1px solid var(--font-color-1);
+    border-right: 1px solid var(--font-color-1);
+    border-left: 1px dashed var(--font-color-1);
 }
 
 .project-data {
@@ -326,9 +329,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100%;
-    width: 60%;
+    width: 100%;
     padding: 2rem;
     border-radius: 1.5rem;
     background-color: var(--bg-element-1);
@@ -338,22 +341,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 40%;
     height: 100%;
     justify-content: center;
     gap: 1rem;
 }
 
-/* ---- Project Stats ---- */
-.project-stats-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: flex-start;
-    height: 100%;
-    width: 100%;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    background-color: var(--bg-element-1);
-}

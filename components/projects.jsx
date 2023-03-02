@@ -251,14 +251,6 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="project-stats-wrapper">
-              <div className="project-stats">
-
-              </div>
-            </div>
-
-
-
           </div>
         </div>
       </div>
