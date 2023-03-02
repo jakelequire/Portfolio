@@ -227,8 +227,10 @@ export default function Projects() {
           {/* -- Project Preview -- */}          
           <div className="project-preview">
 
-            <div className="preview-btn-wrapper">
 
+
+            
+            <div className="preview-btn-wrapper">
               <div className="preview-btns">
                 <SecondaryButton
                 altClass="github-btn"
@@ -248,6 +250,13 @@ export default function Projects() {
                 />
               </div>
             </div>
+
+            <div className="project-stats-wrapper">
+              <div className="project-stats">
+
+              </div>
+            </div>
+
 
 
           </div>
