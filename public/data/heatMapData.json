@@ -1,0 +1,147 @@
+[
+    [
+        {
+          "id": "JavaScript",
+          "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+          ]
+        },
+        {
+            "id": "CSS",
+            "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+            ]
+        }
+    ],
+    [
+        {
+          "id": "JavaScript",
+          "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+          ]
+        },
+        {
+            "id": "CSS",
+            "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+            ]
+        }
+    ],
+    [
+        {
+          "id": "JavaScript",
+          "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+          ]
+        },
+        {
+            "id": "CSS",
+            "data": [
+            {
+              "x": "Lines",
+              "y": 24327
+            },
+            {
+              "x": "Files",
+              "y": -33555
+            },
+            {
+              "x": "Percentage",
+              "y": -30507
+            }
+            ]
+        }
+    ],
+    [
+        {
+            "id": "JavaScript",
+            "data": [
+              {
+                "x": "Lines",
+                "y": 24327
+              },
+              {
+                "x": "Files",
+                "y": -33555
+              },
+              {
+                "x": "Percentage",
+                "y": -30507
+              }
+            ]
+          },
+          {
+              "id": "CSS",
+              "data": [
+                {
+                  "x": "Lines",
+                  "y": 24327
+                },
+                {
+                  "x": "Files",
+                  "y": -33555
+                },
+                {
+                  "x": "Percentage",
+                  "y": -30507
+                }
+            ]
+        }
+      
+    ]
+]

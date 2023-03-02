@@ -1,4 +1,5 @@
 [
+  
     {
       "name": "SolBoba",
       "data": {
@@ -11,12 +12,12 @@
           "Lines": 27,
           "Files": 123,
           "Percentage": 55
+        },
+        "Stats": {
+          "LoadTime": 82,
+          "FirstPaint": 82,
+          "FCP": 82
         }
-      },
-      "Stats": {
-        "LoadTime": 0.00,
-        "FirstPaint": 0.00,
-        "FCP": 0.00
       }
     },
 
@@ -32,17 +33,17 @@
           "Lines": 27,
           "Files": 123,
           "Percentage": 55
+        },
+        "Stats": {
+          "LoadTime": 82,
+          "FirstPaint": 82,
+          "FCP": 82
         }
-      },
-      "Stats": {
-        "LoadTime": 0.00,
-        "FirstPaint": 0.00,
-        "FCP": 0.00
       }
     },
 
     {
-      "name": "PortfolioBackend",
+      "name": "PortfolioBackEnd",
       "data": {
         "JavaScript": {
           "Lines": 153,
@@ -53,12 +54,12 @@
           "Lines": 27,
           "Files": 123,
           "Percentage": 55
+        },
+        "Stats": {
+          "LoadTime": 82,
+          "FirstPaint": 82,
+          "FCP": 82
         }
-      },
-      "Stats": {
-        "LoadTime": 0.00,
-        "FirstPaint": 0.00,
-        "FCP": 0.00
       }
     },
     
@@ -74,12 +75,12 @@
           "Lines": 27,
           "Files": 123,
           "Percentage": 55
+        },
+        "Stats": {
+          "LoadTime": 82,
+          "FirstPaint": 82,
+          "FCP": 82
         }
-      },
-      "Stats": {
-        "LoadTime": 0.00,
-        "FirstPaint": 0.00,
-        "FCP": 0.00
       }
     }
 ]

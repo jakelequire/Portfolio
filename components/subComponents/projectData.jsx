@@ -2,67 +2,8 @@ import { ResponsiveRadar } from '@nivo/radar'
 import radarChartData from '../../public/data/radarChartData.json'
 import { ResponsiveTreeMap } from '@nivo/treemap'
 import treeMapData from '../../public/data/treeMapData.json'
-
-
-/**
- * @param {Number} index 
- * @returns 
- */
-export function RadarData(index) {
-	// Transform JSON data into an array of datasets
-	const datasets = radarChartData.map((item) => {
-	  const { name, data } = item
-	  return {
-		id: name,
-		data: Object.entries(data).map(([language, values]) => ({
-		  language,
-		  ...values,
-		})),
-	  }
-	})
-  
-	return (
-	  <div className="chartData">
-		<ResponsiveRadar
-		  className="radarChart"
-		  data={datasets[index].data}
-		  keys={['JavaScript', 'CSS']}
-		  indexBy="language"
-		  valueFormat=">-.2f"
-		  margin={{ top: 70, right: 80, bottom: 40, left: 40 }}
-		  borderColor={{ from: 'color' }}
-		  gridLabelOffset={25}
-		  dotSize={5}
-		  dotColor={{ theme: 'background' }}
-		  dotBorderWidth={5}
-		  blendMode="normal"
-		  motionConfig="gentle"
-		  colors={{ scheme: 'dark2' }}
-		  legends={[
-			{
-			  anchor: 'top-right',
-			  direction: 'column',
-			  translateX: -170,
-			  translateY: -40,
-			  itemWidth: 80,
-			  itemHeight: 20,
-			  itemTextColor: '#999',
-			  symbolSize: 12,
-			  symbolShape: 'circle',
-			  effects: [
-				{
-				  on: 'hover',
-				  style: {
-					itemTextColor: '#0affa9',
-				  },
-				},
-			  ],
-			},
-		  ]}
-		/>
-	  </div>
-	)
-  }
+import { ResponsiveHeatMap } from '@nivo/heatmap'
+import heatMapData from '../../public/data/heatMapData.json'
 /**
  * @param {Number} index 
  * 
@@ -94,4 +35,76 @@ export function TreeMapData(index) {
   })
 
   return <div>{treeMapCharts[index]}</div>
+}
+
+export function HeatMapData(index) {
+	const heatMapCharts = heatMapData.map((data) => {
+		const { name } = data
+		return {
+			id: name,
+			data: Object.entries(data).map(([language, values]) => ({
+			language,
+			...values,
+			})),
+		}
+	})
+
+	return (
+	<ResponsiveHeatMap
+		data={heatMapCharts[index].data}
+		margin={{ top: 60, right: 90, bottom: 60, left: 90 }}
+		valueFormat=">-.2s"
+		xInnerPadding={0.1}
+		yInnerPadding={0.1}
+		axisTop={{
+			tickSize: 5,
+			tickPadding: 5,
+			tickRotation: -90,
+			legend: '',
+			legendOffset: 46
+		}}
+		axisRight={{
+			tickSize: 5,
+			tickPadding: 5,
+			tickRotation: 0,
+			legend: 'country',
+			legendPosition: 'middle',
+			legendOffset: 70
+		}}
+		axisLeft={{
+			tickSize: 5,
+			tickPadding: 5,
+			tickRotation: 0,
+			legend: 'country',
+			legendPosition: 'middle',
+			legendOffset: -72
+		}}
+		colors={{
+			type: 'diverging',
+			scheme: 'cool',
+			minValue: -100000,
+			maxValue: 100000,
+			divergeAt: 0.5
+		}}
+		emptyColor="#555555"
+		legends={[
+			{
+				anchor: 'bottom',
+				translateX: 0,
+				translateY: 30,
+				length: 400,
+				thickness: 8,
+				direction: 'row',
+				tickPosition: 'after',
+				tickSize: 3,
+				tickSpacing: 4,
+				tickOverlap: false,
+				tickFormat: '>-.2s',
+				title: 'Value →',
+				titleAlign: 'start',
+				titleOffset: 4
+			}
+		]}
+	/>
+	)
 }

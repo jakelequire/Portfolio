@@ -9,7 +9,7 @@
  * |||||||||||||||||    - and the name of the project
  */
 import { useEffect, useState } from "react";
-import { RadarData, TreeMapData } from '../subComponents/projectData.jsx'
+import { HeatMapData, TreeMapData } from '../subComponents/projectData.jsx'
 
 export default function useProjectIndex() {
     const [index, setIndex] = useState(0);
@@ -55,7 +55,7 @@ export default function useProjectIndex() {
     }, [index]);
 
     useEffect(() => {
-        const radarData = RadarData(index);
+        const radarData = HeatMapData(index);
         const treeMapData = TreeMapData(index);
 
         setCurRadarData([radarData]);
