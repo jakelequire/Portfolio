@@ -24,7 +24,7 @@ function importArticles(prop) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          url = prop ? "http://localhost:3001/articles?query=".concat(prop) : 'http://localhost:3001/articles';
+          url = prop ? "https://portfoliobackend-delta.vercel.app/articles?query=".concat(prop) : 'https://portfoliobackend-delta.vercel.app/articles';
           _context.next = 3;
           return regeneratorRuntime.awrap(_axios["default"].get(url));
 
