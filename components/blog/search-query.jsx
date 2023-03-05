@@ -6,16 +6,6 @@ export default function SearchQuery() {
 
     const [articles, setArticles] = useState([]);
 
-    useEffect(() => {
-        async function fetchData() {
-            const data = await blogApiCatcher('GET', 'new');
-            setArticles(data);
-        }
-        fetchData();
-    }, []);
-
-
-    
 
 
     const example = {
