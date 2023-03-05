@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import blogApiCatcher from "../../lib/blogApiCatcher.js"
-import useCustomFilter from "../hooks/useCustomFilter.jsx"
 
 export default function SearchQuery() {
 
