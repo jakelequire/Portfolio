@@ -316,9 +316,14 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    gap: 0.5rem;
 }
 .FE_slideshow-text, .BE_slideshow-text {
     color: var(--font-color-0);
+}
+
+#typescript {
+    transform: scale(0.93)
 }
 
 .button-container {

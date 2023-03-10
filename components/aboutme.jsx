@@ -11,6 +11,7 @@ import react from "../public/media/icons/tech-branding/reactjs.svg";
 import next from "../public/media/icons/tech-branding/next.svg";
 import node from "../public/media/icons/tech-branding/nodejs.svg";
 import firebase from "../public/media/icons/tech-branding/firebase.svg";
+import typescript from "../public/media/icons/tech-branding/typescript.svg";  
 import frontend from "../public/media/icons/web-media/frontend.svg"
 import backend from "../public/media/icons/web-media/backend.svg"
 import api from "../public/media/icons/web-media/api.svg"
@@ -144,6 +145,21 @@ export default function AboutMe() {
 
   /* -- Back-end Slides Content -- */
   const BE_slides = [
+    {
+      content: (
+        <div className="BE_slideshow-item">
+          <Image
+            id="typescript"
+            className={currentDirection}
+            src={typescript}
+            alt="TypeScript"
+            width={200}
+            height={200}
+          />
+          <h1 className="BE_slideshow-text"> TypeScript </h1>
+        </div>
+      )
+    },
     {
       content: (
         <div className="BE_slideshow-item">
