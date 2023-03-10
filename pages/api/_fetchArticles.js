@@ -9,8 +9,8 @@ import PropTypes from "prop-types";
  */
 export default async function importArticles(prop) {
     const url = prop
-    ? `https://portfoliobackend-delta.vercel.app/articles?query=${prop}`
-    : 'https://portfoliobackend-delta.vercel.app/articles';
+    ? `http://localhost:3001/api/posts?query=${prop}`
+    : 'http://localhost:3001/api/posts';
 
   const response = await axios.get(url);
   const articles = response.data;
