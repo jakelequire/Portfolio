@@ -24,13 +24,18 @@ function importArticles(prop) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          url = prop ? "http://localhost:3001/api/posts?query=".concat(prop) : 'http://localhost:3001/api/posts';
+          url = prop ? "http://localhost:3001/api/posts?query=".concat(prop) : 'http://localhost:3001/api/posts'; // const url = 'http://localhost:3001/api/posts'
+
           _context.next = 3;
-          return regeneratorRuntime.awrap(_axios["default"].get(url));
+          return regeneratorRuntime.awrap((0, _axios["default"])(url, {
+            method: 'GET',
+            headers: ('Access-Control-Allow-Origin', '*')
+          }));
 
         case 3:
           response = _context.sent;
-          articles = response.data;
+          articles = response;
+          console.log("<importArticles> Response: ", response.data);
           articleObject = articles.map(function (article) {
             var id = article.id,
                 title = article.title,
@@ -45,7 +50,7 @@ function importArticles(prop) {
           });
           return _context.abrupt("return", articleObject);
 
-        case 7:
+        case 8:
         case "end":
           return _context.stop();
       }
@@ -78,15 +83,39 @@ function createArticle(id, title, description, date, tags, category, image, imag
   this.imageAlt = imageAlt;
   this.content = content;
 }
+/*****************************************************************/
+
+/**/
+
 
 createArticle.propTypes = {
+  /**/
   id: _propTypes["default"].string.isRequired,
+
+  /**/
   title: _propTypes["default"].string.isRequired,
+
+  /**/
   description: _propTypes["default"].string.isRequired,
+
+  /**/
   date: _propTypes["default"].string.isRequired,
+
+  /**/
   tags: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired,
+
+  /**/
   category: _propTypes["default"].string.isRequired,
+
+  /**/
   image: _propTypes["default"].string.isRequired,
+
+  /**/
   imageAlt: _propTypes["default"].string.isRequired,
+
+  /**/
   content: _propTypes["default"].string.isRequired
+  /**/
+
 };
+/******************************************************************/

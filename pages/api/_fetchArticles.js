@@ -11,13 +11,26 @@ export default async function importArticles(prop) {
     const url = prop
     ? `http://localhost:3001/api/posts?query=${prop}`
     : 'http://localhost:3001/api/posts';
-
-  const response = await axios.get(url);
-  const articles = response.data;
-
+    // const url = 'http://localhost:3001/api/posts'
+    const response = await axios(url, {
+        method: 'GET',
+        headers: ('Access-Control-Allow-Origin', '*')
+    });
+    const articles = response;
+    console.log("<importArticles> Response: ", response.data)
     const articleObject = articles.map((article) => {
         const { id, title, description, date, tags, category, image, imageAlt, content } = article;
-        return new createArticle( id, title, description, date, tags, category, image, imageAlt, content);
+        return new createArticle(
+            id, 
+            title, 
+            description, 
+            date, 
+            tags, 
+            category, 
+            image,
+            imageAlt, 
+            content
+        );
     })
     return articleObject;
 }
@@ -46,15 +59,17 @@ function createArticle(id, title, description, date, tags, category, image, imag
     this.imageAlt = imageAlt;
     this.content = content;
 }
-createArticle.propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-    category: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    imageAlt: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-};
-export { createArticle };
+/*****************************************************************/
+/**/ createArticle.propTypes = {
+/**/     id: PropTypes.string.isRequired,
+/**/     title: PropTypes.string.isRequired,
+/**/     description: PropTypes.string.isRequired,
+/**/     date: PropTypes.string.isRequired,
+/**/     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+/**/     category: PropTypes.string.isRequired,
+/**/     image: PropTypes.string.isRequired,
+/**/     imageAlt: PropTypes.string.isRequired,
+/**/     content: PropTypes.string.isRequired,
+/**/ };
+/******************************************************************/
+export { createArticle }
