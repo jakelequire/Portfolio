@@ -31,7 +31,7 @@ function importArticles(prop) {
 
         case 3:
           response = _context.sent;
-          articles = response;
+          articles = response.data;
           console.log("<importArticles> Response: ", response.data);
           articleObject = articles.map(function (article) {
             var id = article.id,

@@ -13,7 +13,7 @@ export default async function importArticles(prop) {
     : 'http://localhost:3001/api/posts';
     // const url = 'http://localhost:3001/api/posts'
     const response = await axios(url);
-    const articles = response;
+    const articles = response.data;
     console.log("<importArticles> Response: ", response.data)
     const articleObject = articles.map((article) => {
         const { id, title, description, date, tags, category, image, imageAlt, content } = article;
