@@ -12,27 +12,30 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 /**
  * Sends a `GET` request to the server to get all articles.
  * @param {string} prop - A string to filter articles by. If no string is provided, all articles are returned.
  * 
  * @returns {Promise} A promise that resolves to an array of articles.
  */
+
 function importArticles(prop) {
   var url, response, articles, articleObject;
   return regeneratorRuntime.async(function importArticles$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          url = prop ? "http://localhost:3001/api/posts?query=".concat(prop) : 'http://localhost:3001/api/posts'; // const url = 'http://localhost:3001/api/posts'
+          url = prop ? "".concat(baseUrl, "/api/posts?query=").concat(prop) : "".concat(baseUrl, "/api/posts");
+          /**/
 
-          _context.next = 3;
+          console.log("<importArticles> URL: ", url);
+          _context.next = 4;
           return regeneratorRuntime.awrap((0, _axios["default"])(url));
 
-        case 3:
+        case 4:
           response = _context.sent;
           articles = response.data;
-          console.log("<importArticles> Response: ", response.data);
           articleObject = articles.map(function (article) {
             var id = article.id,
                 title = article.title,

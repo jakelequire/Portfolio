@@ -1,5 +1,6 @@
 import axios from "axios";
 import PropTypes from "prop-types";
+const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
 /**
  * Sends a `GET` request to the server to get all articles.
@@ -8,13 +9,10 @@ import PropTypes from "prop-types";
  * @returns {Promise} A promise that resolves to an array of articles.
  */
 export default async function importArticles(prop) {
-    const url = prop
-    ? `http://localhost:3001/api/posts?query=${prop}`
-    : 'http://localhost:3001/api/posts';
-    // const url = 'http://localhost:3001/api/posts'
+    const url = prop ? `${baseUrl}/api/posts?query=${prop}` : `${baseUrl}/api/posts`;
+    /**/ console.log("<importArticles> URL: ", url)
     const response = await axios(url);
     const articles = response.data;
-    console.log("<importArticles> Response: ", response.data)
     const articleObject = articles.map((article) => {
         const { id, title, description, date, tags, category, image, imageAlt, content } = article;
         return new createArticle(
