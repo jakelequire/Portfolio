@@ -27,10 +27,7 @@ function importArticles(prop) {
           url = prop ? "http://localhost:3001/api/posts?query=".concat(prop) : 'http://localhost:3001/api/posts'; // const url = 'http://localhost:3001/api/posts'
 
           _context.next = 3;
-          return regeneratorRuntime.awrap((0, _axios["default"])(url, {
-            method: 'GET',
-            headers: ('Access-Control-Allow-Origin', '*')
-          }));
+          return regeneratorRuntime.awrap((0, _axios["default"])(url));
 
         case 3:
           response = _context.sent;

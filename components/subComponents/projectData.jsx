@@ -1,5 +1,3 @@
-import { ResponsiveRadar } from '@nivo/radar'
-import radarChartData from '../../public/data/radarChartData.json'
 import { ResponsiveTreeMap } from '@nivo/treemap'
 import treeMapData from '../../public/data/treeMapData.json'
 import { ResponsiveHeatMap } from '@nivo/heatmap'
