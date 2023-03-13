@@ -13,11 +13,6 @@ import RadarChartWhite from '../public/media/icons/web-media/radar-chart-W.svg'
 import RadarChartGreen from '../public/media/icons/web-media/radar-chart-G.svg'
 import TreeMapWhite from '../public/media/icons/web-media/treemap-chart-W.svg'
 import TreeMapGreen from '../public/media/icons/web-media/treemap-chart-G.svg'
-/* Slideshow */
-import SolBoba_Image from '../public/media/pictures/SolBobaHomepage.webp';
-import Portfolio_Image from '../public/media/pictures/portfolioPreview.webp';
-import PortfolioBackend_Image from '../public/media/pictures/portfoliobackend.webp';
-import ComingSoon_Image from '../public/media/pictures/comingsoon.webp';
 
 // >------------------------------------------------------------------------------------------
 export default function Projects() {

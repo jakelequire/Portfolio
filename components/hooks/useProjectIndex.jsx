@@ -9,7 +9,7 @@
  * |||||||||||||||||    - and the name of the project
  */
 import { useEffect, useState } from "react";
-import { HeatMapData, TreeMapData } from '../subComponents/projectData.jsx'
+import { HeatMapData, MyResponsivePie } from '../subComponents/projectData.jsx'
 
 export default function useProjectIndex() {
     const [index, setIndex] = useState(0);
@@ -21,7 +21,7 @@ export default function useProjectIndex() {
     const [curWebsite, setCurWebsite] = useState('');
     const [curGithub, setCurGithub] = useState('');
     const [curName, setCurName] = useState('');
-
+ 
     const websites = {
         solboba: "https://solboba.com",
         portfolio: "https://jakelequire.dev",
@@ -56,7 +56,7 @@ export default function useProjectIndex() {
 
     useEffect(() => {
         const radarData = HeatMapData(index);
-        const treeMapData = TreeMapData(index);
+        const treeMapData = MyResponsivePie(index);
 
         setCurRadarData([radarData]);
         setCurTreeMapData([treeMapData]);

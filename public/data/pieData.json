@@ -1,0 +1,194 @@
+[
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 181,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 297,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 152,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 606,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 124,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ],
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 121,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 237,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 356,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 206,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 624,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ],
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 681,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 297,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 452,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 206,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 524,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ],
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 581,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 297,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 452,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 106,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 224,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ],
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 481,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 397,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 452,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 206,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 124,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ],
+    [
+        {
+          "id": "erlang",
+          "label": "erlang",
+          "value": 281,
+          "color": "hsl(190, 70%, 50%)"
+        },
+        {
+          "id": "hack",
+          "label": "hack",
+          "value": 427,
+          "color": "hsl(182, 70%, 50%)"
+        },
+        {
+          "id": "elixir",
+          "label": "elixir",
+          "value": 152,
+          "color": "hsl(202, 70%, 50%)"
+        },
+        {
+          "id": "css",
+          "label": "css",
+          "value": 206,
+          "color": "hsl(144, 70%, 50%)"
+        },
+        {
+          "id": "stylus",
+          "label": "stylus",
+          "value": 424,
+          "color": "hsl(186, 70%, 50%)"
+        }
+    ]
+]

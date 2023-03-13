@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@next/font": "^13.1.2",
+    "@nivo/circle-packing": "^0.80.0",
     "@nivo/heatmap": "^0.80.0",
     "@nivo/line": "^0.80.0",
+    "@nivo/marimekko": "^0.80.0",
+    "@nivo/pie": "^0.80.0",
     "@nivo/radar": "^0.80.0",
     "@nivo/treemap": "^0.80.0",
     "axios": "^1.2.2",

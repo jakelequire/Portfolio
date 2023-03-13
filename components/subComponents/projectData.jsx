@@ -1,39 +1,7 @@
-import { ResponsiveTreeMap } from '@nivo/treemap'
-import treeMapData from '../../public/data/treeMapData.json'
 import { ResponsiveHeatMap } from '@nivo/heatmap'
 import heatMapData from '../../public/data/heatMapData.json'
-/**
- * @param {Number} index 
- * 
- * @returns {Object}
- */
-export function TreeMapData(index) {
-	const treeMapCharts = treeMapData.map((data) => {
-	return (
-		<div key={index} className="chartData">
-			<ResponsiveTreeMap
-				className="treeMapChart"
-				data={data.TreeMapData}
-				identity="name"
-				value="loc"
-				valueFormat= " >-.2f"
-				innerPadding={5}
-				outerPadding={5}
-				margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-				labelTextColor={{ from: 'color', modifiers: [['darker', 1.2]] }}
-				parentLabelSize={25}
-				parentLabelTextColor={{ from: 'color', modifiers: [['darker', 1.2]] }}
-				colors={{ scheme: 'category10' }}
-				nodeOpacity={0.1}
-				borderWidth={2}
-				borderColor={{ from: 'color', modifiers: [['darker', 0]] }}
-			/>
-		</div>
-	)
-  })
-
-  return <div>{treeMapCharts[index]}</div>
-}
+import { ResponsivePie } from '@nivo/pie'
+import pieData from '../../public/data/pieData.json'
 
 export function HeatMapData(index) {
 	const heatMapCharts = heatMapData.map((data) => {
@@ -88,5 +56,89 @@ export function HeatMapData(index) {
 			}
 		]}
 	/>
+	)
+}
+/*
+const pieCharts: {
+    id: any;
+    data: any[];
+}[]
+*/
+export function MyResponsivePie(index) {
+	const pieCharts = pieData.map((data) => {
+		const { name } = data
+		return {
+			id: name,
+			data: Object.entries(data).map(([language, values]) => ({
+			language,
+			...values,
+			})),
+		}
+	})
+	
+	console.log("<MyResponsivePie> `pieCharts` ",pieCharts)
+	const pieIndex = pieCharts[index];
+	return (
+		<ResponsivePie
+        data= {pieIndex.data}
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={0.5}
+        padAngle={0.7}
+        cornerRadius={0}
+        activeOuterRadiusOffset={8}
+        colors={{ scheme: 'pink_yellowGreen' }}
+        borderWidth={1}
+        borderColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    0.2
+                ]
+            ]
+        }}
+        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsTextColor="#656565"
+		arcLinkLabelsOffset={18}
+        arcLinkLabelsDiagonalLength={0}
+        arcLinkLabelsStraightLength={0}
+        arcLinkLabelsColor={{ from: 'color' }}
+        enableArcLabels={false}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    2
+                ]
+            ]
+        }}
+        legends={[
+            {
+                anchor: 'bottom',
+                direction: 'row',
+                justify: false,
+                translateX: 0,
+                translateY: 56,
+                itemsSpacing: 0,
+                itemWidth: 100,
+                itemHeight: 18,
+                itemTextColor: '#999',
+                itemDirection: 'left-to-right',
+                itemOpacity: 1,
+                symbolSize: 18,
+                symbolShape: 'circle',
+                effects: [
+                    {
+                        on: 'hover',
+                        style: {
+                            itemTextColor: '#fff'
+                        }
+                    }
+                ]
+            }
+        ]}
+    />
 	)
 }
