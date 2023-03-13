@@ -61,28 +61,12 @@ export function HeatMapData(index) {
 			legend: '',
 			legendOffset: 46
 		}}
-		axisRight={{
-			tickSize: 5,
-			tickPadding: 5,
-			tickRotation: 0,
-			legend: 'country',
-			legendPosition: 'middle',
-			legendOffset: 70
-		}}
-		axisLeft={{
-			tickSize: 5,
-			tickPadding: 5,
-			tickRotation: 0,
-			legend: 'country',
-			legendPosition: 'middle',
-			legendOffset: -72
-		}}
 		colors={{
 			type: 'diverging',
 			scheme: 'cool',
-			minValue: -100000,
-			maxValue: 100000,
-			divergeAt: 0.5
+			minValue: 0,
+			maxValue: 50000,
+			divergeAt: 0.2
 		}}
 		emptyColor="#555555"
 		legends={[
