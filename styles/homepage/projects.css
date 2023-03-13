@@ -322,6 +322,7 @@
     color: var(--font-color-0);
     font-size: var(--font-size-4xl);
     border-bottom: 3px solid var(--font-color-0);
+    font-family: var(--font-family-josefin);
 }
 
 .preview-btn-wrapper {
