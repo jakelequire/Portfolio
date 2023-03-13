@@ -25,39 +25,8 @@ export default function AboutMe() {
   const [currentCategory, setCurrentCategory] = useState("frontend");
   const [currentDirection, setCurrentDirection] = useState("");
 
-  /* -- Front-end Slides -- */
-  function plusFE_Slides(direction) {
-    let newIndex = FE_slideshowIndex + direction;
-    if (newIndex >= FE_slides.length) {
-      newIndex = 0;
-    }
-    if (newIndex < 0) {
-      newIndex = FE_slides.length - 1;
-    }
-    showFE_Slide(newIndex);
-  }
 
-  function showFE_Slide(index) {
-    setFE_SlideshowIndex(index);
-  }
 
-  /* -- Back-end Slides -- */
-  function plusBE_Slides(direction) {
-    let newIndex = BE_slideshowIndex + direction;
-    if (newIndex >= BE_slides.length) {
-      newIndex = 0;
-    }
-    if (newIndex < 0) {
-      newIndex = BE_slides.length - 1;
-    }
-    showBE_Slide(newIndex);
-  }
-
-  function showBE_Slide(index) {
-    setBE_SlideshowIndex(index);
-  }
-
-  /* -- Front-end Slide Content -- */
   useEffect(() => {
     // this callback function will run after currentDirection is updated
   }, [currentDirection]);
@@ -79,161 +48,138 @@ export default function AboutMe() {
     }
   }, [className]);
 
-  const FE_slides = [
-    {
-      content: (
-        <div className="FE_slideshow-item">
-          <Image
-            id="javascript"
-            ref={divRef}
-            className={[className, currentDirection].join(" ")}
-            src={javascript}
-            alt="JavaScript"
-            width={200}
-            height={200}
-          />
-          <h1 className="FE_slideshow-text"> JavaScript</h1>
-        </div>
-      ),
+
+  /* -- Front-end Slide Content -- */
+  const FE_slidesData = {
+    javascript : {
+      src: javascript,
+      alt: "JavaScript",
+      width: 200,
+      height: 200,
+      text: "JavaScript"
     },
-    {
-      content: (
-        <div className="FE_slideshow-item">
-          <Image
-            id="react"
-            className={[className, currentDirection].join(" ")}
-            src={react}
-            alt="React"
-            width={200}
-            height={200}
-          />
-          <h1 className="FE_slideshow-text"> React.js </h1>
-        </div>
-      ),
+    react : {
+      src: react,
+      alt: "React",
+      width: 200,
+      height: 200,
+      text: "React.js"
     },
-    {
-      content: (
-        <div className="FE_slideshow-item">
-          <Image
-            id="html"
-            className={[className, currentDirection].join(" ")}
-            src={html5}
-            alt="HTML5"
-            width={200}
-            height={200}
-          />
-          <h1 className="FE_slideshow-text"> HTML</h1>
-        </div>
-      ),
+    html : {
+      src: html5,
+      alt: "HTML5",
+      width: 200,
+      height: 200,
+      text: "HTML"
     },
-    {
-      content: (
-        <div className="FE_slideshow-item">
-          <Image
-            id="css"
-            className={[className, currentDirection].join(" ")}
-            src={css3}
-            alt="CSS3"
-            width={200}
-            height={200}
-          />
-          <h1 className="FE_slideshow-text"> CSS</h1>
-        </div>
-      ),
-    },
-  ];
+    css : {
+      src: css3,
+      alt: "CSS3",
+      width: 200,
+      height: 200,
+      text: "CSS"
+    }
+
+  }
+
+  const frontendSlides = Object.keys(FE_slidesData).map((key) => {
+    return (
+      <div className="FE_slideshow-item">
+        <Image
+          id={key}
+          ref={divRef}
+          className={[className, currentDirection].join(" ")}
+          src={FE_slidesData[key].src}
+          alt={FE_slidesData[key].alt}
+          width={FE_slidesData[key].width}
+          height={FE_slidesData[key].height}
+        />
+        <h1 className="FE_slideshow-text"> {FE_slidesData[key].text}</h1>
+      </div>
+    )
+  })
+
+  function showFE_Slide(index) {
+    setFE_SlideshowIndex(index);
+  }
+
+  function plusFE_Slides(direction) {
+    let newIndex = FE_slideshowIndex + direction;
+    if (newIndex >= frontendSlides.length) {
+      newIndex = 0;
+    }
+    if (newIndex < 0) {
+      newIndex = frontendSlides.length - 1;
+    }
+    showFE_Slide(newIndex);
+  }
 
   /* -- Back-end Slides Content -- */
-  const BE_slides = [
-    {
-      content: (
-        <div className="BE_slideshow-item">
-          <Image
-            id="typescript"
-            className={currentDirection}
-            src={typescript}
-            alt="TypeScript"
-            width={200}
-            height={200}
-          />
-          <h1 className="BE_slideshow-text"> TypeScript </h1>
-        </div>
-      )
+  const BE_slidesData = {
+    typescript : {
+      src: typescript,
+      alt: "TypeScript",
+      width: 200,
+      height: 200,
+      text: "TypeScript"
     },
-    {
-      content: (
-        <div className="BE_slideshow-item">
-          <Image
-            id="next"
-            className={currentDirection}
-            src={next}
-            alt="NextJs"
-            width={275}
-            height={200}
-          />
-          <h1 className="BE_slideshow-text"> Next.js </h1>
-        </div>
-      ),
+    next : {
+      src: next,
+      alt: "NextJs",
+      width: 275,
+      height: 200,
+      text: "Next.js"
     },
-    {
-      content: (
-        <div className="BE_slideshow-item">
-          <Image
-            id="node"
-            className={currentDirection}
-            src={node}
-            alt="NodeJs"
-            width={200}
-            height={200}
-          />
-          <h1 className="BE_slideshow-text"> Node.js </h1>
-        </div>
-      ),
+    node : {
+      src: node,
+      alt: "NodeJs",
+      width: 200,
+      height: 200,
+      text: "Node.js"
     },
-    {
-      content: (
-        <div className="BE_slideshow-item">
-          <Image
-            id="firebase"
-            className={currentDirection}
-            src={firebase}
-            alt="Firebase"
-            width={200}
-            height={200}
-          />
-          <h1 className="BE_slideshow-text"> Firebase </h1>
-        </div>
-      ),
-    },
-  ];
+    firebase : {
+      src: firebase,
+      alt: "Firebase",
+      width: 200,
+      height: 200,
+      text: "Firebase"
+    }
+  }
 
-  /* ## Intersection Observer ## */
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const intersectionObserver = {
-    header: useRef(null),
-    slideshow: useRef(null),
-  };
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      // Check if the component is intersecting with the viewport
-      if (entries[0].isIntersecting) {
-        // If the component is intersecting, add a "visible" class to the component
-        intersectionObserver[entries[0].target.id].current.classList.add(
-          {
-            header: "about-visible",
-            slideshow: "slideshow-visible",
-          }[entries[0].target.id]
-        );
-      }
-    });
-    Object.values(intersectionObserver).forEach((el) =>
-      observer.observe(el.current)
-    );
-    return () =>
-      Object.values(intersectionObserver).forEach((el) =>
-        observer.unobserve(el.current)
-      );
-  }, []);
+  const backendSlides = Object.keys(BE_slidesData).map((key) => {
+    return (
+      <div className="BE_slideshow-item">
+        <Image
+
+          id={key}
+          ref={divRef}
+          className={[className, currentDirection].join(" ")}
+          src={BE_slidesData[key].src}
+          alt={BE_slidesData[key].alt}
+          width={BE_slidesData[key].width}
+          height={BE_slidesData[key].height}
+        />
+        <h1 className="BE_slideshow-text"> {BE_slidesData[key].text}</h1>
+      </div>
+    )
+  })
+
+  function plusBE_Slides(direction) {
+    let newIndex = BE_slideshowIndex + direction;
+    if (newIndex >= backendSlides.length) {
+      newIndex = 0;
+    }
+    if (newIndex < 0) {
+      newIndex = backendSlides.length - 1;
+    }
+    showBE_Slide(newIndex);
+  }
+
+  function showBE_Slide(index) {
+    setBE_SlideshowIndex(index);
+  }
+
+
   /* ------------------------------------------------------------------------------------------------------------- */
   return (
     <div className="aboutme-wrapper" id="about" ref={ref.about}>
@@ -248,7 +194,6 @@ export default function AboutMe() {
           <div
             className="about-header-wrapper"
             id="header"
-            ref={intersectionObserver.header}
           >
             <div className="aboutme-header a-header">
               <h2 className="preview-title">Meet the Developer.</h2>
@@ -280,13 +225,9 @@ export default function AboutMe() {
           <div
             className="toolkit-container slideshow-visible"
             id="slideshow"
-            ref={intersectionObserver.slideshow}
           >
             <div className="toolkit-slideshow">
               <div className="slideshow-wrapper">
-                <div className="toolkit-header">
-                  <h1 className="preview-title">My Toolkit.</h1>
-                </div>
                 <div className="slideshow-inner-wrapper">
                   <div className="slideshow-category">
                     <a
@@ -315,19 +256,9 @@ export default function AboutMe() {
                   {/* Determine which set of slides to display based on currentCategory */}
                   {currentCategory === "frontend" ? (
                     <div className="slideshow-container">
-                      {FE_slides.map((slide, index) => (
-                        <div
-                          ref={ref[index]}
-                          key={index}
-                          className={
-                            index === FE_slideshowIndex
-                              ? "slideshow-active"
-                              : "slideshow-inactive"
-                          }
-                        >
-                          {slide.content}
-                        </div>
-                      ))}
+
+                      {frontendSlides[FE_slideshowIndex]}
+                      
                       <div className="button-container">
                         <a
                           className="btn-prev"
@@ -351,19 +282,7 @@ export default function AboutMe() {
                     </div>
                   ) : (
                     <div className="slideshow-container">
-                      {BE_slides.map((slide, index) => (
-                        <div
-                          ref={ref[index]}
-                          key={index}
-                          className={
-                            index === BE_slideshowIndex
-                              ? "slideshow-active"
-                              : "slideshow-inactive"
-                          }
-                        >
-                          {slide.content}
-                        </div>
-                      ))}
+                      {backendSlides[BE_slideshowIndex]}
                       <div className="button-container">
                         <a
                           className="btn-prev"
